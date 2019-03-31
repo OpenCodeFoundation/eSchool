@@ -1,0 +1,7 @@
+# These owners will be the default owners for everything in
+# the repo. Unless a later match takes precedence
+*       @ratanparai
+
+# Order is important; the last matching pattern takes the most
+# precedence.
+*.cs   @mahedee @ratanparai

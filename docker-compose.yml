@@ -1,0 +1,17 @@
+version: '3.5'
+
+services:
+
+  sql.data:
+    image: microsoft/mssql-server-linux:2017-latest
+
+  basket.data:
+    image: redis:alpine
+
+  identity.api:
+    image: ${REGISTRY:-eschool}/identity.api:${PLATFORM:-linux}-${TAG:-latest}
+    build:
+      context: .
+      dockerfile: src/Services/Identity/Identity.API/Dockerfile    
+    depends_on:
+      - sql.data

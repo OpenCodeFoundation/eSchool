@@ -1,0 +1,12 @@
+pool:
+  vmImage: 'ubuntu-16.04'
+trigger:
+  paths:
+    include:
+    - src/Services/Identity/*    
+steps:
+- task: DockerCompose@0
+  displayName: Compose build identity
+  inputs:
+    dockerComposeCommand: 'build identity.api'
+    dockerComposeFile: docker-compose.yml

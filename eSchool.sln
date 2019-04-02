@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26124.0
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E6F1EBA7-CD18-4320-917B-3367D84D9B56}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{F58FBC12-B7D3-4B21-BA80-F7AA9CAB01CD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{BE8AE911-38CE-449A-9F60-C27B3645426A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity.API", "src\Services\Identity\Identity.API\Identity.API.csproj", "{2CC818F5-88FE-4AE9-9A11-92D9C83A5026}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2CC818F5-88FE-4AE9-9A11-92D9C83A5026}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CC818F5-88FE-4AE9-9A11-92D9C83A5026}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CC818F5-88FE-4AE9-9A11-92D9C83A5026}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2CC818F5-88FE-4AE9-9A11-92D9C83A5026}.Debug|x64.Build.0 = Debug|Any CPU
+		{2CC818F5-88FE-4AE9-9A11-92D9C83A5026}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2CC818F5-88FE-4AE9-9A11-92D9C83A5026}.Debug|x86.Build.0 = Debug|Any CPU
+		{2CC818F5-88FE-4AE9-9A11-92D9C83A5026}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CC818F5-88FE-4AE9-9A11-92D9C83A5026}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CC818F5-88FE-4AE9-9A11-92D9C83A5026}.Release|x64.ActiveCfg = Release|Any CPU
+		{2CC818F5-88FE-4AE9-9A11-92D9C83A5026}.Release|x64.Build.0 = Release|Any CPU
+		{2CC818F5-88FE-4AE9-9A11-92D9C83A5026}.Release|x86.ActiveCfg = Release|Any CPU
+		{2CC818F5-88FE-4AE9-9A11-92D9C83A5026}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F58FBC12-B7D3-4B21-BA80-F7AA9CAB01CD} = {E6F1EBA7-CD18-4320-917B-3367D84D9B56}
+		{BE8AE911-38CE-449A-9F60-C27B3645426A} = {F58FBC12-B7D3-4B21-BA80-F7AA9CAB01CD}
+		{2CC818F5-88FE-4AE9-9A11-92D9C83A5026} = {BE8AE911-38CE-449A-9F60-C27B3645426A}
+	EndGlobalSection
+EndGlobal

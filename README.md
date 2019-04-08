@@ -27,3 +27,6 @@ Everyone is welcome to contribute, whether it's in the form of code, documentati
 ## Sending feedback and pull requests
 As mentioned, we'd appreciate your feedback, improvements and ideas.
 You can create new issues at the issues section, do pull requests and/or send emails to **techcombd@outlook.com**
+
+## License
+Code licensed under the [MIT License](https://github.com/OpenCodeFoundation/eSchool/blob/master/LICENSE).

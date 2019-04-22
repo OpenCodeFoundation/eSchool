@@ -17,10 +17,6 @@
 - Redis
 - RabbitMQ
 
-## Current features
--
--
--
 ## Contributing
 Everyone is welcome to contribute, whether it's in the form of code, documentation, bug reports, feature requests, or anything else. See the contributing guide for more details.
 

@@ -33,7 +33,7 @@ namespace Identity.API
             });
 
 
-            services.AddMvc()
+            services.AddControllersWithViews()
                 .AddNewtonsoftJson();
         }
 
@@ -54,17 +54,18 @@ namespace Identity.API
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            app.UseRouting(routes =>
-            {
-                routes.MapControllerRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
-                routes.MapRazorPages();
-            });
-
             app.UseCookiePolicy();
 
+            app.UseRouting();
+
             app.UseAuthorization();
+
+            app.UseEndpoints(endpint =>
+            {
+                endpint.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+            });
         }
     }
 }

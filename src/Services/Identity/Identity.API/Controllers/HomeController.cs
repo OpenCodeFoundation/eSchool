@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Identity.API.Models;
+using OpenCodeFoundation.eSchool.Identity.API.Models;
 
-namespace Identity.API.Controllers
+namespace OpenCodeFoundation.eSchool.Identity.API.Controllers
 {
     public class HomeController : Controller
     {

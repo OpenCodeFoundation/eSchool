@@ -1,6 +1,6 @@
 using System;
 
-namespace Identity.API.Models
+namespace OpenCodeFoundation.eSchool.Identity.API.Models
 {
     public class ErrorViewModel
     {

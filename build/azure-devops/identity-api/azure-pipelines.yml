@@ -1,4 +1,5 @@
 pool:
+
   vmImage: 'ubuntu-16.04'
 trigger:
   paths:
@@ -10,3 +11,13 @@ steps:
   inputs:
     dockerComposeCommand: 'build identity.api'
     dockerComposeFile: docker-compose.yml
+
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'sonarcloud'
+    organization: 'opencodefoundation'
+    scannerMode: 'MSBuild'
+    projectKey: 'OpenCodeFoundation_eSchool'
+    projectName: 'eSchool'
+
+- task: SonarCloudAnalyze@1

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="eSchool" ToolsVersion="15.0">
+  <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
+    <!-- File Must Have Header -->
+    <Rule Id="SA1633" Action="None" />
+    <!-- Documentation Must Contain Valid Xml -->
+    <Rule Id="SA1603" Action="Warning" />
+    <!-- Documentation Text Must Begin With A Capital Letter -->
+    <Rule Id="SA1628" Action="Warning" />
+    <!-- Element Documentation Must Be Spelled Correctly -->
+    <Rule Id="SA1650" Action="Warning" />
+    <!-- Documentation Headers Must Not Contain Blank Lines -->
+    <Rule Id="SA1644" Action="Warning" />
+    <!-- Documentation Text Must Contain Whitespace -->
+    <Rule Id="SA1630" Action="Warning" />
+    <!-- Field Names Must Not Begin With Underscore -->
+    <Rule Id="SA1309" Action="None" />
+    <!-- Prefix Local Calls With This -->
+    <Rule Id="SA1101" Action="None" />
+    <!-- IDE0005  C# Using directive is unnecessary. -->
+    <!-- CS8019 "Unnecessary using directive"  -->
+    <Rule Id="IDE0005" Action="Warning" />
+    <!-- Field Names Must Begin With Underscore -->
+    <Rule Id="SX1309" Action="Warning" />
+    <!-- Do Not Prefix Local Members With This -->
+    <Rule Id="SX1101" Action="Warning" />
+  </Rules>
+</RuleSet>

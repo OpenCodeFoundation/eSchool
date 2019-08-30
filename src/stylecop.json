@@ -1,0 +1,17 @@
+
+{
+    "$schema": "https://raw.githubusercontent.com/DotNetAnalyzers/StyleCopAnalyzers/master/StyleCop.Analyzers/StyleCop.Analyzers/Settings/stylecop.schema.json",
+    "settings": {
+      "documentationRules": {
+        "companyName": "OpenCode Foundation",
+        "copyrightText": "Copyright (c) {companyName}. All rights reserved.\nLicensed under the MIT License. See LICENSE in the project root for license information.",
+        "xmlHeader": false,
+        "documentInterfaces": false,
+        "documentInternalElements": false,
+        "documentExposedElements": false
+      },
+      "orderingRules": {
+        "usingDirectivesPlacement": "outsideNamespace"
+      }
+    }
+  }

@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using OpenCodeFoundation.ESchool.Services.Enrolling.Domain.SeedWork;
 
@@ -10,6 +11,6 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.Domain.AggregatesModel.E
 
         Enrollment Update(Enrollment enrollment);
 
-        Task<Enrollment> FindByIdAsync(string id);
+        Task<Enrollment> FindByIdAsync(Guid id);
     }
 }

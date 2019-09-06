@@ -11,12 +11,18 @@
 
   <ItemGroup>
     <!-- Analyzers -->
+    <PackageReference Include="MediatR" Version="7.0.0" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" PrivateAssets="All" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc2" />
   </ItemGroup>
 
   <ItemGroup>
     <AdditionalFiles Include="..\..\..\stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Enrolling.Infrastructure\Enrolling.Infrastructure.csproj" />
+    <ProjectReference Include="..\Enrolling.Domain\Enrolling.Domain.csproj" />
   </ItemGroup>
 
 </Project>

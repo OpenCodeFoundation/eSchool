@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace OpenCodeFoundation.ESchool.Services.Enrollment.API
+namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
 {
     public class Program
     {

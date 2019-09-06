@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace OpenCodeFoundation.ESchool.Services.Enrollment.API
+namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
 {
     public class Startup
     {

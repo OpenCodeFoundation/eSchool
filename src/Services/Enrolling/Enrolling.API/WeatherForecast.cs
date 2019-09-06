@@ -1,6 +1,6 @@
 using System;
 
-namespace OpenCodeFoundation.ESchool.Services.Enrollment.API
+namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
 {
     public class WeatherForecast
     {

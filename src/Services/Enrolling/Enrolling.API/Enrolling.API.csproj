@@ -1,10 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
 
-    <AssemblyName>Enrollment.Domain</AssemblyName>
-    <RootNamespace>OpenCodeFoundation.ESchool.Services.Enrollment.Domain</RootNamespace>
+    <AssemblyName>Enrolling.API</AssemblyName>
+    <RootNamespace>OpenCodeFoundation.ESchool.Services.Enrolling.API</RootNamespace>
 
     <CodeAnalysisRuleSet>..\..\..\..\eSchool.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>

@@ -1,4 +1,4 @@
-namespace OpenCodeFoundation.ESchool.Services.Enrollment.Domain.SeedWork
+namespace OpenCodeFoundation.ESchool.Services.Enrolling.Domain.SeedWork
 {
     // Marker Interface
     public interface IAggregateRoot

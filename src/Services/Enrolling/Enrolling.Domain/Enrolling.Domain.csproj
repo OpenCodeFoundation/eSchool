@@ -1,10 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
 
-    <AssemblyName>Enrollment.Domain</AssemblyName>
-    <RootNamespace>OpenCodeFoundation.ESchool.Services.Enrollment.Domain</RootNamespace>
+    <AssemblyName>Enrolling.Domain</AssemblyName>
+    <RootNamespace>OpenCodeFoundation.ESchool.Services.Enrolling.Domain</RootNamespace>
 
     <CodeAnalysisRuleSet>..\..\..\..\eSchool.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>

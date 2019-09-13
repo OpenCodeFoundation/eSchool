@@ -4,7 +4,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace OpenCodeFoundation.ESchool.Services.Enrollment.API.Controllers
+namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]

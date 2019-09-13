@@ -10,10 +10,27 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <!-- Analyzers -->
+    <!-- In-memory commandbus -->
     <PackageReference Include="MediatR" Version="7.0.0" />
-    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" PrivateAssets="All" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+
+    <!-- Polly is a .NET resilience and transient-fault-handling library that
+    allows developers to express policies such as Retry, Circuit Breaker, Timeout,
+    Bulkhead Isolation, and Fallback in a fluent and thread-safe manner. -->
+    <PackageReference Include="Polly" Version="7.1.1" />
+
+    <!-- Swagger -->
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc2" />
+
+    <!-- Need this package for generating migration files -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.0.0-preview8.19405.11">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+
+    <!-- Analyzers -->
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" PrivateAssets="All" />
+
   </ItemGroup>
 
   <ItemGroup>

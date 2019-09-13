@@ -4,6 +4,14 @@ services:
   sql.data:
     image: microsoft/mssql-server-linux:2017-latest
 
+  enrolling.api:
+    image: ${REGISTRY:-eschool}/enrolling.api:${PLATFORM:-linux}-${TAG:-latest}
+    build:
+      context: .
+      dockerfile: src/Services/Enrolling/Enrolling.API/Dockerfile
+    depends_on:
+      - sql.data
+
   identity.api:
     image: ${REGISTRY:-eschool}/identity.api:${PLATFORM:-linux}-${TAG:-latest}
     build:

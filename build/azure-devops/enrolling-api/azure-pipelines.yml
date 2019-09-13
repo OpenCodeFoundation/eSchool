@@ -1,0 +1,13 @@
+pool:
+
+  vmImage: 'ubuntu-16.04'
+trigger:
+  paths:
+    include:
+    - src/Services/Enrolling/*
+steps:
+- task: DockerCompose@0
+  displayName: Compose build enrolling
+  inputs:
+    dockerComposeCommand: 'build enrolling.api'
+    dockerComposeFile: docker-compose.yml

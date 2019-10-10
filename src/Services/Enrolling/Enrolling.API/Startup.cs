@@ -1,5 +1,6 @@
 using System;
 using System.Reflection;
+using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -8,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using OpenCodeFoundation.ESchool.Services.Enrolling.API.Application.Validations;
 using OpenCodeFoundation.ESchool.Services.Enrolling.Infrastructure;
 
 namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
@@ -37,7 +39,9 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
                             });
                 });
 
-            services.AddControllers();
+            services.AddControllers()
+                .AddFluentValidation(fv =>
+                    fv.RegisterValidatorsFromAssemblyContaining<EnrollmentApplicationCommandValidator>());
 
             services.AddSwaggerGen(c =>
             {

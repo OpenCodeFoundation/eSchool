@@ -1,6 +1,12 @@
-name: Docker Image CI
+name: Enrolling.API
 
-on: [push]
+on:
+  push:
+    paths:
+    - 'src/Services/Enrolling/**'
+  pull_request:
+    paths:
+    - 'src/Services/Enrolling/**'
 
 jobs:
 

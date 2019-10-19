@@ -5,6 +5,12 @@ trigger:
   paths:
     include:
     - src/Services/Enrolling/*
+    - build/azure-devops/*
+pr:
+  paths:
+    include:
+    - src/Services/Enrolling/*
+    - build/azure-devops/*
 steps:
 - task: DockerCompose@0
   displayName: Compose build enrolling

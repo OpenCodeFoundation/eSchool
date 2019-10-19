@@ -2,9 +2,10 @@
 
 ## Linux Build Status for 'master' branch
 
-|                                                                                                    Identity API                                                                                                    |
-| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| [![Build Status](https://dev.azure.com/OpenCodeFoundation/eSchool/_apis/build/status/identity?branchName=master)](https://dev.azure.com/OpenCodeFoundation/eSchool/_build/latest?definitionId=1&branchName=master) |
+|                                                                                                    Identity API                                                                                                    |                                                                                                    Enrolling.API                                                                                                    |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| [![Build Status](https://dev.azure.com/OpenCodeFoundation/eSchool/_apis/build/status/identity?branchName=master)](https://dev.azure.com/OpenCodeFoundation/eSchool/_build/latest?definitionId=1&branchName=master) | [![Build Status](https://dev.azure.com/OpenCodeFoundation/eSchool/_apis/build/status/Enrolling?branchName=master)](https://dev.azure.com/OpenCodeFoundation/eSchool/_build/latest?definitionId=4&branchName=master) |
+|                                                                                                                                                                                                                    |                             [![Actions Status](https://github.com/OpenCodeFoundation/eSchool/workflows/Enrolling.API/badge.svg)](https://github.com/OpenCodeFoundation/eSchool/actions)                             |
 
 ## Tech & Tools
 - .NET Core

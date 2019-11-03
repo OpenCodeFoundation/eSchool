@@ -10,6 +10,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <!-- HealthChecks -->
+    <PackageReference Include="AspNetCore.HealthChecks.SqlServer" Version="3.0.0" />
+    <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="3.0.0" />
+
     <!-- In-memory commandbus -->
     <PackageReference Include="MediatR" Version="7.0.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />

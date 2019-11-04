@@ -10,4 +10,9 @@
   <ItemGroup>
   </ItemGroup>
 
+
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.HealthChecks.UI" Version="3.0.0" />
+  </ItemGroup>
+
 </Project>

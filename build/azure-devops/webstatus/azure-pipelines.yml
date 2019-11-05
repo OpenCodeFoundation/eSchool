@@ -1,0 +1,19 @@
+pool:
+
+  vmImage: 'ubuntu-16.04'
+trigger:
+  paths:
+    include:
+    - src/Web/WebStatus/*
+    - build/azure-devops/*
+pr:
+  paths:
+    include:
+    - src/Web/WebStatus/*
+    - build/azure-devops/*
+steps:
+- task: DockerCompose@0
+  displayName: Compose build webstatus
+  inputs:
+    dockerComposeCommand: 'build webstatus'
+    dockerComposeFile: docker-compose.yml

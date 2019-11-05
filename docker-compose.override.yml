@@ -23,3 +23,12 @@ services:
       - ASPNETCORE_URLS=http://0.0.0.0:80
     ports:
       - "5105:80"
+
+  webstatus:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+      - HealthChecksUI__HealthChecks__0__Name=Enrolling HTTP Check
+      - HealthChecksUI__HealthChecks__0__Uri=http://enrolling.api/hc
+    ports:
+      - "5107:80"

@@ -19,3 +19,9 @@ services:
       dockerfile: src/Services/Identity/Identity.API/Dockerfile
     depends_on:
       - sql.data
+
+  webstatus:
+    image: ${REGISTRY:-eschool}/webstatus:${PLATFORM:-linux}-${TAG:-latest}
+    build:
+      context: .
+      dockerfile: src/Web/WebStatus/Dockerfile

@@ -2,10 +2,10 @@
 
 ## Linux Build Status for 'master' branch
 
-|                                                                                                    Identity API                                                                                                    |                                                                                                    Enrolling.API                                                                                                    |
-| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
-| [![Build Status](https://dev.azure.com/OpenCodeFoundation/eSchool/_apis/build/status/identity?branchName=master)](https://dev.azure.com/OpenCodeFoundation/eSchool/_build/latest?definitionId=1&branchName=master) | [![Build Status](https://dev.azure.com/OpenCodeFoundation/eSchool/_apis/build/status/Enrolling?branchName=master)](https://dev.azure.com/OpenCodeFoundation/eSchool/_build/latest?definitionId=4&branchName=master) |
-|                                                                                                                                                                                                                    |                             [![Actions Status](https://github.com/OpenCodeFoundation/eSchool/workflows/Enrolling.API/badge.svg)](https://github.com/OpenCodeFoundation/eSchool/actions)                             |
+|                                                                                                    Identity API                                                                                                    |                                                                                                    Enrolling.API                                                                                                    |                                                                                                      WebStatus                                                                                                      |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| [![Build Status](https://dev.azure.com/OpenCodeFoundation/eSchool/_apis/build/status/identity?branchName=master)](https://dev.azure.com/OpenCodeFoundation/eSchool/_build/latest?definitionId=1&branchName=master) | [![Build Status](https://dev.azure.com/OpenCodeFoundation/eSchool/_apis/build/status/Enrolling?branchName=master)](https://dev.azure.com/OpenCodeFoundation/eSchool/_build/latest?definitionId=4&branchName=master) | [![Build Status](https://dev.azure.com/OpenCodeFoundation/eSchool/_apis/build/status/WebStatus?branchName=master)](https://dev.azure.com/OpenCodeFoundation/eSchool/_build/latest?definitionId=5&branchName=master) |
+|                                                                                                                                                                                                                    |                             [![Actions Status](https://github.com/OpenCodeFoundation/eSchool/workflows/Enrolling.API/badge.svg)](https://github.com/OpenCodeFoundation/eSchool/actions)                             |                               [![Actions Status](https://github.com/OpenCodeFoundation/eSchool/workflows/WebStatus/badge.svg)](https://github.com/OpenCodeFoundation/eSchool/actions)                               |
 
 ## System requirements
 ### Recommended Hardware requirements for Windows
@@ -34,6 +34,12 @@ $ docker-compose up
 ```
 
 in terminal from project's root folder. The first run can take 30 mins to 1 hour depending on your internet speed, as it will download required docker images from the docker hub. After everything starts up, you can access the `Enrolling.API` swagger UI by visiting [http://localhost:5102/swagger/](http://localhost:5102/swagger/)
+
+### Service URLs
+* WebStatus - [http://localhost:5107/](http://localhost:5107/)
+* Enrolling.API - [http://localhost:5102/swagger/](http://localhost:5102/swagger/)
+* Identity - [http://localhost:5105/](http://localhost:5105/)
+
 
 ## Tech & Tools
 - .NET Core

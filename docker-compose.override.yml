@@ -12,7 +12,7 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://0.0.0.0:80
-      - ConnectionStrings__EnrollingDatabase=Server=sql.data;Database=OpenCodeFoundation.EnrollingDb;User Id=sa;Password=Pass@word
+      - ConnectionStrings=Server=sql.data;Database=OpenCodeFoundation.EnrollingDb;User Id=sa;Password=Pass@word
     ports:
       - "5102:80"
       - "5581:5001"
@@ -23,3 +23,12 @@ services:
       - ASPNETCORE_URLS=http://0.0.0.0:80
     ports:
       - "5105:80"
+
+  webstatus:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+      - HealthChecksUI__HealthChecks__0__Name=Enrolling HTTP Check
+      - HealthChecksUI__HealthChecks__0__Uri=http://enrolling.api/hc
+    ports:
+      - "5107:80"

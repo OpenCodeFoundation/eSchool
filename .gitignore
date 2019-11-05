@@ -331,3 +331,6 @@ ASALocalRun/
 
 # Visual studio code
 .vscode
+
+# Ignore HealthCheckdb
+*healthchecksdb*

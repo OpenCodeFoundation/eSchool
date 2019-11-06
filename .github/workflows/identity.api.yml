@@ -1,0 +1,22 @@
+name: Identity.API
+
+on:
+  push:
+    paths:
+    - 'src/Services/Identity/**'
+    - '.github/workflows/**'
+  pull_request:
+    paths:
+    - 'src/Services/Identity/**'
+    - '.github/workflows/**'
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-16.04
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: docker compose
+      run: docker-compose build identity.api

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace Identity.API.Controllers
+namespace OpenCodeFoundation.eSchool.Identity.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]

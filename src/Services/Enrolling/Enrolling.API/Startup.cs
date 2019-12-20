@@ -62,8 +62,6 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
-
             app.UseRouting();
 
             app.UseAuthorization();

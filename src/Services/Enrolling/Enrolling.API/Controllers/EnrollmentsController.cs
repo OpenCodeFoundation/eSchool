@@ -31,13 +31,21 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Controllers
         [HttpGet]
         public async Task<List<Enrollment>> Get()
         {
-            return await _context.Enrollments.ToListAsync();
+            _logger.LogInformation("Getting all Enrollments");
+            var enrollments = await _context.Enrollments.ToListAsync();
+
+            _logger.LogInformation("Total {NumberOfEnrollment} enrollments retrived", enrollments.Count);
+            return enrollments;
         }
 
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] EnrollmentApplicationCommand command)
         {
-            _logger.LogInformation("Posting request");
+            _logger.LogInformation(
+                "Sending command: {CommandName} - ({@Command})",
+                command.GetType().Name,
+                command);
+
             await _mediator.Send(command);
             return Ok();
         }

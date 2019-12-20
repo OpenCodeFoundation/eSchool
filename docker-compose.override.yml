@@ -1,6 +1,12 @@
 version: '3.5'
 
 services:
+  seq:
+    environment:
+      - ACCEPT_EULA=Y
+    ports:
+      - "5140:80"
+
   sql.data:
     environment:
       - SA_PASSWORD=Pass@word

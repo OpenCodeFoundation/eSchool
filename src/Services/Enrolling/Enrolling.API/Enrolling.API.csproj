@@ -15,7 +15,7 @@
     <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="3.0.2" />
 
     <!-- In-memory commandbus -->
-    <PackageReference Include="MediatR" Version="7.0.0" />
+    <PackageReference Include="MediatR" Version="8.0.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
 
     <!-- For validating inputs -->

@@ -1,4 +1,4 @@
-version: '3.5'
+version: "3.5"
 
 services:
   seq:
@@ -12,7 +12,7 @@ services:
       - SA_PASSWORD=Pass@word
       - ACCEPT_EULA=Y
     ports:
-      - "5433:1433"    # Important: In a production environment your should remove the external port
+      - "5433:1433" # Important: In a production environment your should remove the external port
 
   enrolling.api:
     environment:
@@ -22,13 +22,6 @@ services:
     ports:
       - "5102:80"
       - "5581:5001"
-
-  identity.api:
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_URLS=http://0.0.0.0:80
-    ports:
-      - "5105:80"
 
   webstatus:
     environment:

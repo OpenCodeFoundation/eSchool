@@ -38,7 +38,6 @@ in terminal from project's root folder. The first run can take 30 mins to 1 hour
 ### Service URLs
 * WebStatus - [http://localhost:5107/](http://localhost:5107/)
 * Enrolling.API - [http://localhost:5102/swagger/](http://localhost:5102/swagger/)
-* Identity - [http://localhost:5105/](http://localhost:5105/)
 
 
 ## Tech & Tools

@@ -19,7 +19,7 @@
 ### Software requirements for Windows
 
 - Docker Community Edition (aka. Docker for Windows) - Requires Windows 10 Pro 64 bits and Hyper-V enabled
-- Latest **.NET Core 3.0 SDK** from: https://www.microsoft.com/net/download
+- Latest **.NET Core 3.1 SDK** from: https://www.microsoft.com/net/download
 - (Optional) Visual Studio 2019
 - (Optional) Visual Studio Code
 

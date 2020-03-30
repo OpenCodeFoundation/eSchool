@@ -7,17 +7,17 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OpenCodeFoundation.ESchool.Services.Enrolling.Infrastructure;
 
-namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Infrastructure.Migrations
+namespace OpenCodeFoundation.ESchool.Services.Enrolling.Infrastructure.Migrations
 {
     [DbContext(typeof(EnrollingContext))]
-    [Migration("20190913125104_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20200330154056_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.0.0-preview8.19405.11")
+                .HasAnnotation("ProductVersion", "3.1.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 

@@ -37,7 +37,7 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
                         Configuration["ConnectionStrings"],
                         sqlServerOptionsAction: sqlOptions =>
                             {
-                                sqlOptions.MigrationsAssembly(typeof(Startup).GetTypeInfo().Assembly.GetName().Name);
+                                sqlOptions.MigrationsAssembly(typeof(EnrollingContext).GetTypeInfo().Assembly.GetName().Name);
                                 sqlOptions.EnableRetryOnFailure(maxRetryCount: 15, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null);
                             });
                 });

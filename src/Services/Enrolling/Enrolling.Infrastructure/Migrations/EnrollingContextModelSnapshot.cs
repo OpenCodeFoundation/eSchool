@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OpenCodeFoundation.ESchool.Services.Enrolling.Infrastructure;
 
-namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Infrastructure.Migrations
+namespace OpenCodeFoundation.ESchool.Services.Enrolling.Infrastructure.Migrations
 {
     [DbContext(typeof(EnrollingContext))]
     partial class EnrollingContextModelSnapshot : ModelSnapshot
@@ -15,7 +15,7 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Infrastructure.Migra
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.0.0-preview8.19405.11")
+                .HasAnnotation("ProductVersion", "3.1.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 

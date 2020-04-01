@@ -1,0 +1,9 @@
+version: "3.5"
+
+services:
+  enrolling.api.test:
+    entrypoint:
+      - dotnet
+      - test
+      - --logger
+      - trx;LogFileName=/tests/enrolling-unit-test-results.xml

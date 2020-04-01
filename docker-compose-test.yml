@@ -1,0 +1,11 @@
+version: "3.5"
+
+services:
+  enrolling.api.test:
+    image: ${REGISTRY:-eschool}/enrolling.api.test:${TAG:-latest}
+    build:
+      context: .
+      dockerfile: src/Services/Enrolling/Enrolling.API/Dockerfile
+      target: unittest
+    volumes:
+      - ${BUILD_ARTIFACTSTAGINGDIRECTORY:-./tests-results/}:/tests

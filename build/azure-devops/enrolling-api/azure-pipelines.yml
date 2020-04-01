@@ -31,3 +31,9 @@ steps:
       testResultsFiles: "**/*.xml"
       searchFolder: "$(Build.ArtifactStagingDirectory)"
       publishRunAttachments: true
+
+  - task: PublishCodeCoverageResults@1
+    displayName: Publish test coverage
+    inputs:
+      codeCoverageTool: "cobertura" # Options: cobertura, jaCoCo
+      summaryFileLocation: "$(Build.ArtifactStagingDirectory)/*/coverage.cobertura.xml"

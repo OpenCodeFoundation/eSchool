@@ -334,3 +334,6 @@ ASALocalRun/
 
 # Ignore HealthCheckdb
 *healthchecksdb*
+
+# Test Results
+/tests-results

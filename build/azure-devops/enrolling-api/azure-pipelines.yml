@@ -1,19 +1,39 @@
 pool:
-
-  vmImage: 'ubuntu-16.04'
+  vmImage: "ubuntu-16.04"
 trigger:
   paths:
     include:
-    - src/Services/Enrolling/*
-    - build/azure-devops/*
+      - src/Services/Enrolling/*
+      - build/azure-devops/*
 pr:
   paths:
     include:
-    - src/Services/Enrolling/*
-    - build/azure-devops/*
+      - src/Services/Enrolling/*
+      - build/azure-devops/*
 steps:
-- task: DockerCompose@0
-  displayName: Compose build enrolling
-  inputs:
-    dockerComposeCommand: 'build enrolling.api'
-    dockerComposeFile: docker-compose.yml
+  - task: DockerCompose@0
+    displayName: Build
+    inputs:
+      dockerComposeCommand: "build enrolling.api"
+      dockerComposeFile: docker-compose.yml
+
+  - task: DockerCompose@0
+    displayName: UnitTests
+    inputs:
+      dockerComposeCommand: "up enrolling.api.test"
+      dockerComposeFile: docker-compose-test.yml
+      additionalDockerComposeFiles: docker-compose-test.override.yml
+
+  - task: PublishTestResults@2
+    displayName: Publish test results
+    inputs:
+      testResultsFormat: "VSTest"
+      testResultsFiles: "**/*.xml"
+      searchFolder: "$(Build.ArtifactStagingDirectory)"
+      publishRunAttachments: true
+
+  - task: PublishCodeCoverageResults@1
+    displayName: Publish test coverage
+    inputs:
+      codeCoverageTool: "cobertura" # Options: cobertura, jaCoCo
+      summaryFileLocation: "$(Build.ArtifactStagingDirectory)/*/coverage.cobertura.xml"

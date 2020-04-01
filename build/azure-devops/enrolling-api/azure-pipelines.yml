@@ -1,19 +1,25 @@
 pool:
-
-  vmImage: 'ubuntu-16.04'
+  vmImage: "ubuntu-16.04"
 trigger:
   paths:
     include:
-    - src/Services/Enrolling/*
-    - build/azure-devops/*
+      - src/Services/Enrolling/*
+      - build/azure-devops/*
 pr:
   paths:
     include:
-    - src/Services/Enrolling/*
-    - build/azure-devops/*
+      - src/Services/Enrolling/*
+      - build/azure-devops/*
 steps:
-- task: DockerCompose@0
-  displayName: Compose build enrolling
-  inputs:
-    dockerComposeCommand: 'build enrolling.api'
-    dockerComposeFile: docker-compose.yml
+  - task: DockerCompose@0
+    displayName: Compose build enrolling
+    inputs:
+      dockerComposeCommand: "build enrolling.api"
+      dockerComposeFile: docker-compose.yml
+
+  - task: DockerCompose@0
+    displayName: Compose unittest enrolling
+    inputs:
+      dockerComposeCommand: "up enrolling.api.test"
+      dockerComposeFile: docker-compose-test.yml
+      additionalDockerComposeFiles: docker-compose-test.override.yml

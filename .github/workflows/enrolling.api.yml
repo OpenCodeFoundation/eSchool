@@ -21,7 +21,7 @@ jobs:
         run: docker-compose build enrolling.api
 
       - name: unit tests
-        run: docker-compose -f docker-compose-test.yml -f docker-compose-test.override.yml up enrolling.api.test --exit-code-from enrolling.api.test
+        run: docker-compose -f docker-compose-test.yml -f docker-compose-test.override.yml up --exit-code-from enrolling.api.test enrolling.api.test
 
       - name: functional tests
-        run: docker-compose -f docker-compose-test.yml -f docker-compose-test.override.yml up enrolling.api.functional-test --exit-code-from enrolling.api.functional-test
+        run: docker-compose -f docker-compose-test.yml -f docker-compose-test.override.yml up --exit-code-from enrolling.api.functional-test enrolling.api.functional-test

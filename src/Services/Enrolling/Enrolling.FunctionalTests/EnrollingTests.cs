@@ -13,6 +13,7 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.FunctionalTests
             _testServer = testServer ?? throw new System.ArgumentNullException(nameof(testServer));
         }
 
+        [Fact]
         public async Task Get_all_enrolling_ok_status_code()
         {
             var response = await _testServer.Client.GetAsync("/");

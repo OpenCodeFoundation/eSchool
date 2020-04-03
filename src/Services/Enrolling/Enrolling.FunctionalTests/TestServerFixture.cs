@@ -31,6 +31,7 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.FunctionalTests
                 .UseContentRoot(Path.GetDirectoryName(path))
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    webBuilder.UseTestServer();
                     webBuilder.UseStartup<Startup>();
                     webBuilder.ConfigureAppConfiguration(config =>
                     {
@@ -39,7 +40,7 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.FunctionalTests
                     });
                 });
 
-            return builder.Build();
+            return builder.Start();
         }
 
         public void Dispose()

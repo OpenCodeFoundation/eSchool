@@ -18,9 +18,16 @@ steps:
       dockerComposeFile: docker-compose.yml
 
   - task: DockerCompose@0
-    displayName: UnitTests
+    displayName: Unit Tests
     inputs:
-      dockerComposeCommand: "up enrolling.api.test"
+      dockerComposeCommand: "run enrolling.api.test"
+      dockerComposeFile: docker-compose-test.yml
+      additionalDockerComposeFiles: docker-compose-test.override.yml
+
+  - task: DockerCompose@0
+    displayName: Functional Tests
+    inputs:
+      dockerComposeCommand: "run enrolling.api.functional-test"
       dockerComposeFile: docker-compose-test.yml
       additionalDockerComposeFiles: docker-compose-test.override.yml
 

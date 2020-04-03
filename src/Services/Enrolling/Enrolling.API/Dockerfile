@@ -27,7 +27,7 @@ FROM build as unittest
 WORKDIR /src/src/Services/Enrolling/Enrolling.UnitTests
 
 FROM build as functionaltest
-WORKDIR /src/Services/Enrolling/Enrolling.FunctionalTests
+WORKDIR /src/src/Services/Enrolling/Enrolling.FunctionalTests
 
 FROM build AS publish
 RUN dotnet publish --no-restore -c Release -o /app/publish

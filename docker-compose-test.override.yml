@@ -1,6 +1,13 @@
 version: "3.5"
 
 services:
+  sql.data.test:
+    environment:
+      - SA_PASSWORD=Pass@word
+      - ACCEPT_EULA=Y
+    ports:
+      - "5433:1433" # Important: In a production environment your should remove the external port
+
   enrolling.api.test:
     entrypoint:
       - dotnet
@@ -9,4 +16,20 @@ services:
       - /tests
       - --logger
       - trx;LogFileName=/tests/enrolling-unit-test-results.xml
+      - --collect:"XPlat Code Coverage"
+
+  enrolling.api.functional-test:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+      - ConnectionStrings=Server=sql.data.test;Database=OpenCodeFoundation.EnrollingDb;User Id=sa;Password=Pass@word
+    ports:
+      - "5102:80"
+    entrypoint:
+      - dotnet
+      - test
+      - --results-directory
+      - /tests
+      - --logger
+      - trx;LogFileName=/tests/enrolling-functional-test-results.xml
       - --collect:"XPlat Code Coverage"

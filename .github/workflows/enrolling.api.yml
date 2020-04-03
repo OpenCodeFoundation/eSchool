@@ -17,8 +17,11 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: unit tests
-        run: docker-compose -f docker-compose-test.yml -f docker-compose-test.override.yml up enrolling.api.test
-
-      - name: docker compose
+      - name: build
         run: docker-compose build enrolling.api
+
+      - name: unit tests
+        run: docker-compose -f docker-compose-test.yml -f docker-compose-test.override.yml run enrolling.api.test
+
+      - name: functional tests
+        run: docker-compose -f docker-compose-test.yml -f docker-compose-test.override.yml run enrolling.api.functional-test

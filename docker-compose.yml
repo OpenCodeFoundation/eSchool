@@ -5,7 +5,7 @@ services:
     image: datalust/seq:latest
 
   sql.data:
-    image: microsoft/mssql-server-linux:2017-latest
+    image: mcr.microsoft.com/mssql/server:2019-latest
 
   enrolling.api:
     image: ${REGISTRY:-eschool}/enrolling.api:${PLATFORM:-linux}-${TAG:-latest}

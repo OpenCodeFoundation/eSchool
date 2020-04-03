@@ -17,3 +17,13 @@ services:
       - --logger
       - trx;LogFileName=/tests/enrolling-unit-test-results.xml
       - --collect:"XPlat Code Coverage"
+
+  enrolling.api.functional-test:
+    entrypoint:
+      - dotnet
+      - test
+      - --results-directory
+      - /tests
+      - --logger
+      - trx;LogFileName=/tests/enrolling-functional-test-results.xml
+      - --collect:"XPlat Code Coverage"

@@ -16,7 +16,7 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.FunctionalTests
         [Fact]
         public async Task Get_all_enrolling_ok_status_code()
         {
-            var response = await _testServer.Client.GetAsync("/");
+            var response = await _testServer.Client.GetAsync("/Enrollments");
 
             response.EnsureSuccessStatusCode();
         }

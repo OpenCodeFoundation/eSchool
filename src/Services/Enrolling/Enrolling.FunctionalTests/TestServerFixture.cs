@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using OpenCodeFoundation.ESchool.Services.Enrolling.API;
+using OpenCodeFoundation.ESchool.Services.Enrolling.Infrastructure;
 
 namespace OpenCodeFoundation.ESchool.Services.Enrolling.FunctionalTests
 {
@@ -16,6 +17,7 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.FunctionalTests
         public TestServerFixture()
         {
             WebHost = CreateHost();
+            WebHost.MigrateDbContext<EnrollingContext>((_, __) => { });
         }
 
         public HttpClient Client => WebHost.GetTestClient();

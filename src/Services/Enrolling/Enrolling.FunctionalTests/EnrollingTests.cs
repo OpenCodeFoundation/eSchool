@@ -1,30 +1,23 @@
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc.Testing;
-using OpenCodeFoundation.ESchool.Services.Enrolling.API;
 using Xunit;
 
 namespace OpenCodeFoundation.ESchool.Services.Enrolling.FunctionalTests
 {
+    [Collection("TestServer")]
     public class EnrollingTests
-        : IClassFixture<WebApplicationFactory<Startup>>
     {
-        private readonly WebApplicationFactory<Startup> _factory;
+        private readonly TestServerFixture _testServer;
 
-        public EnrollingTests(WebApplicationFactory<Startup> factory)
+        public EnrollingTests(TestServerFixture testServer)
         {
-            _factory = factory ?? throw new System.ArgumentNullException(nameof(factory));
+            _testServer = testServer ?? throw new System.ArgumentNullException(nameof(testServer));
         }
 
-        [Fact]
-        public async Task Get_EndpointsReturnSuccess()
+        public async Task Get_all_enrolling_ok_status_code()
         {
-            var client = _factory.CreateClient();
+            var response = await _testServer.Client.GetAsync("/");
 
-            var response = await client.GetAsync("/");
-
-            // Assert
-            response.EnsureSuccessStatusCode(); // Status Code 200-299
+            response.EnsureSuccessStatusCode();
         }
-
     }
 }

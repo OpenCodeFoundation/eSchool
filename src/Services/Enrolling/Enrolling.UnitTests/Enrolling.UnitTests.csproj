@@ -15,8 +15,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Enrolling.API\Enrolling.API.csproj" />
-    <!-- <ProjectReference Include="..\Enrolling.Domain\Enrolling.Domain.csproj" />
-    <ProjectReference Include="..\Enrolling.Infrastructure\Enrolling.Infrastructure.csproj" /> -->
+    <ProjectReference Include="..\Enrolling.Domain\Enrolling.Domain.csproj" />
+    <ProjectReference Include="..\Enrolling.Infrastructure\Enrolling.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

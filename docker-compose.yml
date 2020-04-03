@@ -15,6 +15,14 @@ services:
     depends_on:
       - sql.data
 
+  joining.api:
+    image: ${REGISTRY:-eschool}/joining.api:${PLATFORM:-linux}-${TAG:-latest}
+    build:
+      context: .
+      dockerfile: src/Services/Joining/Joining.API/Dockerfile
+    depends_on:
+      - sql.data
+
   webstatus:
     image: ${REGISTRY:-eschool}/webstatus:${PLATFORM:-linux}-${TAG:-latest}
     build:

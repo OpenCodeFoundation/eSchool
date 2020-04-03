@@ -1,6 +1,13 @@
 version: "3.5"
 
 services:
+  sql.data.test:
+    environment:
+      - SA_PASSWORD=Pass@word
+      - ACCEPT_EULA=Y
+    ports:
+      - "5433:1433" # Important: In a production environment your should remove the external port
+
   enrolling.api.test:
     entrypoint:
       - dotnet

@@ -1,11 +1,25 @@
 version: "3.5"
 
 services:
+  sql.data.test:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+
   enrolling.api.test:
     image: ${REGISTRY:-eschool}/enrolling.api.test:${TAG:-latest}
     build:
       context: .
       dockerfile: src/Services/Enrolling/Enrolling.API/Dockerfile
       target: unittest
+    volumes:
+      - ${BUILD_ARTIFACTSTAGINGDIRECTORY:-./tests-results/}:/tests
+
+  enrolling.api.functional-test:
+    image: ${REGISTRY:-eschool}/enrolling.api.functional-test:${TAG:-latest}
+    build:
+      context: .
+      dockerfile: src/Services/Enrolling/Enrolling.API/Dockerfile
+      target: functionaltest
+    depends_on:
+      - sql.data.test
     volumes:
       - ${BUILD_ARTIFACTSTAGINGDIRECTORY:-./tests-results/}:/tests

@@ -19,6 +19,12 @@ services:
       - --collect:"XPlat Code Coverage"
 
   enrolling.api.functional-test:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+      - ConnectionStrings=Server=sql.data.test;Database=OpenCodeFoundation.EnrollingDb;User Id=sa;Password=Pass@word
+    ports:
+      - "5102:80"
     entrypoint:
       - dotnet
       - test

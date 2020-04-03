@@ -20,14 +20,14 @@ steps:
   - task: DockerCompose@0
     displayName: Unit Tests
     inputs:
-      dockerComposeCommand: "up --exit-code-from enrolling.api.test enrolling.api.test"
+      dockerComposeCommand: "run enrolling.api.test"
       dockerComposeFile: docker-compose-test.yml
       additionalDockerComposeFiles: docker-compose-test.override.yml
 
   - task: DockerCompose@0
     displayName: Functional Tests
     inputs:
-      dockerComposeCommand: "up --exit-code-from enrolling.api.functional-test enrolling.api.functional-test"
+      dockerComposeCommand: "run enrolling.api.functional-test"
       dockerComposeFile: docker-compose-test.yml
       additionalDockerComposeFiles: docker-compose-test.override.yml
 

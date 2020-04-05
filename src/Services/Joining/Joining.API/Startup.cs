@@ -84,7 +84,7 @@ namespace OpenCodeFoundation.ESchool.Services.Joining.API
             app.UseSwagger()
                 .UseSwaggerUI(c =>
                 {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Enrolling HTTP API");
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Joining HTTP API");
                 });
         }
     }

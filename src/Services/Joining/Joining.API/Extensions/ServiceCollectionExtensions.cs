@@ -16,8 +16,8 @@ namespace OpenCodeFoundation.ESchool.Services.Joining.API.Extensions
                 .AddCheck("self", () => HealthCheckResult.Healthy())
                 .AddSqlServer(
                     configuration["ConnectionStrings"],
-                    name: "EnrollingDB-check",
-                    tags: new string[] { "enrollingdb" });
+                    name: "JoiningDB-check",
+                    tags: new string[] { "joiningdb" });
 
             return services;
         }

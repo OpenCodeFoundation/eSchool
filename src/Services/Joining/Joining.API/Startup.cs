@@ -50,7 +50,7 @@ namespace OpenCodeFoundation.ESchool.Services.Joining.API
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Enrolling HTTP API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Joining HTTP API", Version = "v1" });
             });
         }
 

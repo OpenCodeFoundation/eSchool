@@ -38,7 +38,7 @@ namespace OpenCodeFoundation.ESchool.Services.Joining.API.Controllers
             _logger.LogInformation("Getting all Joins");
             var joins = await _context.Joins.ToListAsync();
 
-            _logger.LogInformation("Total {NumberOfEnrollment} enrollments retrived", joins.Count);
+            _logger.LogInformation("Total {NumberOfJoin} joins retrived", joins.Count);
             return joins;
         }
 

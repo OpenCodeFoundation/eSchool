@@ -52,7 +52,7 @@ in terminal from project's root folder. The first run can take 30 mins to 1 hour
 - RabbitMQ
 
 ## Contributing
-Everyone is welcome to contribute, whether it's in the form of code, documentation, bug reports, feature requests, or anything else. See the contributing guide for more details.
+Everyone is welcome to contribute, whether it's in the form of code, documentation, bug reports, feature requests, or anything else. See the [Contributing](https://github.com/OpenCodeFoundation/eschool/blob/master/CONTRIBUTING.md) guide for more details.
 
 ## Sending feedback and pull requests
 As mentioned, we'd appreciate your feedback, improvements and ideas.

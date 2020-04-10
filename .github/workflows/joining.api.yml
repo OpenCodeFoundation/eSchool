@@ -1,4 +1,4 @@
-name: Enrolling.API
+name: Joining.API
 
 on:
   push:

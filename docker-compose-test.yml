@@ -23,3 +23,23 @@ services:
       - sql.data.test
     volumes:
       - ${BUILD_ARTIFACTSTAGINGDIRECTORY:-./tests-results/}:/tests
+
+  joining.api.test:
+    image: ${REGISTRY:-eschool}/joining.api.test:${TAG:-latest}
+    build:
+      context: .
+      dockerfile: src/Services/Joining/Joining.API/Dockerfile
+      target: unittest
+    volumes:
+      - ${BUILD_ARTIFACTSTAGINGDIRECTORY:-./tests-results/}:/tests
+
+  joining.api.functional-test:
+    image: ${REGISTRY:-eschool}/joining.api.functional-test:${TAG:-latest}
+    build:
+      context: .
+      dockerfile: src/Services/Joining/Joining.API/Dockerfile
+      target: functionaltest
+    depends_on:
+      - sql.data.test
+    volumes:
+      - ${BUILD_ARTIFACTSTAGINGDIRECTORY:-./tests-results/}:/tests

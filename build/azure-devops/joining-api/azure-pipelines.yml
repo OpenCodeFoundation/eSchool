@@ -1,0 +1,46 @@
+pool:
+  vmImage: "ubuntu-16.04"
+trigger:
+  paths:
+    include:
+      - src/Services/Joining/*
+      - build/azure-devops/*
+pr:
+  paths:
+    include:
+      - src/Services/Joining/*
+      - build/azure-devops/*
+steps:
+  - task: DockerCompose@0
+    displayName: Build
+    inputs:
+      dockerComposeCommand: "build joining.api"
+      dockerComposeFile: docker-compose.yml
+
+  - task: DockerCompose@0
+    displayName: Unit Tests
+    inputs:
+      dockerComposeCommand: "run joining.api.test"
+      dockerComposeFile: docker-compose-test.yml
+      additionalDockerComposeFiles: docker-compose-test.override.yml
+
+  - task: DockerCompose@0
+    displayName: Functional Tests
+    inputs:
+      dockerComposeCommand: "run joining.api.functional-test"
+      dockerComposeFile: docker-compose-test.yml
+      additionalDockerComposeFiles: docker-compose-test.override.yml
+
+  - task: PublishTestResults@2
+    displayName: Publish test results
+    inputs:
+      testResultsFormat: "VSTest"
+      testResultsFiles: "**/*.xml"
+      searchFolder: "$(Build.ArtifactStagingDirectory)"
+      publishRunAttachments: true
+
+  - task: PublishCodeCoverageResults@1
+    displayName: Publish test coverage
+    inputs:
+      codeCoverageTool: "cobertura" # Options: cobertura, jaCoCo
+      summaryFileLocation: "$(Build.ArtifactStagingDirectory)/*/coverage.cobertura.xml"

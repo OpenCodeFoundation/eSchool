@@ -1,0 +1,27 @@
+name: Joining.API
+
+on:
+  push:
+    paths:
+      - "src/Services/Joining/**"
+      - ".github/workflows/**"
+  pull_request:
+    paths:
+      - "src/Services/Joining/**"
+      - ".github/workflows/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-16.04
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: build
+        run: docker-compose build joining.api
+
+      - name: unit tests
+        run: docker-compose -f docker-compose-test.yml -f docker-compose-test.override.yml run joining.api.test
+
+      - name: functional tests
+        run: docker-compose -f docker-compose-test.yml -f docker-compose-test.override.yml run joining.api.functional-test

@@ -14,20 +14,20 @@ steps:
   - task: DockerCompose@0
     displayName: Build
     inputs:
-      dockerComposeCommand: "build Joining.api"
+      dockerComposeCommand: "build joining.api"
       dockerComposeFile: docker-compose.yml
 
   - task: DockerCompose@0
     displayName: Unit Tests
     inputs:
-      dockerComposeCommand: "run Joining.api.test"
+      dockerComposeCommand: "run joining.api.test"
       dockerComposeFile: docker-compose-test.yml
       additionalDockerComposeFiles: docker-compose-test.override.yml
 
   - task: DockerCompose@0
     displayName: Functional Tests
     inputs:
-      dockerComposeCommand: "run Joining.api.functional-test"
+      dockerComposeCommand: "run joining.api.functional-test"
       dockerComposeFile: docker-compose-test.yml
       additionalDockerComposeFiles: docker-compose-test.override.yml
 

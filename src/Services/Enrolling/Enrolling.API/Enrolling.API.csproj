@@ -11,7 +11,7 @@
 
   <ItemGroup>
     <!-- HealthChecks -->
-    <PackageReference Include="AspNetCore.HealthChecks.SqlServer" Version="3.1.0" />
+    <PackageReference Include="AspNetCore.HealthChecks.SqlServer" Version="3.1.1" />
     <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="3.1.0" />
 
     <!-- In-memory commandbus -->
@@ -24,17 +24,17 @@
     <!-- Polly is a .NET resilience and transient-fault-handling library that
     allows developers to express policies such as Retry, Circuit Breaker, Timeout,
     Bulkhead Isolation, and Fallback in a fluent and thread-safe manner. -->
-    <PackageReference Include="Polly" Version="7.2.0" />
+    <PackageReference Include="Polly" Version="7.2.1" />
 
     <!-- Logging  -->
     <PackageReference Include="Serilog.AspNetCore" Version="3.2.0" />
     <PackageReference Include="Serilog.Sinks.Seq" Version="4.0.0" />
 
     <!-- Swagger -->
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.3.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.4.1" />
 
     <!-- Need this package for generating migration files -->
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.3">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.4">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>

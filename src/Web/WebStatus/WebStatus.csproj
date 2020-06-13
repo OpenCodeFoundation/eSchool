@@ -6,13 +6,9 @@
     <RootNamespace>OpenCodeFoundation.ESchool.Web.WebStatus</RootNamespace>
   </PropertyGroup>
 
-
   <ItemGroup>
-  </ItemGroup>
-
-
-  <ItemGroup>
-    <PackageReference Include="AspNetCore.HealthChecks.UI" Version="3.1.0" />
+    <PackageReference Include="AspNetCore.HealthChecks.UI" Version="3.1.1" />
+    <PackageReference Include="AspNetCore.HealthChecks.UI.SqlServer.Storage" Version="3.1.1" />
   </ItemGroup>
 
 </Project>

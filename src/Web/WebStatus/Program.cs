@@ -1,11 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
 namespace OpenCodeFoundation.ESchool.Web.WebStatus
 {
@@ -13,6 +8,8 @@ namespace OpenCodeFoundation.ESchool.Web.WebStatus
     {
         public static void Main(string[] args)
         {
+            Activity.DefaultIdFormat = ActivityIdFormat.W3C;
+
             CreateHostBuilder(args).Build().Run();
         }
 

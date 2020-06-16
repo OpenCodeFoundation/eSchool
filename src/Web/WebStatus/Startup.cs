@@ -23,7 +23,9 @@ namespace OpenCodeFoundation.ESchool.Web.WebStatus
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddHealthChecksUI();
+            services
+                .AddHealthChecksUI()
+                .AddSqlServerStorage(Configuration["ConnectionStrings"]);
 
             services.AddControllersWithViews();
         }

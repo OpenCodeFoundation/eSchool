@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -15,6 +16,8 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
 
         public static int Main(string[] args)
         {
+            Activity.DefaultIdFormat = ActivityIdFormat.W3C;
+
             var configuration = GetConfiguration();
 
             Log.Logger = CreateSerilogLogger(configuration);

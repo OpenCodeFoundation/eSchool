@@ -46,6 +46,10 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
                 });
 
             services.AddControllers()
+                .AddJsonOptions(options =>
+                {
+                    options.JsonSerializerOptions.IgnoreNullValues = true;
+                })
                 .AddFluentValidation(fv =>
                     fv.RegisterValidatorsFromAssemblyContaining<EnrollmentApplicationCommandValidator>());
 

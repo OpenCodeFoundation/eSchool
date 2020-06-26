@@ -5,6 +5,7 @@
 
     <AssemblyName>Enrolling.Domain</AssemblyName>
     <RootNamespace>OpenCodeFoundation.ESchool.Services.Enrolling.Domain</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
 
     <CodeAnalysisRuleSet>..\..\..\..\eSchool.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>

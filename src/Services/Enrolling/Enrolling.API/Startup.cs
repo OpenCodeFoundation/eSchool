@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using OpenCodeFoundation.ESchool.Services.Enrolling.API.Application.Behaviors;
 using OpenCodeFoundation.ESchool.Services.Enrolling.API.Application.Validations;
 using OpenCodeFoundation.ESchool.Services.Enrolling.API.Extensions;
 using OpenCodeFoundation.ESchool.Services.Enrolling.Infrastructure;
@@ -30,6 +31,8 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMediatR(typeof(Startup).GetTypeInfo().Assembly);
+
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
 
             services.AddDbContext<EnrollingContext>(options =>
                 {

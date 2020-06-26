@@ -5,6 +5,7 @@
 
     <AssemblyName>Enrolling.API</AssemblyName>
     <RootNamespace>OpenCodeFoundation.ESchool.Services.Enrolling.API</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
 
     <CodeAnalysisRuleSet>..\..\..\..\eSchool.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>

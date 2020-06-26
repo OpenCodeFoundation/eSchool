@@ -4,6 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
 
     <RootNamespace>OpenCodeFoundation.ESchool.Services.Enrolling.FunctionalTests</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 

@@ -21,7 +21,7 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
 
                 try
                 {
-                    logger.LogInformation($"Migrating database associated with context { typeof(TContext).Name}");
+                    logger.LogInformation("Migrating database associated with context {ContextName}", typeof(TContext).Name);
 
                     var retry = Policy.Handle<SqlException>()
                         .WaitAndRetry(new TimeSpan[]

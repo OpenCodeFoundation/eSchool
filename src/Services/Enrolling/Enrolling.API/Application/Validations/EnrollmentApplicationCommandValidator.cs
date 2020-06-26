@@ -9,7 +9,7 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Application.Validati
         public EnrollmentApplicationCommandValidator()
         {
             RuleFor(application => application.Name).NotEmpty();
-            RuleFor(application => application.Email).EmailAddress();
+            RuleFor(application => application.Email).NotEmpty().EmailAddress();
             RuleFor(application => application.Mobile).NotEmpty();
         }
     }

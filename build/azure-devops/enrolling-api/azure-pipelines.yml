@@ -4,12 +4,12 @@ trigger:
   paths:
     include:
       - src/Services/Enrolling/*
-      - build/azure-devops/*
+      - build/azure-devops/enrolling-api/*
 pr:
   paths:
     include:
       - src/Services/Enrolling/*
-      - build/azure-devops/*
+      - build/azure-devops/enrolling-api/*
 steps:
   - task: DockerCompose@0
     displayName: Build
@@ -43,4 +43,5 @@ steps:
     displayName: Publish test coverage
     inputs:
       codeCoverageTool: "cobertura" # Options: cobertura, jaCoCo
+      pathToSources: $(System.DefaultWorkingDirectory)/src/Services/Enrolling/
       summaryFileLocation: "$(Build.ArtifactStagingDirectory)/*/coverage.cobertura.xml"

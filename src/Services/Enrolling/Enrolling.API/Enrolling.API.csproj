@@ -17,7 +17,7 @@
 
     <!-- In-memory commandbus -->
     <PackageReference Include="MediatR" Version="8.0.1" />
-    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.1" />
 
     <!-- For validating inputs -->
     <PackageReference Include="FluentValidation.AspNetCore" Version="8.6.2" />

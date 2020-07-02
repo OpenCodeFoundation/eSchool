@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: enrolling.api-v0.2
+  labels:
+    app: enrolling.api
+    version: v0.2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: enrolling.api
+      version: v0.2
+  template:
+    metadata:
+      labels:
+        app: enrolling.api
+        version: v0.2
+    spec:
+      serviceAccountName: enrolling.api
+      containers:
+      - name: enrolling.api
+        image: docker.io/eschool/enrolling.api:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+        resources:
+            limits:
+              cpu: 100m
+              memory: 128Mi
+            requests:
+              cpu: 100m
+              memory: 128Mi

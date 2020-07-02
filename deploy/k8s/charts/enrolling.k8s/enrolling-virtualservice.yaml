@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: enrolling
+spec:
+  hosts:
+  - "enrolling.eschool.com"
+  gateways:
+  - enrolling-gateway
+  http:
+  - name: "enrolling.api-v0.2-route"
+    route:
+    - destination:
+        host: enrolling.api
+        port:
+          number: 80

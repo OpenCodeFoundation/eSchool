@@ -8,7 +8,7 @@ services:
     image: mcr.microsoft.com/mssql/server:2019-latest
 
   enrolling.api:
-    image: ${REGISTRY:-eschool}/enrolling.api:${PLATFORM:-linux}-${TAG:-latest}
+    image: ${REGISTRY:-eschool}/enrolling.api:${TAG:-latest}
     build:
       context: .
       dockerfile: src/Services/Enrolling/Enrolling.API/Dockerfile
@@ -16,7 +16,7 @@ services:
       - sql.data
 
   joining.api:
-    image: ${REGISTRY:-eschool}/joining.api:${PLATFORM:-linux}-${TAG:-latest}
+    image: ${REGISTRY:-eschool}/joining.api:${TAG:-latest}
     build:
       context: .
       dockerfile: src/Services/Joining/Joining.API/Dockerfile
@@ -24,7 +24,7 @@ services:
       - sql.data
 
   webstatus:
-    image: ${REGISTRY:-eschool}/webstatus:${PLATFORM:-linux}-${TAG:-latest}
+    image: ${REGISTRY:-eschool}/webstatus:${TAG:-latest}
     build:
       context: .
       dockerfile: src/Web/WebStatus/Dockerfile

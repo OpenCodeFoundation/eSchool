@@ -4,13 +4,13 @@ metadata:
   name: enrolling
 spec:
   hosts:
-  - "enrolling.eschool.com"
+    - "enrolling.eschool.com"
   gateways:
-  - enrolling-gateway
+    - enrolling-gateway
   http:
-  - name: "enrolling.api-v0.2-route"
-    route:
-    - destination:
-        host: enrolling.api
-        port:
-          number: 80
+    - name: "enrolling.api-v0.2-route"
+      route:
+        - destination:
+            host: enrolling
+            port:
+              number: 80

@@ -1,4 +1,5 @@
 using System.Reflection;
+using Attendance.SharedKernel;
 using HealthChecks.UI.Client;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -24,6 +25,8 @@ namespace OpenCodeFoundation.ESchool.Services.Attendance.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<CommandHandler>();
+            services.AddSingleton<QueryHandler>();
             services.AddMediatR(typeof(Startup).GetTypeInfo().Assembly);
 
             services.AddCustomHealthChecks(Configuration);

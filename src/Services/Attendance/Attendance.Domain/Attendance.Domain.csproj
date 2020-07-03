@@ -8,4 +8,8 @@
     <Folder Include="AggregatesModel\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Attendance.SharedKernel\Attendance.SharedKernel.csproj" />
+  </ItemGroup>
+
 </Project>

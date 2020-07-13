@@ -1,0 +1,25 @@
+{{- if .Values.istio.enabled -}}
+{{- $fullName := include "enrolling.fullname" . -}}
+{{- $svcPort := .Values.service.port -}}
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: {{ $fullName }}
+spec:
+  hosts:
+    {{- range .Values.istio.hosts }}
+    - {{ .host | quote }}
+    {{- end }}
+  gateways:
+    - {{ .Values.istio.gateway }}
+  http:
+    - name: {{ $fullName | quote }}
+      match:
+        - uri:
+            prefix: {{ .Values.istio.prefix | quote }}
+      route:
+        - destination:
+            host: {{ $fullName }}
+            port:
+              number: {{ $svcPort }}
+{{- end }}

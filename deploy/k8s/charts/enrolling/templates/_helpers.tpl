@@ -48,6 +48,7 @@ Selector labels
 */}}
 {{- define "enrolling.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "enrolling.name" . }}
+app: {{ include "enrolling.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 

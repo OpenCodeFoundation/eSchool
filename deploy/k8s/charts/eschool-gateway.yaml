@@ -1,7 +1,7 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
-  name: enrolling-gateway
+  name: eschool-gateway
 spec:
   selector:
     istio: ingressgateway # use istio default controller
@@ -11,4 +11,4 @@ spec:
         name: http
         protocol: HTTP
       hosts:
-        - "enrolling.eschool.com"
+        - "*"

@@ -35,7 +35,7 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
 
     <!-- Need this package for generating migration files -->
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.5">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.6">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>

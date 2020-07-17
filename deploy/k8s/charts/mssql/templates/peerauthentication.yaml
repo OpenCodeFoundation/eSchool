@@ -1,0 +1,11 @@
+{{- $fullName := include "mssql.fullname" . -}}
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: {{ $fullName }}
+spec:
+  selector:
+    matchLabels:
+      app: {{ $fullName }}
+  mtls:
+    mode: STRICT

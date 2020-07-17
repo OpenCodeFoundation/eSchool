@@ -1,0 +1,10 @@
+{{- $fullName := include "mssql.fullname" . -}}
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: {{ $fullName }}
+spec:
+  host: {{ $fullName }}
+  trafficPolicy:
+    tls:
+      mode: ISTIO_MUTUAL

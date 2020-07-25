@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>OpenCodeFoundation.OpenTelemetry</AssemblyName>
+    <RootNamespace>OpenCodeFoundation.OpenTelemetry</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <CodeAnalysisRuleSet>..\..\..\eSchool.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Asp.net required packages -->
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.0-preview.7.20364.11" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="5.0.0-preview.7.20364.11" />
+
+    <!-- OpenTelemetry -->
+    <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="0.4.0-beta.2" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="0.4.0-beta.2" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="0.4.0-beta.2" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.SqlClient" Version="0.4.0-beta.2" />
+    <PackageReference Include="OpenTelemetry.Exporter.Jaeger" Version="0.4.0-beta.2" />
+    <!-- <PackageReference Include="OpenTelemetry.Instrumentation.StackExchangeRedis" Version="0.4.0-beta.2" /> -->
+
+    <!-- Analyzers -->
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" PrivateAssets="All" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\stylecop.json" />
+  </ItemGroup>
+
+</Project>

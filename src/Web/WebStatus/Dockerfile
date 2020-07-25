@@ -19,6 +19,8 @@ COPY "src/Services/Joining/Joining.Infrastructure/Joining.Infrastructure.csproj"
 COPY "src/Services/Joining/Joining.UnitTests/Joining.UnitTests.csproj" "src/Services/Joining/Joining.UnitTests/Joining.UnitTests.csproj"
 COPY "src/Services/Joining/Joining.FunctionalTests/Joining.FunctionalTests.csproj" "src/Services/Joining/Joining.FunctionalTests/Joining.FunctionalTests.csproj"
 
+COPY "src/Libraries/OpenTelemetry/OpenTelemetry.csproj" "src/Libraries/OpenTelemetry/OpenTelemetry.csproj"
+
 COPY "src/Web/WebStatus/WebStatus.csproj" "src/Web/WebStatus/WebStatus.csproj"
 
 COPY "docker-compose.dcproj" "docker-compose.dcproj"

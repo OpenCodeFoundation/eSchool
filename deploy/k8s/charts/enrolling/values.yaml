@@ -60,6 +60,8 @@ istio:
   prefix: /enrolling-api
   hosts:
     - host: "*"
+jaeger:
+  host: jaeger-agent.istio-system.svc.cluster.local
 
 database:
   sql:

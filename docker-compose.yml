@@ -28,3 +28,6 @@ services:
     build:
       context: .
       dockerfile: src/Web/WebStatus/Dockerfile
+
+  jaeger:
+    image: jaegertracing/all-in-one

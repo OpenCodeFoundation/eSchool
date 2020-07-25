@@ -28,14 +28,14 @@
     <PackageReference Include="Polly" Version="7.2.1" />
 
     <!-- Logging  -->
-    <PackageReference Include="Serilog.AspNetCore" Version="3.2.0" />
+    <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
     <PackageReference Include="Serilog.Sinks.Seq" Version="4.0.0" />
 
     <!-- Swagger -->
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
 
     <!-- Need this package for generating migration files -->
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.0-preview.6.20312.4">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.0-preview.7.20365.15">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
@@ -52,6 +52,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Enrolling.Infrastructure\Enrolling.Infrastructure.csproj" />
     <ProjectReference Include="..\Enrolling.Domain\Enrolling.Domain.csproj" />
+    <ProjectReference Include="..\..\..\Libraries\OpenTelemetry\OpenTelemetry.csproj" />
   </ItemGroup>
 
 </Project>

@@ -4,11 +4,11 @@ on:
   push:
     paths:
       - "src/Services/Joining/**"
-      - ".github/workflows/**"
+      - ".github/workflows/joining.api.yml"
   pull_request:
     paths:
       - "src/Services/Joining/**"
-      - ".github/workflows/**"
+      - ".github/workflows/joining.api.yml"
 
 jobs:
   build:

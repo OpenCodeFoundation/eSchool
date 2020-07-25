@@ -4,11 +4,11 @@ on:
   push:
     paths:
     - 'src/Web/WebStatus/**'
-    - '.github/workflows/**'
+    - '.github/workflows/webstatus.yml'
   pull_request:
     paths:
     - 'src/Web/WebStatus/**'
-    - '.github/workflows/**'
+    - '.github/workflows/webstatus.yml'
 
 jobs:
 

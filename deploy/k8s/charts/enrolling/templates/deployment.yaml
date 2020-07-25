@@ -38,6 +38,10 @@ spec:
               value: {{ .Values.istio.prefix }}
             - name: ConnectionStrings
               value: {{ .Values.database.sql.connectionString | quote }}
+            - name: OpenTelemetry__Istio
+              value: "true"
+            - name: OpenTelemetry__Jaeger__Host
+              value: {{ .Values.jaeger.host }}
           ports:
             - name: http
               containerPort: 80

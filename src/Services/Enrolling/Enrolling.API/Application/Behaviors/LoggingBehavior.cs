@@ -10,7 +10,8 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Application.Behavior
     {
         private readonly ILogger<LoggingBehavior<TRequest, TResponse>> _logger;
 
-        public LoggingBehavior(ILogger<LoggingBehavior<TRequest, TResponse>> logger)
+        public LoggingBehavior(
+            ILogger<LoggingBehavior<TRequest, TResponse>> logger)
         {
             _logger = logger ?? throw new System.ArgumentNullException(nameof(logger));
         }

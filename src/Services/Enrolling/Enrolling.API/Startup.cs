@@ -16,6 +16,7 @@ using OpenCodeFoundation.ESchool.Services.Enrolling.API.Application.Behaviors;
 using OpenCodeFoundation.ESchool.Services.Enrolling.API.Application.Validations;
 using OpenCodeFoundation.ESchool.Services.Enrolling.API.Extensions;
 using OpenCodeFoundation.ESchool.Services.Enrolling.Infrastructure;
+using OpenCodeFoundation.OpenTelemetry;
 
 namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
 {
@@ -60,6 +61,8 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Enrolling HTTP API", Version = "v1" });
             });
+
+            services.AddOpenTelemetryIntegration();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

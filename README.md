@@ -58,5 +58,9 @@ Everyone is welcome to contribute, whether it's in the form of code, documentati
 As mentioned, we'd appreciate your feedback, improvements and ideas.
 You can create new issues at the issues section, do pull requests and/or send emails to **techcombd@outlook.com**
 
+### Thanks to all the people and bot (😉) who have contributed
+
+[![contributors](https://contributors-img.web.app/image?repo=OpenCodeFoundation/eSchool)](https://github.com/OpenCodeFoundation/eSchool/graphs/contributors)
+
 ## License
 Code licensed under the [MIT License](https://github.com/OpenCodeFoundation/eSchool/blob/master/LICENSE).

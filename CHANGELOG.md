@@ -1,3 +1,16 @@
+# [0.3.0](https://github.com/OpenCodeFoundation/eSchool/compare/v0.2.0...v0.3.0) (2020-08-01)
+
+
+### Features
+
+* **deployment:** Initial deployment script  ([#178](https://github.com/OpenCodeFoundation/eSchool/issues/178)) ([5344488](https://github.com/OpenCodeFoundation/eSchool/commit/5344488dd5b13f81423ce4fce4cc256223957569)), closes [#146](https://github.com/OpenCodeFoundation/eSchool/issues/146)
+* **enrolling:** add open telemetry integration ([eb751de](https://github.com/OpenCodeFoundation/eSchool/commit/eb751ded855a5923ef1f42707c9476e87e36a825))
+* **enrolling:** publish docker image to docker hub ([#177](https://github.com/OpenCodeFoundation/eSchool/issues/177))Closes [#173](https://github.com/OpenCodeFoundation/eSchool/issues/173) ([43fb95c](https://github.com/OpenCodeFoundation/eSchool/commit/43fb95c3bb5039a2d47f2ed0b5e2fa496603c1d0))
+* **enrolling:** update enrolling service to .NET 5.0 ([#186](https://github.com/OpenCodeFoundation/eSchool/issues/186)) ([a03d284](https://github.com/OpenCodeFoundation/eSchool/commit/a03d284d9ccdeb4127ce4377084557ffffb82120)), closes [#167](https://github.com/OpenCodeFoundation/eSchool/issues/167)
+* **pipeline:** improve pipeline trigger ([60e7fb7](https://github.com/OpenCodeFoundation/eSchool/commit/60e7fb7efce0db773d6d8be3d8698c1ca3b0bad0))
+
+
+
 ## [0.2.0](https://github.com/OpenCodeFoundation/eSchool/compare/62af44a5c22bd198491bc95684b0a136f0a2b9cd...v0.2.0) (2020-07-01)
 
 

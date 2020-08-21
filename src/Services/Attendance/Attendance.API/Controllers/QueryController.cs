@@ -1,6 +1,4 @@
 ﻿using Attendance.SharedKernel;
-using Attendance.SharedKernel.Interfaces;
-using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 

@@ -1,7 +1,6 @@
 using System.Reflection;
 using Attendance.SharedKernel;
 using HealthChecks.UI.Client;
-using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
@@ -27,8 +26,6 @@ namespace OpenCodeFoundation.ESchool.Services.Attendance.API
         {
             services.AddSingleton<CommandHandler>();
             services.AddSingleton<QueryHandler>();
-            services.AddMediatR(typeof(Startup).GetTypeInfo().Assembly);
-
             services.AddCustomHealthChecks(Configuration);
 
             services.AddSwaggerGen(c =>

@@ -20,7 +20,6 @@
     <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="0.4.0-beta.2" />
     <PackageReference Include="OpenTelemetry.Instrumentation.SqlClient" Version="0.4.0-beta.2" />
     <PackageReference Include="OpenTelemetry.Exporter.Jaeger" Version="0.4.0-beta.2" />
-    <!-- <PackageReference Include="OpenTelemetry.Instrumentation.StackExchangeRedis" Version="0.4.0-beta.2" /> -->
 
     <!-- Analyzers -->
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" PrivateAssets="All" />

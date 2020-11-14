@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v1
 
       - name: set image tag
-        run: echo "::set-env name=TAG::$(git tag --points-at HEAD | cut -c 2-4)"
+        run: echo "TAG=$(git tag --points-at HEAD | cut -c 2-4)" >> $GITHUB_ENV
 
       - name: build
         run: docker-compose build enrolling.api

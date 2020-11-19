@@ -15,11 +15,11 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="5.0.0" />
 
     <!-- OpenTelemetry -->
-    <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="0.4.0-beta.2" />
-    <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="0.4.0-beta.2" />
-    <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="0.4.0-beta.2" />
-    <PackageReference Include="OpenTelemetry.Instrumentation.SqlClient" Version="0.4.0-beta.2" />
-    <PackageReference Include="OpenTelemetry.Exporter.Jaeger" Version="0.4.0-beta.2" />
+    <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.0.0-rc1.1" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.0.0-rc1.1" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.0.0-rc1.1" />
+    <PackageReference Include="OpenTelemetry.Instrumentation.SqlClient" Version="1.0.0-rc1.1" />
+    <PackageReference Include="OpenTelemetry.Exporter.Jaeger" Version="1.0.0-rc1.1" />
 
     <!-- Analyzers -->
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" PrivateAssets="All" />

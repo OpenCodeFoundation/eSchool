@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using OpenTelemetry;
 using OpenTelemetry.Context.Propagation;
+using OpenTelemetry.Resources;
 using OpenTelemetry.Trace;
-using OpenTelemetry.Trace.Samplers;
 
 namespace OpenCodeFoundation.OpenTelemetry
 {
@@ -46,10 +48,10 @@ namespace OpenCodeFoundation.OpenTelemetry
 
         private static void ConfigureOpenTelemetry(IServiceCollection services, OpenTelemetryOptions openTelemetryOptions)
         {
-            services.AddOpenTelemetry(configure =>
+            services.AddOpenTelemetryTracing(configure =>
             {
                 ConfigureSampler(openTelemetryOptions, configure);
-                ConfigureInstrumentations(openTelemetryOptions, configure);
+                ConfigureInstrumentation(openTelemetryOptions, configure);
                 ConfigureExporters(openTelemetryOptions, configure);
             });
         }
@@ -66,34 +68,42 @@ namespace OpenCodeFoundation.OpenTelemetry
         {
             if (openTelemetryOptions.Jaeger.Enabled)
             {
-                configure.UseJaegerExporter(config =>
-                {
-                    config.ServiceName = openTelemetryOptions.Jaeger.ServiceName;
+                configure.SetResourceBuilder(ResourceBuilder.CreateDefault()
+                    .AddService(openTelemetryOptions.Jaeger.ServiceName));
 
+                configure.AddJaegerExporter(config =>
+                {
                     config.AgentHost = openTelemetryOptions.Jaeger.Host;
                     config.AgentPort = openTelemetryOptions.Jaeger.Port;
                 });
             }
         }
 
-        private static void ConfigureInstrumentations(OpenTelemetryOptions openTelemetryOptions, TracerProviderBuilder configure)
+        private static void ConfigureInstrumentation(OpenTelemetryOptions openTelemetryOptions, TracerProviderBuilder configure)
         {
-            configure.AddAspNetCoreInstrumentation(config =>
-            {
-                config.TextFormat = GetTextFormat(openTelemetryOptions);
-            });
+            Sdk.SetDefaultTextMapPropagator(GetPropagator(openTelemetryOptions));
 
-            configure.AddHttpClientInstrumentation(config =>
-            {
-                config.TextFormat = GetTextFormat(openTelemetryOptions);
-            });
+            configure.AddAspNetCoreInstrumentation();
 
-            configure.AddSqlClientDependencyInstrumentation();
+            configure.AddHttpClientInstrumentation();
+
+            configure.AddSqlClientInstrumentation();
         }
 
-        private static ITextFormat GetTextFormat(OpenTelemetryOptions openTelemetryOptions)
-            => openTelemetryOptions.Istio
-                ? new B3Format()
-                : (ITextFormat)new TraceContextFormat();
+        private static TextMapPropagator GetPropagator(OpenTelemetryOptions openTelemetryOptions)
+        {
+            var propagators = new List<TextMapPropagator>()
+            {
+                new TraceContextPropagator(),
+                new BaggagePropagator(),
+            };
+
+            if (openTelemetryOptions.Istio)
+            {
+                propagators.Add(new B3Propagator());
+            }
+
+            return new CompositeTextMapPropagator(propagators);
+        }
     }
 }

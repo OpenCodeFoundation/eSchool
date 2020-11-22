@@ -6,7 +6,7 @@ using Microsoft.Extensions.Logging;
 using OpenCodeFoundation.ESchool.Services.Enrolling.Domain.AggregatesModel.EnrollmentAggregate;
 using OpenCodeFoundation.ESchool.Services.Enrolling.Infrastructure;
 
-namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.graphql
+namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Graphql
 {
     public class Query
     {

@@ -4,7 +4,7 @@ using OpenCodeFoundation.ESchool.Services.Enrolling.API.Application.Commands;
 using OpenCodeFoundation.ESchool.Services.Enrolling.Domain.AggregatesModel.EnrollmentAggregate;
 using OpenCodeFoundation.ESchool.Services.Enrolling.Infrastructure;
 
-namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.graphql
+namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Graphql
 {
     public class Mutation
     {

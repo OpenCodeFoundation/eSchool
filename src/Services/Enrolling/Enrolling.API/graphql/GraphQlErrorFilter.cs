@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using HotChocolate;
+﻿using HotChocolate;
 
-namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.graphql
+namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Graphql
 {
     public class GraphQlErrorFilter
         : IErrorFilter

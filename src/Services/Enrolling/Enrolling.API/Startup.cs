@@ -16,7 +16,7 @@ using Microsoft.OpenApi.Models;
 using OpenCodeFoundation.ESchool.Services.Enrolling.API.Application.Behaviors;
 using OpenCodeFoundation.ESchool.Services.Enrolling.API.Application.Validations;
 using OpenCodeFoundation.ESchool.Services.Enrolling.API.Extensions;
-using OpenCodeFoundation.ESchool.Services.Enrolling.API.graphql;
+using OpenCodeFoundation.ESchool.Services.Enrolling.API.Graphql;
 using OpenCodeFoundation.ESchool.Services.Enrolling.Infrastructure;
 using OpenCodeFoundation.OpenTelemetry;
 

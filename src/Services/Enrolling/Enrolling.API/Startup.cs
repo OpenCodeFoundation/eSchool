@@ -2,7 +2,6 @@ using System;
 using System.Reflection;
 using FluentValidation.AspNetCore;
 using HealthChecks.UI.Client;
-using HotChocolate.Execution.Options;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -52,7 +51,6 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
             services.AddGraphQLServer()
                 .AddQueryType<Query>()
                 .AddMutationType<Mutation>()
-                .AddApolloTracing(TracingPreference.Always)
                 .AddErrorFilter<GraphQlErrorFilter>();
 
             services.AddControllers()

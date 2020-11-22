@@ -7,7 +7,8 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Graphql
     {
         public IError OnError(IError error)
         {
-            return error.WithMessage(error.Exception.Message);
+            return error.WithMessage(
+                error.Exception?.Message ?? string.Empty);
         }
     }
 }

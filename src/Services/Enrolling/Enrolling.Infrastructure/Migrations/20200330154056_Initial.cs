@@ -14,7 +14,7 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.Infrastructure.Migration
                     Id = table.Column<Guid>(nullable: false),
                     Name = table.Column<string>(nullable: true),
                     EmailAddress = table.Column<string>(nullable: true),
-                    MobileNumber = table.Column<string>(nullable: true)
+                    MobileNumber = table.Column<string>(nullable: true),
                 },
                 constraints: table =>
                 {

@@ -17,7 +17,7 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Graphql
                 input.Email,
                 input.Mobile);
 
-            context.Enrollments.Add(enrollment);
+            await context.Enrollments.AddAsync(enrollment);
             await context.SaveChangesAsync();
             return enrollment;
         }

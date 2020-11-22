@@ -11,7 +11,7 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
 {
     public class Program
     {
-        public static readonly string Namespace = typeof(Program).Namespace;
+        public static readonly string Namespace = typeof(Program).Namespace!;
         public static readonly string AppName = Namespace.Substring(Namespace.LastIndexOf('.', Namespace.LastIndexOf('.') - 1) + 1);
 
         public static int Main(string[] args)
@@ -75,7 +75,6 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
                 .AddEnvironmentVariables();
 
             // Load other configurations here. Ex. Keyvault or AppConfiguration
-
             return builder.Build();
         }
     }

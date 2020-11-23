@@ -15,8 +15,10 @@ using Microsoft.OpenApi.Models;
 using OpenCodeFoundation.ESchool.Services.Enrolling.API.Application.Behaviors;
 using OpenCodeFoundation.ESchool.Services.Enrolling.API.Application.Validations;
 using OpenCodeFoundation.ESchool.Services.Enrolling.API.Extensions;
+using OpenCodeFoundation.ESchool.Services.Enrolling.API.Graphql;
 using OpenCodeFoundation.ESchool.Services.Enrolling.Infrastructure;
 using OpenCodeFoundation.OpenTelemetry;
+using Serilog;
 
 namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
 {
@@ -46,6 +48,11 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
                                 sqlOptions.EnableRetryOnFailure(maxRetryCount: 15, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null);
                             });
                 });
+
+            services.AddGraphQLServer()
+                .AddQueryType<Query>()
+                .AddMutationType<Mutation>()
+                .AddErrorFilter<GraphQlErrorFilter>();
 
             services.AddControllers()
                 .AddJsonOptions(options =>
@@ -80,6 +87,8 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseSerilogRequestLogging();
+
             app.UseSwagger()
                 .UseSwaggerUI(c =>
                 {
@@ -103,6 +112,8 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
                 {
                     Predicate = r => r.Name.Contains("self"),
                 });
+
+                endpoints.MapGraphQL();
             });
         }
     }

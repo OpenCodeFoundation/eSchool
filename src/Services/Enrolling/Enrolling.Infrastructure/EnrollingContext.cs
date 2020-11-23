@@ -12,7 +12,7 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.Infrastructure
         {
         }
 
-        public DbSet<Enrollment> Enrollments { get; set; }
+        public DbSet<Enrollment> Enrollments { get; set; } = default!;
     }
 
     /// <summary>

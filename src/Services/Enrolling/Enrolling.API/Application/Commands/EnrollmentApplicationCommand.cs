@@ -5,10 +5,10 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Application.Commands
     public class EnrollmentApplicationCommand
         : IRequest<bool>
     {
-        public string Name { get; set; }
+        public string Name { get; init; }
 
-        public string Email { get; set; }
+        public string Email { get; init; }
 
-        public string Mobile { get; set; }
+        public string Mobile { get; init; }
     }
 }

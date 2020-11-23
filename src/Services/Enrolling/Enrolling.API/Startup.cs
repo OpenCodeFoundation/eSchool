@@ -18,6 +18,7 @@ using OpenCodeFoundation.ESchool.Services.Enrolling.API.Extensions;
 using OpenCodeFoundation.ESchool.Services.Enrolling.API.Graphql;
 using OpenCodeFoundation.ESchool.Services.Enrolling.Infrastructure;
 using OpenCodeFoundation.OpenTelemetry;
+using Serilog;
 
 namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
 {
@@ -85,6 +86,8 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSerilogRequestLogging();
 
             app.UseSwagger()
                 .UseSwaggerUI(c =>

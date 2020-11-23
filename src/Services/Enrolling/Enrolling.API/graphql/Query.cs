@@ -17,7 +17,7 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Graphql
             var enrollments = await context.Enrollments
                 .ToListAsync();
 
-            logger.LogDebug(
+            logger.LogInformation(
                 "Returning enrollments {EnrollmentCount} with payload {@Enrollment}",
                 enrollments.Count,
                 enrollments);

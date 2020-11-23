@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using OpenCodeFoundation.ESchool.Services.Enrolling.Infrastructure;
 using Serilog;
+using Serilog.Enrichers.Span;
 
 namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
 {
@@ -61,6 +62,7 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
                 .MinimumLevel.Verbose()
                 .Enrich.WithProperty("ApplicationContext", AppName)
                 .Enrich.FromLogContext()
+                .Enrich.WithSpan()
                 .WriteTo.Console()
                 .WriteTo.Seq("http://seq")
                 .ReadFrom.Configuration(configuration)

@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using OpenCodeFoundation.ESchool.Services.Enrolling.API;
 using OpenCodeFoundation.ESchool.Services.Enrolling.Infrastructure;
+using Serilog;
 
 namespace OpenCodeFoundation.ESchool.Services.Enrolling.FunctionalTests
 {
@@ -40,6 +41,7 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.FunctionalTests
                         config.AddJsonFile("appsettings.json", optional: false)
                             .AddEnvironmentVariables();
                     });
+                    webBuilder.UseSerilog();
                 });
 
             return builder.Start();

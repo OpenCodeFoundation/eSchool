@@ -7,7 +7,6 @@
     <RootNamespace>OpenCodeFoundation.ESchool.Services.Enrolling.API</RootNamespace>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
 
-    <LangVersion>preview</LangVersion>
     <Nullable>enable</Nullable>
     <CodeAnalysisRuleSet>..\..\..\..\eSchool.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>

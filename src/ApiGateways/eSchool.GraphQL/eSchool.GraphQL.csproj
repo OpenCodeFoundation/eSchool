@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+
+    <AssemblyName>ESchool.GraphQL</AssemblyName>
+    <RootNamespace>OpenCodeFoundation.ESchool.ApiGateways.ESchool.GraphQL</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HotChocolate.AspNetCore" Version="11.0.0" />
+    <PackageReference Include="HotChocolate.Stitching" Version="11.0.0" />
+
+    <!-- Logging  -->
+    <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />
+    <PackageReference Include="Serilog.Enrichers.Span" Version="1.0.1" />
+    <PackageReference Include="Serilog.Sinks.Seq" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\OpenTelemetry\OpenTelemetry.csproj" />
+  </ItemGroup>
+
+</Project>

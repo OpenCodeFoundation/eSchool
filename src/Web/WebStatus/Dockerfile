@@ -7,6 +7,8 @@ WORKDIR /src
 
 COPY "eSchool.sln" "eSchool.sln"
 
+COPY "src/ApiGateways/eSchool.GraphQL/eSchool.GraphQL.csproj" "src/ApiGateways/eSchool.GraphQL/eSchool.GraphQL.csproj"
+
 COPY "src/Services/Enrolling/Enrolling.API/Enrolling.API.csproj" "src/Services/Enrolling/Enrolling.API/Enrolling.API.csproj"
 COPY "src/Services/Enrolling/Enrolling.Domain/Enrolling.Domain.csproj" "src/Services/Enrolling/Enrolling.Domain/Enrolling.Domain.csproj"
 COPY "src/Services/Enrolling/Enrolling.Infrastructure/Enrolling.Infrastructure.csproj" "src/Services/Enrolling/Enrolling.Infrastructure/Enrolling.Infrastructure.csproj"

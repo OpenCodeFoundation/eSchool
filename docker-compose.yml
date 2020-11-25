@@ -21,5 +21,11 @@ services:
       context: .
       dockerfile: src/Web/WebStatus/Dockerfile
 
+  eschool.graphql:
+    image: ${REGISTRY:-eschool}/eschool.graphql:${TAG:-latest}
+    build:
+      context: .
+      dockerfile: src/ApiGateways/eSchool.GraphQL/Dockerfile
+
   jaeger:
     image: jaegertracing/all-in-one

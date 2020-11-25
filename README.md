@@ -36,25 +36,32 @@ $ docker-compose up
 in terminal from project's root folder. The first run can take 30 mins to 1 hour depending on your internet speed, as it will download required docker images from the docker hub. After everything starts up, you can access the `Enrolling.API` swagger UI by visiting [http://localhost:5102/swagger/](http://localhost:5102/swagger/)
 
 ### Service URLs
-* WebStatus - [http://localhost:5107/](http://localhost:5107/)
-* Enrolling.API - [http://localhost:5102/swagger/](http://localhost:5102/swagger/)
 
+- eSchool Gateway (GraphQL) - [http://localhost:5101/graphql/](http://localhost:5102/graphql/)
+- WebStatus - [http://localhost:5107/](http://localhost:5107/)
+- Enrolling.API (REST - Swagger) - [http://localhost:5102/swagger/](http://localhost:5102/swagger/)
+- Enrolling.API (GraphQL - Banana Cake Pop) - [http://localhost:5102/graphql/](http://localhost:5102/graphql/)
+- Distributed Tracing (Jaeger) - [http://localhost:16686](http://localhost:16686)
+- Logging (Seq) - [http://localhost:5140/](http://localhost:5140/)
 
 ## Tech & Tools
+
 - .NET Core
 - Docker
 - Orchestrators: Kubernetes
 - Visual Studio
-- MongoDB
 - SQL Server
 - Azure DevOps
-- Redis
 - RabbitMQ
+- API Gateway
+- GraphQL
 
 ## Contributing
+
 Everyone is welcome to contribute, whether it's in the form of code, documentation, bug reports, feature requests, or anything else. See the [Contributing](https://github.com/OpenCodeFoundation/eschool/blob/master/CONTRIBUTING.md) guide for more details.
 
 ## Sending feedback and pull requests
+
 As mentioned, we'd appreciate your feedback, improvements and ideas.
 You can create new issues at the issues section, do pull requests and/or send emails to **techcombd@outlook.com**
 
@@ -63,4 +70,5 @@ You can create new issues at the issues section, do pull requests and/or send em
 [![contributors](https://contributors-img.web.app/image?repo=OpenCodeFoundation/eSchool)](https://github.com/OpenCodeFoundation/eSchool/graphs/contributors)
 
 ## License
+
 Code licensed under the [MIT License](https://github.com/OpenCodeFoundation/eSchool/blob/master/LICENSE).

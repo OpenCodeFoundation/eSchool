@@ -1,0 +1,37 @@
+name: ESchool.GraphQL
+
+on:
+  push:
+    paths:
+      - "src/ApiGateways/eSchool.GraphQL/**"
+      - ".github/workflows/eschool.graphql.yml"
+      - "src/Libraries/OpenTelemetry/**"
+  pull_request:
+    paths:
+      - "src/ApiGateways/eSchool.GraphQL/**"
+      - ".github/workflows/eschool.graphql.yml"
+      - "src/Libraries/OpenTelemetry/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-16.04
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: set image tag
+        run: echo "TAG=$(git tag --points-at HEAD | cut -c 2-4)" >> $GITHUB_ENV
+
+      - name: build
+        run: docker-compose build eschool.graphql
+
+      - uses: azure/docker-login@v1
+        if: startsWith(github.ref, 'refs/tags') || github.ref == 'refs/heads/master'
+        with:
+          login-server: index.docker.io
+          username: ${{ secrets.DOCKERIO_USERNAME }}
+          password: ${{ secrets.DOCKERIO_PASSWORD }}
+
+      - name: push image
+        if: startsWith(github.ref, 'refs/tags') || github.ref == 'refs/heads/master'
+        run: docker-compose push eschool.graphql

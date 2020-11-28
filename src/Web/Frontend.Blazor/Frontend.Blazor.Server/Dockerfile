@@ -27,14 +27,8 @@ COPY "docker-compose.dcproj" "docker-compose.dcproj"
 RUN dotnet restore eSchool.sln -nowarn:msb3202,nu1503
 
 COPY . .
-WORKDIR /src/src/Services/Enrolling/Enrolling.API
+WORKDIR /src/src/Web/Frontend.Blazor/Frontend.Blazor.Server
 RUN dotnet build --no-restore -c Release -o /app/build
-
-FROM build as unittest
-WORKDIR /src/src/Services/Enrolling/Enrolling.UnitTests
-
-FROM build as functionaltest
-WORKDIR /src/src/Services/Enrolling/Enrolling.FunctionalTests
 
 FROM build AS publish
 RUN dotnet publish --no-restore -c Release -o /app/publish
@@ -42,4 +36,4 @@ RUN dotnet publish --no-restore -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Enrolling.API.dll"]
+ENTRYPOINT ["dotnet", "Frontend.Blazor.Server.dll"]

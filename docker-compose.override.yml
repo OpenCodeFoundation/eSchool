@@ -25,7 +25,7 @@ services:
 
   webstatus:
     environment:
-      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://0.0.0.0:80
       - ConnectionStrings=Server=sql.data;Database=OpenCodeFoundation.WebStatusDb;User Id=sa;Password=Pass@word
       - HealthChecksUI__HealthChecks__0__Name=Enrolling HTTP Check
@@ -35,10 +35,17 @@ services:
 
   eschool.graphql:
     environment:
-      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_URLS=http://0.0.0.0:80
     ports:
       - "5101:80"
+
+  frontend.blazor:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+    ports:
+      - "5200:80"
 
   jaeger:
     environment:

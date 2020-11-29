@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using MudBlazor;
+using MudBlazor.Services;
 
 namespace OpenCodeFoundation.ESchool.Web.Frontend.Blazor.Client
 {
@@ -18,6 +20,10 @@ namespace OpenCodeFoundation.ESchool.Web.Frontend.Blazor.Client
             builder.RootComponents.Add<App>("#app");
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+
+            builder.Services.AddMudBlazorDialog();
+            builder.Services.AddMudBlazorSnackbar();
+            builder.Services.AddMudBlazorResizeListener();
 
             await builder.Build().RunAsync();
         }

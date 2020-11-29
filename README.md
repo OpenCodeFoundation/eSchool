@@ -8,6 +8,7 @@
 |                             [![Actions Status](https://github.com/OpenCodeFoundation/eSchool/workflows/Enrolling.API/badge.svg)](https://github.com/OpenCodeFoundation/eSchool/actions)                             |                               [![Actions Status](https://github.com/OpenCodeFoundation/eSchool/workflows/WebStatus/badge.svg)](https://github.com/OpenCodeFoundation/eSchool/actions)                               |                               [![Actions Status](https://github.com/OpenCodeFoundation/eSchool/workflows/ESchool.GraphQL/badge.svg)](https://github.com/OpenCodeFoundation/eSchool/actions)                               |
 
 ## System requirements
+
 ### Recommended Hardware requirements for Windows
 
 - Windows 10 Pro, Education or Enterprise
@@ -37,6 +38,7 @@ in terminal from project's root folder. The first run can take 30 mins to 1 hour
 
 ### Service URLs
 
+- eSchool Frontend (Blazor) - [http://localhost:5200/](http://localhost:5200/)
 - eSchool Gateway (GraphQL) - [http://localhost:5101/graphql/](http://localhost:5102/graphql/)
 - WebStatus - [http://localhost:5107/](http://localhost:5107/)
 - Enrolling.API (REST - Swagger) - [http://localhost:5102/swagger/](http://localhost:5102/swagger/)
@@ -55,6 +57,7 @@ in terminal from project's root folder. The first run can take 30 mins to 1 hour
 - RabbitMQ
 - API Gateway
 - GraphQL
+- Blazor
 
 ## Contributing
 

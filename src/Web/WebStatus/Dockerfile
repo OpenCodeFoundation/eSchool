@@ -1,8 +1,8 @@
-FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
+FROM mcr.microsoft.com/dotnet/aspnet:5.0-buster-slim AS base
 WORKDIR /app
 EXPOSE 80
 
-FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:5.0-buster-slim AS build
 WORKDIR /src
 
 COPY "eSchool.sln" "eSchool.sln"
@@ -18,6 +18,9 @@ COPY "src/Services/Enrolling/Enrolling.FunctionalTests/Enrolling.FunctionalTests
 COPY "src/Libraries/OpenTelemetry/OpenTelemetry.csproj" "src/Libraries/OpenTelemetry/OpenTelemetry.csproj"
 
 COPY "src/Web/WebStatus/WebStatus.csproj" "src/Web/WebStatus/WebStatus.csproj"
+
+COPY "src/Web/Frontend.Blazor/Frontend.Blazor.Server/Frontend.Blazor.Server.csproj" "src/Web/Frontend.Blazor/Frontend.Blazor.Server/Frontend.Blazor.Server.csproj"
+COPY "src/Web/Frontend.Blazor/Frontend.Blazor.Client/Frontend.Blazor.Client.csproj" "src/Web/Frontend.Blazor/Frontend.Blazor.Client/Frontend.Blazor.Client.csproj"
 
 COPY "docker-compose.dcproj" "docker-compose.dcproj"
 

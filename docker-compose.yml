@@ -27,5 +27,11 @@ services:
       context: .
       dockerfile: src/ApiGateways/eSchool.GraphQL/Dockerfile
 
+  frontend.blazor:
+    image: ${REGISTRY:-eschool}/frontend.blazor:${TAG:-latest}
+    build:
+      context: .
+      dockerfile: src/Web/Frontend.Blazor/Frontend.Blazor.Server/Dockerfile
+
   jaeger:
     image: jaegertracing/all-in-one

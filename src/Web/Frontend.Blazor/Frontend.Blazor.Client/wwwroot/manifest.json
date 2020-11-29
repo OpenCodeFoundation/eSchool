@@ -1,6 +1,6 @@
 {
-  "name": "OpenCodeFoundation.ESchool.Web.Frontend.Blazor",
-  "short_name": "OpenCodeFoundation.ESchool.Web.Frontend.Blazor",
+  "name": "eSchool",
+  "short_name": "eSchool",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",

@@ -1,0 +1,43 @@
+﻿@page "/enrollments"
+
+@inject IEschoolClient ESchoolClient
+
+<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-16">
+    <MudText Typo="Typo.h3" GutterBottom="true">Enrollment Lists</MudText>
+    <MudText Class="mb-8">Get enrollment from database</MudText>
+    @if (_enrollments == null)
+    {
+        <MudProgressCircular Color="Color.Default" Indeterminate="true" />
+    }
+    else
+    {
+        <MudTable Items="_enrollments" Hover="true" SortLabel="Sort By" Elevation="0">
+            <HeaderContent>
+                <MudTh><MudTableSortLabel SortBy="new Func<IEnrollment, object>(x=>x.Id)">Id</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<IEnrollment, object>(x=>x.Name)">Name</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel InitialDirection="SortDirection.Ascending" SortBy="new Func<IEnrollment, object>(x=>x.MobileNumber)">Mobile</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<IEnrollment, object>(x=>x.EmailAddress)">Email</MudTableSortLabel></MudTh>
+            </HeaderContent>
+            <RowTemplate>
+                <MudTd DataLabel="Id">@context.Id</MudTd>
+                <MudTd DataLabel="Name">@context.Name</MudTd>
+                <MudTd DataLabel="Mobile Number">@context.MobileNumber</MudTd>
+                <MudTd DataLabel="Email Address">@context.EmailAddress</MudTd>
+            </RowTemplate>
+            <PagerContent>
+                <MudTablePager PageSizeOptions="new[]{1, 50, 100}" />
+            </PagerContent>
+        </MudTable>
+    }
+</MudContainer>
+
+@code {
+    private IReadOnlyList<IEnrollment>? _enrollments;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var operation = await ESchoolClient.GetEnrollmentsAsync();
+        operation.EnsureNoErrors();
+        _enrollments = operation.Data?.Enrollments;
+    }
+}

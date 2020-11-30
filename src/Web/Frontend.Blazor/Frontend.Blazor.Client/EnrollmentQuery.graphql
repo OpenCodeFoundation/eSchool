@@ -1,0 +1,18 @@
+query getEnrollments {
+  enrollments {
+    ... enrollment
+  }
+}
+
+mutation registerStudent($fullName: String! $email: String! $mobile: String!) {
+  addEnrollment(input: {name: $fullName, email: $email mobile: $mobile}) {
+    ... enrollment
+  }
+}
+
+fragment enrollment on Enrollment {
+  id
+  name
+  emailAddress
+  mobileNumber
+}

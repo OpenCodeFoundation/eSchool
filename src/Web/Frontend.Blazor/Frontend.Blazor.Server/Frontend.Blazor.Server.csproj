@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
 
+    <Nullable>enable</Nullable>
     <AssemblyName>Frontend.Blazor.Server</AssemblyName>
     <RootNamespace>OpenCodeFoundation.ESchool.Web.Frontend.Blazor.Server</RootNamespace>
   </PropertyGroup>

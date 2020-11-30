@@ -13,7 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Frontend.Blazor.Client\Frontend.Blazor.Client.csproj" />
+    <ProjectReference Include="..\Frontend.Blazor.Shared\Frontend.Blazor.Shared.csproj" />
   </ItemGroup>
-
 
 </Project>

@@ -21,6 +21,7 @@ COPY "src/Web/WebStatus/WebStatus.csproj" "src/Web/WebStatus/WebStatus.csproj"
 
 COPY "src/Web/Frontend.Blazor/Frontend.Blazor.Server/Frontend.Blazor.Server.csproj" "src/Web/Frontend.Blazor/Frontend.Blazor.Server/Frontend.Blazor.Server.csproj"
 COPY "src/Web/Frontend.Blazor/Frontend.Blazor.Client/Frontend.Blazor.Client.csproj" "src/Web/Frontend.Blazor/Frontend.Blazor.Client/Frontend.Blazor.Client.csproj"
+COPY "src/Web/Frontend.Blazor/Frontend.Blazor.Shared/Frontend.Blazor.Shared.csproj" "src/Web/Frontend.Blazor/Frontend.Blazor.Shared/Frontend.Blazor.Shared.csproj"
 
 COPY "docker-compose.dcproj" "docker-compose.dcproj"
 

@@ -1,3 +1,28 @@
+# [0.6.0](https://github.com/OpenCodeFoundation/eSchool/compare/v0.3.0...v0.6.0) (2020-12-02)
+
+After 3 months, we are publishing new version. We are skipping v0.4.0 and v0.5.0.
+
+### Bug Fixes
+
+* **doc:** fix GraphQL gateway URL ([bf17307](https://github.com/OpenCodeFoundation/eSchool/commit/bf173074c5bc6fbee4a0ee53662909a38c609085))
+
+
+### Features
+
+* **enrolling:** add GraphQL support ([#239](https://github.com/OpenCodeFoundation/eSchool/issues/239)) ([16abcfe](https://github.com/OpenCodeFoundation/eSchool/commit/16abcfe912f79e76a726d5eb435289528529f587))
+* **enrolling:** replace deprecated `set-env` command ([#236](https://github.com/OpenCodeFoundation/eSchool/issues/236)) ([eebd832](https://github.com/OpenCodeFoundation/eSchool/commit/eebd8322bc2f2b1fd130efdb9a4a4a82a4190d29))
+* **eschool-graphql:** add build pipelines ([#242](https://github.com/OpenCodeFoundation/eSchool/issues/242)) ([813d033](https://github.com/OpenCodeFoundation/eSchool/commit/813d0330d231ec6ba5f07d744ffd36cc891996ee))
+* **frontend-blazor:** add blazor web assembly project ([#243](https://github.com/OpenCodeFoundation/eSchool/issues/243)) ([9740132](https://github.com/OpenCodeFoundation/eSchool/commit/9740132e99b6f78f09d93992f5c575e16521eedd))
+* **frontend-blazor:** read frontend configuration from host service ([9a17cfe](https://github.com/OpenCodeFoundation/eSchool/commit/9a17cfeaea309b7774f36b7a1e987d96aedd6149))
+* add graphql api gateway ([#240](https://github.com/OpenCodeFoundation/eSchool/issues/240)) ([dc0e813](https://github.com/OpenCodeFoundation/eSchool/commit/dc0e8132d914f509cf4429610abb85cd62d0ce10))
+* **joining:** remove joining service ([#234](https://github.com/OpenCodeFoundation/eSchool/issues/234)) ([d5835ca](https://github.com/OpenCodeFoundation/eSchool/commit/d5835ca5eca40b89fd7a54c7ddb87a41189ab9a3)), closes [#169](https://github.com/OpenCodeFoundation/eSchool/issues/169)
+* **lib:** update open telemetry to latest RC version ([#238](https://github.com/OpenCodeFoundation/eSchool/issues/238)) ([3d599cf](https://github.com/OpenCodeFoundation/eSchool/commit/3d599cf137292826a74b1d75f25878d7cb442f2e))
+* update services to .NET 5 ([#233](https://github.com/OpenCodeFoundation/eSchool/issues/233)) ([d543280](https://github.com/OpenCodeFoundation/eSchool/commit/d54328012b2d397f29b5e50db5cf3dcc3b49fed3))
+* **pipeline:** add spell check to pull request ([18f5b0d](https://github.com/OpenCodeFoundation/eSchool/commit/18f5b0d3fc48179265aa739f79339e1674029d02)), closes [#193](https://github.com/OpenCodeFoundation/eSchool/issues/193)
+* **web-status:** replace third party library files with libman package manager ([0343337](https://github.com/OpenCodeFoundation/eSchool/commit/0343337c04f049eed0c4f735b18a3fb83239d2df))
+
+
+
 # [0.3.0](https://github.com/OpenCodeFoundation/eSchool/compare/v0.2.0...v0.3.0) (2020-08-01)
 
 

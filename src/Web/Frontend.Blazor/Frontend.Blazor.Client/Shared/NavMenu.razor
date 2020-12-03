@@ -1,5 +1,14 @@
 ﻿<MudNavMenu>
     <MudNavLink Href="" Match="NavLinkMatch.All" Icon="@Filled.Home">Home</MudNavLink>
     <MudNavLink Href="/counter" Match="NavLinkMatch.Prefix" Icon="@Filled.Add">Counter</MudNavLink>
-    <MudNavLink Href="/enrollments" Match="NavLinkMatch.Prefix" Icon="@Filled.LibraryBooks">Enrollments</MudNavLink>
+    <MudNavGroup Title="Enrollments" Icon="@Filled.ContactMail">
+        <MudNavLink
+            Href="/enrollments"
+            Match="NavLinkMatch.Prefix"
+            Icon="@Filled.LibraryBooks">List</MudNavLink>
+        <MudNavLink
+            Href="/enrollments/create"
+            Match="NavLinkMatch.Prefix"
+            Icon="@Filled.Create">Create</MudNavLink>
+    </MudNavGroup>
 </MudNavMenu>

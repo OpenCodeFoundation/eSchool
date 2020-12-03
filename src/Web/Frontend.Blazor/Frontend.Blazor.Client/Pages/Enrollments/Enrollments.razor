@@ -1,6 +1,7 @@
 ﻿@page "/enrollments"
 
 @inject IEschoolClient ESchoolClient
+@inject ISnackbar Snackbar
 
 <MudContainer  MaxWidth="MaxWidth.ExtraLarge" Class="mt-16">
     <MudText Typo="Typo.h3" GutterBottom="true">Enrollment Lists</MudText>
@@ -39,20 +40,31 @@
         </MudContainer>
 
         @code {
-    private IReadOnlyList<IEnrollment>? _enrollments;
+            private IReadOnlyList<IEnrollment>? _enrollments;
 
-    private string _selectedName = string.Empty;
+            private string _selectedName = string.Empty;
 
-    protected override async Task OnInitializedAsync()
-    {
-        var operation = await ESchoolClient.GetEnrollmentsAsync();
-        operation.EnsureNoErrors();
-        _enrollments = operation.Data?.Enrollments;
-    }
+            protected override async Task OnInitializedAsync()
+            {
+                var operation = await ESchoolClient.GetEnrollmentsAsync();
 
-    private Task OnItemClicked(IEnrollment enrollment)
-    {
-        _selectedName = enrollment.Name;
-        return Task.CompletedTask;
-    }
+                if (operation.HasErrors)
+                {
+                    foreach (var error in operation.Errors)
+                    {
+                        Snackbar.Add(error.Message, Severity.Error);
+                    }
+                }
+                else
+                {
+                    _enrollments = operation.Data?.Enrollments;
+                }
+
+            }
+
+            private Task OnItemClicked(IEnrollment enrollment)
+            {
+                _selectedName = enrollment.Name;
+                return Task.CompletedTask;
+            }
 }

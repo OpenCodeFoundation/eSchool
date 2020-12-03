@@ -33,7 +33,11 @@ namespace OpenCodeFoundation.ESchool.Web.Frontend.Blazor.Client
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
             builder.Services.AddMudBlazorDialog();
-            builder.Services.AddMudBlazorSnackbar();
+            builder.Services.AddMudBlazorSnackbar(config =>
+            {
+                config.PositionClass = Defaults.Classes.Position.BottomRight;
+                config.SnackbarVariant = Variant.Filled;
+            });
             builder.Services.AddMudBlazorResizeListener();
 
             await builder.Build().RunAsync();

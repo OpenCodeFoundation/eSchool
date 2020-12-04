@@ -1,0 +1,70 @@
+﻿@page "/enrollments"
+
+@inject IEschoolClient ESchoolClient
+@inject ISnackbar Snackbar
+
+<MudContainer  MaxWidth="MaxWidth.ExtraLarge" Class="mt-16">
+    <MudText Typo="Typo.h3" GutterBottom="true">Enrollment Lists</MudText>
+    <MudText Class="mb-8">Get enrollment from database</MudText>
+    <MudText class="mb-8">@_selectedName</MudText>
+    @if (_enrollments == null)
+        {
+            <MudProgressCircular Color="Color.Default" Indeterminate="true" />
+        }
+        else
+        {
+            <MudTable Items="_enrollments" Hover="true" SortLabel="Sort By" Elevation="0" T="IEnrollment"
+                SelectedItemChanged="OnItemClicked">
+                <HeaderContent>
+                    <MudTh>
+                        <MudTableSortLabel InitialDirection="SortDirection.Ascending"
+                            SortBy="new Func<IEnrollment, object>(x=>x.Name)">Name</MudTableSortLabel>
+                    </MudTh>
+                    <MudTh>
+                        <MudTableSortLabel SortBy="new Func<IEnrollment, object>(x=>x.MobileNumber)">Mobile</MudTableSortLabel>
+                    </MudTh>
+                    <MudTh>
+                        <MudTableSortLabel SortBy="new Func<IEnrollment, object>(x=>x.EmailAddress)">Email</MudTableSortLabel>
+                    </MudTh>
+                </HeaderContent>
+                <RowTemplate>
+                    <MudTd DataLabel="Name">@context.Name</MudTd>
+                    <MudTd DataLabel="Mobile Number">@context.MobileNumber</MudTd>
+                    <MudTd DataLabel="Email Address">@context.EmailAddress</MudTd>
+                </RowTemplate>
+                <PagerContent>
+                    <MudTablePager PageSizeOptions="new[]{10, 50, 100}" />
+                </PagerContent>
+            </MudTable>
+        }
+        </MudContainer>
+
+        @code {
+            private IReadOnlyList<IEnrollment>? _enrollments;
+
+            private string _selectedName = string.Empty;
+
+            protected override async Task OnInitializedAsync()
+            {
+                var operation = await ESchoolClient.GetEnrollmentsAsync();
+
+                if (operation.HasErrors)
+                {
+                    foreach (var error in operation.Errors)
+                    {
+                        Snackbar.Add(error.Message, Severity.Error);
+                    }
+                }
+                else
+                {
+                    _enrollments = operation.Data?.Enrollments;
+                }
+
+            }
+
+            private Task OnItemClicked(IEnrollment enrollment)
+            {
+                _selectedName = enrollment.Name;
+                return Task.CompletedTask;
+            }
+}

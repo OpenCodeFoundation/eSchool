@@ -1,0 +1,64 @@
+﻿@page "/enrollments/create"
+@using System.ComponentModel.DataAnnotations
+
+@inject IEschoolClient EschoolClient
+@inject NavigationManager NavigationManager
+@inject ISnackbar Snackbar
+
+<MudForm @bind-IsValid="Success">
+    <MudCard>
+        <MudCardContent>
+            <MudTextField
+                Label="Full Name"
+                Required="true"
+                RequiredError="Full Name is Required"
+                @bind-Value="_fullName" />
+            <MudTextField
+                Label="Email"
+                Required="true"
+                RequiredError="Email is Required"
+                Validation="@(new EmailAddressAttribute() {ErrorMessage = "The email address is invalid"})"
+                @bind-Value="_email" />
+            <MudTextField
+                Label="Mobile"
+                Required="true"
+                @bind-Value="_mobile" />
+        </MudCardContent>
+        <MudCardContent>
+            <MudButton
+                Variant="Variant.Filled"
+                Color="Color.Primary"
+                Disabled="@(!Success)"
+                OnClick="Callback">Create</MudButton>
+        </MudCardContent>
+    </MudCard>
+</MudForm>
+
+@code {
+    bool Success;
+
+    string _fullName;
+    string _email;
+    string _mobile;
+
+    private async Task Callback(MouseEventArgs obj)
+    {
+
+        var operation = await EschoolClient
+            .RegisterStudentAsync(_fullName, _email, _mobile);
+
+        if (operation.HasErrors)
+        {
+            foreach (var error in operation.Errors)
+            {
+                Snackbar.Add(error.Message, Severity.Error);
+            }
+
+            return;
+        }
+
+        NavigationManager.NavigateTo("enrollments");
+
+    }
+
+}

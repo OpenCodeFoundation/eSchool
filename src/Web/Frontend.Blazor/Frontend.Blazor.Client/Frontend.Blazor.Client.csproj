@@ -3,7 +3,8 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
-  
+
+    <Nullable>enable</Nullable>
     <AssemblyName>Frontend.Blazor.Client</AssemblyName>
     <RootNamespace>OpenCodeFoundation.ESchool.Web.Frontend.Blazor.Client</RootNamespace>
   </PropertyGroup>
@@ -11,8 +12,10 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.0" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="5.0.0" />
     <PackageReference Include="MudBlazor" Version="1.1.5" />
     <PackageReference Include="System.Net.Http.Json" Version="5.0.0" />
+    <PackageReference Include="StrawberryShake" Version="11.0.0-preview.137" />
   </ItemGroup>
 
   <ItemGroup>

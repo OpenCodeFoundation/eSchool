@@ -21,38 +21,38 @@ namespace OpenCodeFoundation.ESchool.Web.Frontend.Blazor.Client
         };
         private readonly byte[] _hash = new byte[]
         {
-            101,
-            49,
-            52,
-            50,
-            102,
             48,
-            57,
-            97,
-            101,
-            57,
-            51,
-            102,
-            98,
-            101,
-            99,
-            102,
-            99,
-            56,
+            55,
             48,
             100,
             55,
-            101,
-            51,
-            99,
+            50,
+            49,
+            52,
+            49,
             102,
-            48,
-            51,
-            53,
-            56,
-            98,
+            49,
+            52,
             101,
-            53
+            97,
+            102,
+            98,
+            100,
+            56,
+            49,
+            57,
+            54,
+            57,
+            52,
+            100,
+            55,
+            57,
+            50,
+            97,
+            52,
+            102,
+            55,
+            101
         };
         private readonly byte[] _content = new byte[]
         {
@@ -306,6 +306,8 @@ namespace OpenCodeFoundation.ESchool.Web.Frontend.Blazor.Client
             101,
             110,
             116,
+            73,
+            100,
             32,
             125,
             32,
@@ -358,7 +360,21 @@ namespace OpenCodeFoundation.ESchool.Web.Frontend.Blazor.Client
             109,
             101,
             32,
-            105,
+            46,
+            46,
+            46,
+            32,
+            101,
+            110,
+            114,
+            111,
+            108,
+            108,
+            109,
+            101,
+            110,
+            116,
+            73,
             100,
             32,
             110,
@@ -392,6 +408,60 @@ namespace OpenCodeFoundation.ESchool.Web.Frontend.Blazor.Client
             101,
             114,
             32,
+            125,
+            32,
+            102,
+            114,
+            97,
+            103,
+            109,
+            101,
+            110,
+            116,
+            32,
+            101,
+            110,
+            114,
+            111,
+            108,
+            108,
+            109,
+            101,
+            110,
+            116,
+            73,
+            100,
+            32,
+            111,
+            110,
+            32,
+            69,
+            110,
+            114,
+            111,
+            108,
+            108,
+            109,
+            101,
+            110,
+            116,
+            32,
+            123,
+            32,
+            95,
+            95,
+            116,
+            121,
+            112,
+            101,
+            110,
+            97,
+            109,
+            101,
+            32,
+            105,
+            100,
+            32,
             125
         };
 
@@ -412,15 +482,19 @@ namespace OpenCodeFoundation.ESchool.Web.Frontend.Blazor.Client
             
             mutation registerStudent($fullName: String!, $email: String!, $mobile: String!) {
               addEnrollment(input: { name: $fullName, email: $email, mobile: $mobile }) {
-                ... enrollment
+                ... enrollmentId
               }
             }
             
             fragment enrollment on Enrollment {
-              id
+              ... enrollmentId
               name
               emailAddress
               mobileNumber
+            }
+            
+            fragment enrollmentId on Enrollment {
+              id
             }";
     }
 }

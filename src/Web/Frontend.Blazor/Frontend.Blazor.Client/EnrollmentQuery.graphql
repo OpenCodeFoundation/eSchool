@@ -6,13 +6,17 @@ query getEnrollments {
 
 mutation registerStudent($fullName: String! $email: String! $mobile: String!) {
   addEnrollment(input: {name: $fullName, email: $email mobile: $mobile}) {
-    ... enrollment
+    ... enrollmentId
   }
 }
 
 fragment enrollment on Enrollment {
-  id
+  ... enrollmentId
   name
   emailAddress
   mobileNumber
+}
+
+fragment enrollmentId on Enrollment {
+  id
 }

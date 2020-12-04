@@ -10,23 +10,23 @@ namespace OpenCodeFoundation.ESchool.Web.Frontend.Blazor.Client
         : IEnrollment
     {
         public Enrollment(
-            System.Guid id, 
             string name, 
             string emailAddress, 
-            string mobileNumber)
+            string mobileNumber, 
+            System.Guid id)
         {
-            Id = id;
             Name = name;
             EmailAddress = emailAddress;
             MobileNumber = mobileNumber;
+            Id = id;
         }
-
-        public System.Guid Id { get; }
 
         public string Name { get; }
 
         public string EmailAddress { get; }
 
         public string MobileNumber { get; }
+
+        public System.Guid Id { get; }
     }
 }

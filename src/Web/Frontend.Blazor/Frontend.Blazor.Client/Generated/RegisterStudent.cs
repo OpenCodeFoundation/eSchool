@@ -10,11 +10,11 @@ namespace OpenCodeFoundation.ESchool.Web.Frontend.Blazor.Client
         : IRegisterStudent
     {
         public RegisterStudent(
-            global::OpenCodeFoundation.ESchool.Web.Frontend.Blazor.Client.IEnrollment addEnrollment)
+            global::OpenCodeFoundation.ESchool.Web.Frontend.Blazor.Client.IEnrollmentId addEnrollment)
         {
             AddEnrollment = addEnrollment;
         }
 
-        public global::OpenCodeFoundation.ESchool.Web.Frontend.Blazor.Client.IEnrollment AddEnrollment { get; }
+        public global::OpenCodeFoundation.ESchool.Web.Frontend.Blazor.Client.IEnrollmentId AddEnrollment { get; }
     }
 }

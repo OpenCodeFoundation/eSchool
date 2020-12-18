@@ -15,8 +15,8 @@
     <!-- HealthChecks -->
     <PackageReference Include="AspNetCore.HealthChecks.SqlServer" Version="3.2.0" />
     <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="3.1.2" />
-    <PackageReference Include="HotChocolate.AspNetCore" Version="11.0.1" />
-    <PackageReference Include="HotChocolate.Stitching" Version="11.0.1" />
+    <PackageReference Include="HotChocolate.AspNetCore" Version="11.0.4" />
+    <PackageReference Include="HotChocolate.Stitching" Version="11.0.4" />
 
     <!-- In-memory commandbus -->
     <PackageReference Include="MediatR" Version="9.0.0" />
@@ -39,7 +39,7 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
 
     <!-- Need this package for generating migration files -->
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.0">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>

@@ -9,8 +9,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="HotChocolate.AspNetCore" Version="11.0.1" />
-    <PackageReference Include="HotChocolate.Stitching" Version="11.0.1" />
+    <PackageReference Include="HotChocolate.AspNetCore" Version="11.0.4" />
+    <PackageReference Include="HotChocolate.Stitching" Version="11.0.4" />
 
     <!-- Logging  -->
     <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />

@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="HotChocolate.AspNetCore" Version="11.0.6" />
-    <PackageReference Include="HotChocolate.Stitching" Version="11.0.6" />
+    <PackageReference Include="HotChocolate.Stitching" Version="11.0.9" />
 
     <!-- Logging  -->
     <PackageReference Include="Serilog.AspNetCore" Version="3.4.0" />

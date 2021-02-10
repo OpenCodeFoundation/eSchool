@@ -1,0 +1,22 @@
+name: Frontend.Blazor
+
+on:
+  push:
+    paths:
+    - 'src/Web/Frontend.Blazor/**'
+    - '.github/workflows/frontend.blazor.yml'
+  pull_request:
+    paths:
+    - 'src/Web/Frontend.Blazor/**'
+    - '.github/workflows/frontend.blazor.yml'
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-16.04
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: docker compose
+      run: docker-compose build frontend.blazor

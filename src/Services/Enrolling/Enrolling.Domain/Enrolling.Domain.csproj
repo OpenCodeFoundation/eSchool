@@ -5,19 +5,6 @@
 
     <AssemblyName>Enrolling.Domain</AssemblyName>
     <RootNamespace>OpenCodeFoundation.ESchool.Services.Enrolling.Domain</RootNamespace>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-
-    <Nullable>enable</Nullable>
-    <CodeAnalysisRuleSet>..\..\..\..\eSchool.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
-
-  <ItemGroup>
-    <!-- Analyzers -->
-    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" PrivateAssets="All" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <AdditionalFiles Include="..\..\..\stylecop.json" />
-  </ItemGroup>
 
 </Project>

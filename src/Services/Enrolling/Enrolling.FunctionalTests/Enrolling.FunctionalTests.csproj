@@ -4,7 +4,6 @@
     <TargetFramework>net5.0</TargetFramework>
 
     <RootNamespace>OpenCodeFoundation.ESchool.Services.Enrolling.FunctionalTests</RootNamespace>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>

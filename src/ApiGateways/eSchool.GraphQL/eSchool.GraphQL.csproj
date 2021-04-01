@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="HotChocolate.AspNetCore" Version="11.0.9" />
+    <PackageReference Include="HotChocolate.AspNetCore" Version="11.1.0" />
     <PackageReference Include="HotChocolate.Stitching" Version="11.0.9" />
 
     <!-- Logging  -->

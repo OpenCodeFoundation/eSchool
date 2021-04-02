@@ -110,7 +110,7 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
                 });
                 endpoints.MapHealthChecks("/liveness", new HealthCheckOptions()
                 {
-                    Predicate = r => r.Name.Contains("self"),
+                    Predicate = r => r.Name.Contains("self", StringComparison.Ordinal),
                 });
 
                 endpoints.MapGraphQL();

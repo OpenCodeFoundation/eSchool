@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -16,17 +18,21 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Controllers
 
         public EnrollmentsController(IMediator mediator)
         {
-            _mediator = mediator;
+            _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Enrollment>> Get()
-            => await _mediator.Send(new FindAllEnrollmentsQuery());
+        public async Task<IEnumerable<Enrollment>> Get(CancellationToken cancellationToken)
+            => await _mediator.Send(new FindAllEnrollmentsQuery(), cancellationToken)
+                .ConfigureAwait(false);
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] EnrollmentApplicationCommand command)
+        public async Task<IActionResult> Post(
+            [FromBody] EnrollmentApplicationCommand command,
+            CancellationToken cancellationToken)
         {
-            await _mediator.Send(command);
+            await _mediator.Send(command, cancellationToken)
+                .ConfigureAwait(false);
             return Ok();
         }
     }

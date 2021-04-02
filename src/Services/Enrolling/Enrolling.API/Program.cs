@@ -10,11 +10,15 @@ using Serilog.Enrichers.Span;
 
 namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
 {
-    public class Program
+    public static class Program
     {
         public static readonly string Namespace = typeof(Program).Namespace!;
         public static readonly string AppName = Namespace.Substring(Namespace.LastIndexOf('.', Namespace.LastIndexOf('.') - 1) + 1);
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage(
+            "Design",
+            "CA1031:Do not catch general exception types",
+            Justification = "Top level all exception catcher")]
         public static int Main(string[] args)
         {
             Activity.DefaultIdFormat = ActivityIdFormat.W3C;
@@ -29,7 +33,7 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
                 var host = CreateHostBuilder(configuration, args).Build();
 
                 Log.Information("Applying migrations ({ApplicationContext})...", AppName);
-                host.MigrateDbContext<EnrollingContext>((_, __) => { });
+                host.MigrateDbContext<EnrollingContext>((_, _) => { });
 
                 Log.Information("Starting web host ({ApplicationContext})...", AppName);
                 host.Run();

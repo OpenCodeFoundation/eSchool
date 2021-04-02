@@ -18,9 +18,12 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Application.Queries
             _context = context ?? throw new System.ArgumentNullException(nameof(context));
         }
 
-        public async Task<IEnumerable<Enrollment>> Handle(FindAllEnrollmentsQuery request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<Enrollment>> Handle(
+            FindAllEnrollmentsQuery request,
+            CancellationToken cancellationToken)
         {
-            return await _context.Enrollments.ToListAsync();
+            return await _context.Enrollments.ToListAsync(cancellationToken)
+                .ConfigureAwait(false);
         }
     }
 }

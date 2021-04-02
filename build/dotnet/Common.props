@@ -8,9 +8,9 @@
     <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)/eSchool.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+  <!-- <PropertyGroup Condition="'$(Configuration)'=='Release'">
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-  </PropertyGroup>
+  </PropertyGroup> -->
 
   <PropertyGroup Label="Package versions used in this repository">
     <!--

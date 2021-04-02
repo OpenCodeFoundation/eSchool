@@ -24,6 +24,9 @@
     <Rule Id="SX1309" Action="Warning" />
     <!-- Do Not Prefix Local Members With This -->
     <Rule Id="SX1101" Action="Warning" />
+    <!-- File May Only Contain A Single Type -->
+    <Rule Id="SA1402" Action="None" />
+
   </Rules>
   <Rules AnalyzerId="Microsoft.CodeAnalysis.CSharp" RuleNamespace="Microsoft.CodeAnalysis.CSharp">
     <!-- Missing XML comment for publicly visible type or member -->

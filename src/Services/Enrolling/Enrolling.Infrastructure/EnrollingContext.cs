@@ -19,7 +19,7 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.Infrastructure
     ///     Helper class for creating migration. To create new migration, run the
     ///     command from `Enrolling.Intrastructure` folder.
     ///
-    ///     $ dotnet ef migrations add name_of_migration --startup-project ../Enrolling.API
+    ///     $ dotnet ef migrations add name_of_migration --startup-project ../Enrolling.API.
     /// </summary>
     public class EnrollingContextFactory : IDesignTimeDbContextFactory<EnrollingContext>
     {

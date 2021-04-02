@@ -50,7 +50,7 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
                 });
 
             services.AddGraphQLServer()
-                .AddQueryType<Query>()
+                .AddQueryType<EnrollingQuery>()
                 .AddMutationType<Mutation>()
                 .AddErrorFilter<GraphQlErrorFilter>();
 

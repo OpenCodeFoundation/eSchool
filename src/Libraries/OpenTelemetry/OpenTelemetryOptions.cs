@@ -11,7 +11,7 @@ namespace OpenCodeFoundation.OpenTelemetry
 
         public bool Istio { get; set; }
 
-        public JaegerOptions Jaeger { get; set; } = new ();
+        public JaegerOptions Jaeger { get; set; } = new();
 
         public void Validate()
         {

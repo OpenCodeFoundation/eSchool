@@ -19,7 +19,7 @@
     -->
     <MicrosoftCodeAnalysisFxCopAnalyzersPkgVer>[3.3.0,4.0)</MicrosoftCodeAnalysisFxCopAnalyzersPkgVer>
     <MicrosoftCodeCoveragePkgVer>[16.9.1]</MicrosoftCodeCoveragePkgVer>
-    <StyleCopAnalyzersPkgVer>[1.1.118,2.0)</StyleCopAnalyzersPkgVer>
+    <StyleCopAnalyzersPkgVer>[1.2.0-*,2.0)</StyleCopAnalyzersPkgVer>
   </PropertyGroup>
 
   <ItemGroup>

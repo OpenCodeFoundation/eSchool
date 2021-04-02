@@ -2,10 +2,9 @@ namespace Enrolling.UnitTests.Builders
 {
     public class EnrollmentDtoBuilder
     {
-
-        private string _name;
-        private string _email;
-        private string _mobile;
+        private string? _name;
+        private string? _email;
+        private string? _mobile;
 
         public EnrollmentDtoBuilder WithDefaults()
         {

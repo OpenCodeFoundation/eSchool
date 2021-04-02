@@ -1,7 +1,7 @@
-using OpenCodeFoundation.ESchool.Services.Enrolling.Domain.AggregatesModel.EnrollmentAggregate;
-using Xunit;
 using System;
 using Enrolling.UnitTests.Builders;
+using OpenCodeFoundation.ESchool.Services.Enrolling.Domain.AggregatesModel.EnrollmentAggregate;
+using Xunit;
 
 namespace Enrolling.UnitTests.Domain
 {
@@ -14,7 +14,7 @@ namespace Enrolling.UnitTests.Domain
                 .WithDefaults()
                 .Build();
 
-            var enrollment = new Enrollment(dto.Name, dto.Email, dto.Mobile);
+            var enrollment = new Enrollment(dto.Name!, dto.Email!, dto.Mobile!);
 
             Assert.NotNull(enrollment);
             Assert.Equal(dto.Name, enrollment.Name);
@@ -30,7 +30,7 @@ namespace Enrolling.UnitTests.Domain
                 .WithEmptyName()
                 .Build();
 
-            Assert.Throws<ArgumentNullException>(() => new Enrollment(dto.Name, dto.Email, dto.Mobile));
+            Assert.Throws<ArgumentNullException>(() => new Enrollment(dto.Name!, dto.Email!, dto.Mobile!));
         }
 
         [Fact]
@@ -38,10 +38,10 @@ namespace Enrolling.UnitTests.Domain
         {
             var dto = new EnrollmentDtoBuilder()
                 .WithDefaults()
-                .WithEmail("")
+                .WithEmail(string.Empty)
                 .Build();
 
-            Assert.Throws<ArgumentNullException>(() => new Enrollment(dto.Name, dto.Email, dto.Mobile));
+            Assert.Throws<ArgumentNullException>(() => new Enrollment(dto.Name!, dto.Email!, dto.Mobile!));
         }
 
         [Fact]
@@ -49,10 +49,10 @@ namespace Enrolling.UnitTests.Domain
         {
             var dto = new EnrollmentDtoBuilder()
                 .WithDefaults()
-                .WithMobile("")
+                .WithMobile(string.Empty)
                 .Build();
 
-            Assert.Throws<ArgumentNullException>(() => new Enrollment(dto.Name, dto.Email, dto.Mobile));
+            Assert.Throws<ArgumentNullException>(() => new Enrollment(dto.Name!, dto.Email!, dto.Mobile!));
         }
     }
 }

@@ -1,5 +1,4 @@
 using System;
-using HotChocolate.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -9,6 +8,10 @@ using Serilog;
 
 namespace OpenCodeFoundation.ESchool.ApiGateways.ESchool.GraphQL
 {
+    [System.Diagnostics.CodeAnalysis.SuppressMessage(
+        "Performance",
+        "CA1822:Mark members as static",
+        Justification = "Can not mark this class static. We can remove it when we read configuration")]
     public class Startup
     {
         public const string Enrolling = "enrolling";

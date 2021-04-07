@@ -50,7 +50,8 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
                 });
 
             services.AddGraphQLServer()
-                .AddQueryType<Query>()
+                .AddQueryType(d => d.Name("Query"))
+                    .AddType<EnrollingQuery>()
                 .AddMutationType<Mutation>()
                 .AddErrorFilter<GraphQlErrorFilter>();
 
@@ -110,7 +111,7 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
                 });
                 endpoints.MapHealthChecks("/liveness", new HealthCheckOptions()
                 {
-                    Predicate = r => r.Name.Contains("self"),
+                    Predicate = r => r.Name.Contains("self", StringComparison.Ordinal),
                 });
 
                 endpoints.MapGraphQL();

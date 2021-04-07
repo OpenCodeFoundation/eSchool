@@ -8,7 +8,7 @@ using OpenCodeFoundation.ESchool.Services.Enrolling.Infrastructure;
 
 namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Application.Commands
 {
-    public class EnrollmentApplicationCommandHandler
+    public sealed class EnrollmentApplicationCommandHandler
         : IRequestHandler<EnrollmentApplicationCommand, bool>
     {
         private readonly ILogger<EnrollmentApplicationCommandHandler> _logger;
@@ -22,11 +22,20 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Application.Commands
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
-        public async Task<bool> Handle(EnrollmentApplicationCommand command, CancellationToken cancellationToken)
+        public async Task<bool> Handle(
+            EnrollmentApplicationCommand command,
+            CancellationToken cancellationToken)
         {
+            if (command == null)
+            {
+                throw new ArgumentNullException(nameof(command));
+            }
+
             var enrollment = new Enrollment(command.Name, command.Email, command.Mobile);
-            _context.Enrollments.Add(enrollment);
-            await _context.SaveChangesAsync();
+            await _context.Enrollments.AddAsync(enrollment, cancellationToken)
+                .ConfigureAwait(false);
+            await _context.SaveChangesAsync(cancellationToken)
+                .ConfigureAwait(false);
             return true;
         }
     }

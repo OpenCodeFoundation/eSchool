@@ -1,0 +1,38 @@
+<Project>
+  <PropertyGroup>
+    <LangVersion>9.0</LangVersion>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <Nullable>enable</Nullable>
+
+    <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)/eSchool.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <!-- <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup> -->
+
+  <PropertyGroup Label="Package versions used in this repository">
+    <!--
+      Please sort alphabetically.
+      Refer to https://docs.microsoft.com/en-us/nuget/concepts/package-versioning for semver syntax.
+    -->
+    <MicrosoftCodeAnalysisFxCopAnalyzersPkgVer>[3.3.0,4.0)</MicrosoftCodeAnalysisFxCopAnalyzersPkgVer>
+    <MicrosoftCodeCoveragePkgVer>[16.9.1]</MicrosoftCodeCoveragePkgVer>
+    <StyleCopAnalyzersPkgVer>[1.2.0-*,2.0)</StyleCopAnalyzersPkgVer>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="$(MSBuildThisFileDirectory)/stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="StyleCop.Analyzers" Version="$(StyleCopAnalyzersPkgVer)" Condition="'$(SkipAnalysis)'!='true'">
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CodeCoverage" Version="$(MicrosoftCodeCoveragePkgVer)" Condition="'$(Configuration)'=='Release'"/>
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="$(MicrosoftCodeAnalysisFxCopAnalyzersPkgVer)" Condition="'$(SkipAnalysis)'!='true'">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+</Project>

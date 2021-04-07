@@ -1,4 +1,5 @@
-﻿using HotChocolate;
+﻿using System;
+using HotChocolate;
 
 namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Graphql
 {
@@ -7,6 +8,11 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Graphql
     {
         public IError OnError(IError error)
         {
+            if (error == null)
+            {
+                throw new ArgumentNullException(nameof(error));
+            }
+
             return error.WithMessage(
                 error.Exception?.Message ?? string.Empty);
         }

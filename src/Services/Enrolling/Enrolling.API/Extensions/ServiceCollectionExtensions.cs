@@ -1,3 +1,4 @@
+using System;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
@@ -10,6 +11,11 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Extensions
             this IServiceCollection services,
             IConfiguration configuration)
         {
+            if (configuration == null)
+            {
+                throw new ArgumentNullException(nameof(configuration));
+            }
+
             var hcBuilder = services.AddHealthChecks();
 
             hcBuilder

@@ -1,6 +1,9 @@
 namespace OpenCodeFoundation.ESchool.Services.Enrolling.Domain.SeedWork
 {
-    // Marker Interface
+    [System.Diagnostics.CodeAnalysis.SuppressMessage(
+        "Design",
+        "CA1040:Avoid empty interfaces",
+        Justification = "Marker interface")]
     public interface IAggregateRoot
     {
     }

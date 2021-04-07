@@ -329,8 +329,9 @@ ASALocalRun/
 # MFractors (Xamarin productivity tool) working folder
 .mfractor/
 
-# Visual studio code
-.vscode
+# Visual Studio Code
+**/.vscode/*
+!.vscode/settings.json
 
 # Ignore HealthCheckdb
 *healthchecksdb*

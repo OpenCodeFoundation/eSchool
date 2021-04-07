@@ -4,9 +4,6 @@
     <TargetFramework>net5.0</TargetFramework>
     <AssemblyName>OpenCodeFoundation.OpenTelemetry</AssemblyName>
     <RootNamespace>OpenCodeFoundation.OpenTelemetry</RootNamespace>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-
-    <CodeAnalysisRuleSet>..\..\..\eSchool.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,13 +18,6 @@
     <PackageReference Include="OpenTelemetry.Instrumentation.SqlClient" Version="1.0.0-rc2" />
     <PackageReference Include="OpenTelemetry.Exporter.Jaeger" Version="1.0.1" />
 
-    <!-- Analyzers -->
-    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" PrivateAssets="All" />
-
-  </ItemGroup>
-
-  <ItemGroup>
-    <AdditionalFiles Include="..\..\stylecop.json" />
   </ItemGroup>
 
 </Project>

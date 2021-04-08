@@ -5,7 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="9.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Application\Behaviors\" />
+    <Folder Include="Application\Validations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CourseRegistration.Domain\CourseRegistration.Domain.csproj" />
+    <ProjectReference Include="..\CourseRegistration.Infrastructure\CourseRegistration.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

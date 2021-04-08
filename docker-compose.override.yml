@@ -23,6 +23,15 @@ services:
       - "5102:80"
       - "5581:5001"
 
+  courseregistration.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+      - ConnectionStrings=Server=sql.data;Database=OpenCodeFoundation.CourseRegistrationDb;User Id=sa;Password=Pass@word
+    ports:
+      - "5103:80"
+      - "5582:5001"
+
   webstatus:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development

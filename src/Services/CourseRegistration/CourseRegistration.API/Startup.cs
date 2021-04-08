@@ -13,6 +13,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using MediatR;
+using CourseRegistration.Infrastructure;
+using Microsoft.EntityFrameworkCore;
 
 namespace CourseRegistration.API
 {
@@ -28,12 +30,29 @@ namespace CourseRegistration.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddMediatR(typeof(Startup).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(Startup).GetTypeInfo().Assembly);
 
-            services.AddControllers();
+            services.AddDbContext<CourseRegistrationContext>(options =>
+            {
+                options.UseSqlServer(
+                    Configuration["ConnectionStrings"],
+                    sqlServerOptionsAction: sqlOptions =>
+                    {
+                        sqlOptions.MigrationsAssembly(typeof(CourseRegistrationContext).GetTypeInfo().Assembly.GetName().Name);
+                        sqlOptions.EnableRetryOnFailure(maxRetryCount: 15, maxRetryDelay: TimeSpan.FromSeconds(30), errorNumbersToAdd: null);
+                    });
+            });
+
+
+            services.AddControllers()
+                .AddJsonOptions(options =>
+                {
+                    options.JsonSerializerOptions.IgnoreNullValues = true;
+                });
+
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "CourseRegistration.API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "CourseRegistration HTTP API", Version = "v1" });
             });
         }
 

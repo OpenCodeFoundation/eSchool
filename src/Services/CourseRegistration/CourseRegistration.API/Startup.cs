@@ -15,6 +15,9 @@ using Microsoft.OpenApi.Models;
 using MediatR;
 using CourseRegistration.Infrastructure;
 using Microsoft.EntityFrameworkCore;
+using CourseRegistration.API.Extensions;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using HealthChecks.UI.Client;
 
 namespace CourseRegistration.API
 {
@@ -50,6 +53,8 @@ namespace CourseRegistration.API
                     options.JsonSerializerOptions.IgnoreNullValues = true;
                 });
 
+            services.AddCustomHealthChecks(Configuration);
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CourseRegistration HTTP API", Version = "v1" });
@@ -75,6 +80,15 @@ namespace CourseRegistration.API
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHealthChecks("/hc", new HealthCheckOptions()
+                {
+                    Predicate = _ => true,
+                    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse,
+                });
+                endpoints.MapHealthChecks("/liveness", new HealthCheckOptions()
+                {
+                    Predicate = r => r.Name.Contains("self"),
+                });
             });
         }
     }

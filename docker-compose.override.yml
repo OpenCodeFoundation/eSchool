@@ -39,6 +39,8 @@ services:
       - ConnectionStrings=Server=sql.data;Database=OpenCodeFoundation.WebStatusDb;User Id=sa;Password=Pass@word
       - HealthChecksUI__HealthChecks__0__Name=Enrolling HTTP Check
       - HealthChecksUI__HealthChecks__0__Uri=http://enrolling.api/hc
+      - HealthChecksUI__HealthChecks__0__Name=CourseRegistration HTTP Check
+      - HealthChecksUI__HealthChecks__0__Uri=http://courseregistration.api/hc
     ports:
       - "5107:80"
 

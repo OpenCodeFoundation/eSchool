@@ -1,13 +1,9 @@
-using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Json;
-using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Microsoft.Extensions.DependencyInjection;
 using MudBlazor;
 using MudBlazor.Services;
 using OpenCodeFoundation.ESchool.Web.Frontend.Blazor.Shared;
@@ -32,6 +28,7 @@ namespace OpenCodeFoundation.ESchool.Web.Frontend.Blazor.Client
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
+            builder.Services.AddMudServices();
             builder.Services.AddMudBlazorDialog();
             builder.Services.AddMudBlazorSnackbar(config =>
             {
@@ -40,7 +37,7 @@ namespace OpenCodeFoundation.ESchool.Web.Frontend.Blazor.Client
             });
             builder.Services.AddMudBlazorResizeListener();
 
-            await builder.Build().RunAsync();
+            await builder.Build().RunAsync().ConfigureAwait(false);
         }
 
         private static async Task<FrontendSettings> LoadFrontendSettings(WebAssemblyHostBuilder builder)

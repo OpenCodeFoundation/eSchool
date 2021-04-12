@@ -20,6 +20,7 @@ using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using HealthChecks.UI.Client;
 using CourseRegistration.API.Application.Behaviors;
 using Serilog;
+using OpenCodeFoundation.OpenTelemetry;
 
 namespace CourseRegistration.API
 {
@@ -63,6 +64,8 @@ namespace CourseRegistration.API
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CourseRegistration HTTP API", Version = "v1" });
             });
+
+            services.AddOpenTelemetryIntegration();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

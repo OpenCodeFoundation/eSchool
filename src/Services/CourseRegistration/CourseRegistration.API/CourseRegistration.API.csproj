@@ -26,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Libraries\OpenTelemetry\OpenTelemetry.csproj" />
     <ProjectReference Include="..\CourseRegistration.Domain\CourseRegistration.Domain.csproj" />
     <ProjectReference Include="..\CourseRegistration.Infrastructure\CourseRegistration.Infrastructure.csproj" />
   </ItemGroup>

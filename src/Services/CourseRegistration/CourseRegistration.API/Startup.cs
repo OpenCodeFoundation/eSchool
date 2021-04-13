@@ -21,6 +21,7 @@ using HealthChecks.UI.Client;
 using CourseRegistration.API.Application.Behaviors;
 using Serilog;
 using OpenCodeFoundation.OpenTelemetry;
+using CourseRegistration.API.GraphQL;
 
 namespace CourseRegistration.API
 {
@@ -51,6 +52,10 @@ namespace CourseRegistration.API
                     });
             });
 
+            services.AddGraphQLServer()
+                .AddQueryType<Query>()
+                .AddMutationType<Mutation>()
+                .AddErrorFilter<GraphQlErrorFilter>();
 
             services.AddControllers()
                 .AddJsonOptions(options =>
@@ -105,6 +110,8 @@ namespace CourseRegistration.API
                 {
                     Predicate = r => r.Name.Contains("self"),
                 });
+
+                endpoints.MapGraphQL();
             });
         }
     }

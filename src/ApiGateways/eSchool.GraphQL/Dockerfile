@@ -15,6 +15,13 @@ COPY "src/Services/Enrolling/Enrolling.Infrastructure/Enrolling.Infrastructure.c
 COPY "src/Services/Enrolling/Enrolling.UnitTests/Enrolling.UnitTests.csproj" "src/Services/Enrolling/Enrolling.UnitTests/Enrolling.UnitTests.csproj"
 COPY "src/Services/Enrolling/Enrolling.FunctionalTests/Enrolling.FunctionalTests.csproj" "src/Services/Enrolling/Enrolling.FunctionalTests/Enrolling.FunctionalTests.csproj"
 
+COPY "src/Services/CourseRegistration/CourseRegistration.API/CourseRegistration.API.csproj" "src/Services/CourseRegistration/CourseRegistration.API/CourseRegistration.API.csproj"
+COPY "src/Services/CourseRegistration/CourseRegistration.Domain/CourseRegistration.Domain.csproj" "src/Services/CourseRegistration/CourseRegistration.Domain/CourseRegistration.Domain.csproj"
+COPY "src/Services/CourseRegistration/CourseRegistration.Infrastructure/CourseRegistration.Infrastructure.csproj" "src/Services/CourseRegistration/CourseRegistration.Infrastructure/CourseRegistration.Infrastructure.csproj"
+COPY "src/Services/CourseRegistration/CourseRegistration.UnitTests/CourseRegistration.UnitTests.csproj" "src/Services/CourseRegistration/CourseRegistration.UnitTests/Enrolling.UnitTests.csproj"
+COPY "src/Services/CourseRegistration/CourseRegistration.FunctionalTests/CourseRegistration.FunctionalTests.csproj" "src/Services/CourseRegistration/CourseRegistration.FunctionalTests/CourseRegistration.FunctionalTests.csproj"
+
+
 COPY "src/Libraries/OpenTelemetry/OpenTelemetry.csproj" "src/Libraries/OpenTelemetry/OpenTelemetry.csproj"
 
 COPY "src/Web/WebStatus/WebStatus.csproj" "src/Web/WebStatus/WebStatus.csproj"

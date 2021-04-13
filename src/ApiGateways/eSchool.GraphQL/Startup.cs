@@ -12,6 +12,7 @@ namespace OpenCodeFoundation.ESchool.ApiGateways.ESchool.GraphQL
     public class Startup
     {
         public const string Enrolling = "enrolling";
+        public const string CourseRegistration = "courseregistration";
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
@@ -22,9 +23,13 @@ namespace OpenCodeFoundation.ESchool.ApiGateways.ESchool.GraphQL
             services.AddHttpClient(Enrolling, c =>
                 c.BaseAddress = new Uri("http://enrolling.api/graphql"));
 
+            services.AddHttpClient(CourseRegistration, c =>
+                c.BaseAddress = new Uri("http://courseregistration.api/graphql"));
+
             services
                 .AddGraphQLServer()
-                .AddRemoteSchema(Enrolling);
+                .AddRemoteSchema(Enrolling)
+                .AddRemoteSchema(CourseRegistration);
 
             services.AddOpenTelemetryIntegration();
         }

@@ -3,12 +3,18 @@ name: WebStatus
 on:
   push:
     paths:
-    - 'src/Web/WebStatus/**'
-    - '.github/workflows/webstatus.yml'
+    - "src/Web/WebStatus/**"
+    - ".github/workflows/webstatus.yml"
+    - "eSchool.sln"
+    - "build/dotnet/**"
+    - "src/Directory.Build.props"
   pull_request:
     paths:
-    - 'src/Web/WebStatus/**'
-    - '.github/workflows/webstatus.yml'
+    - "src/Web/WebStatus/**"
+    - ".github/workflows/webstatus.yml"
+    - "eSchool.sln"
+    - "build/dotnet/**"
+    - "src/Directory.Build.props"
 
 jobs:
 

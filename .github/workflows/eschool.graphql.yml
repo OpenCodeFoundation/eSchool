@@ -6,11 +6,17 @@ on:
       - "src/ApiGateways/eSchool.GraphQL/**"
       - ".github/workflows/eschool.graphql.yml"
       - "src/Libraries/OpenTelemetry/**"
+      - "eSchool.sln"
+      - "build/dotnet/**"
+      - "src/Directory.Build.props"
   pull_request:
     paths:
       - "src/ApiGateways/eSchool.GraphQL/**"
       - ".github/workflows/eschool.graphql.yml"
       - "src/Libraries/OpenTelemetry/**"
+      - "eSchool.sln"
+      - "build/dotnet/**"
+      - "src/Directory.Build.props"
 
 jobs:
   build:

@@ -3,12 +3,28 @@ name: WebStatus
 on:
   push:
     paths:
-    - 'src/Web/WebStatus/**'
-    - '.github/workflows/webstatus.yml'
+    - "src/Web/WebStatus/**"
+    - ".github/workflows/webstatus.yml"
+    - "eSchool.sln"
+    - "build/dotnet/**"
+    - "src/Directory.Build.props"
+    - "docker-compose.yml"
+    - "docker-compose.override.yml"
+    - "docker-compose.dcproj"
+    - "docker-compose-test.yml"
+    - "docker-compose-test.override.yml"
   pull_request:
     paths:
-    - 'src/Web/WebStatus/**'
-    - '.github/workflows/webstatus.yml'
+    - "src/Web/WebStatus/**"
+    - ".github/workflows/webstatus.yml"
+    - "eSchool.sln"
+    - "build/dotnet/**"
+    - "src/Directory.Build.props"
+    - "docker-compose.yml"
+    - "docker-compose.override.yml"
+    - "docker-compose.dcproj"
+    - "docker-compose-test.yml"
+    - "docker-compose-test.override.yml"
 
 jobs:
 

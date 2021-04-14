@@ -3,12 +3,28 @@ name: Frontend.Blazor
 on:
   push:
     paths:
-    - 'src/Web/Frontend.Blazor/**'
-    - '.github/workflows/frontend.blazor.yml'
+    - "src/Web/Frontend.Blazor/**"
+    - ".github/workflows/frontend.blazor.yml"
+    - "eSchool.sln"
+    - "build/dotnet/**"
+    - "src/Directory.Build.props"
+    - "docker-compose.yml"
+    - "docker-compose.override.yml"
+    - "docker-compose.dcproj"
+    - "docker-compose-test.yml"
+    - "docker-compose-test.override.yml"
   pull_request:
     paths:
-    - 'src/Web/Frontend.Blazor/**'
-    - '.github/workflows/frontend.blazor.yml'
+    - "src/Web/Frontend.Blazor/**"
+    - ".github/workflows/frontend.blazor.yml"
+    - "eSchool.sln"
+    - "build/dotnet/**"
+    - "src/Directory.Build.props"
+    - "docker-compose.yml"
+    - "docker-compose.override.yml"
+    - "docker-compose.dcproj"
+    - "docker-compose-test.yml"
+    - "docker-compose-test.override.yml"
 
 jobs:
 

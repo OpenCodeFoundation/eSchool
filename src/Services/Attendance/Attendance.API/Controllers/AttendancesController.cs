@@ -4,11 +4,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using OpenCodeFoundation.ESchool.Services.Attendance.API.Application.Commands;
-using OpenCodeFoundation.ESchool.Services.Attendance.API.Application.Queries;
-using OpenCodeFoundation.ESchool.Services.Attendance.Domain.AggregatesModel.EnrollmentAggregate;
+using OpenCodeFoundation.ESchool.Services.Attending.API.Application.Commands;
+using OpenCodeFoundation.ESchool.Services.Attending.API.Application.Queries;
 
-namespace OpenCodeFoundation.ESchool.Services.Attendance.API.Controllers
+namespace OpenCodeFoundation.ESchool.Services.Attending.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -22,8 +21,8 @@ namespace OpenCodeFoundation.ESchool.Services.Attendance.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Enrollment>> Get(CancellationToken cancellationToken)
-            => await _mediator.Send(new FindAllEnrollmentsQuery(), cancellationToken)
+        public async Task<IEnumerable<Domain.AggregatesModel.AttendanceAggregate.Attendance>> Get(CancellationToken cancellationToken)
+            => await _mediator.Send(new FindAllAttendancesQuery(), cancellationToken)
                 .ConfigureAwait(false);
 
         [HttpPost]

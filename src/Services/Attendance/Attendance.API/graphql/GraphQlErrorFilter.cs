@@ -1,7 +1,7 @@
 ﻿using System;
 using HotChocolate;
 
-namespace OpenCodeFoundation.ESchool.Services.Attendance.API.Graphql
+namespace OpenCodeFoundation.ESchool.Services.Attending.API.Graphql
 {
     public class GraphQlErrorFilter
         : IErrorFilter

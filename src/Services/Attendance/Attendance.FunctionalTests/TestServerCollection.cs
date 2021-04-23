@@ -1,6 +1,6 @@
 using Xunit;
 
-namespace OpenCodeFoundation.ESchool.Services.Attendance.FunctionalTests
+namespace OpenCodeFoundation.ESchool.Services.Attending.FunctionalTests
 {
     [CollectionDefinition("TestServer")]
     public class TestServerCollection

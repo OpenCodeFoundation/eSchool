@@ -1,34 +1,14 @@
-namespace Attendance.UnitTests.Builders
+namespace Attending.UnitTests.Builders
 {
     public class AttendanceDtoBuilder
     {
-        private string? _name;
-        private string? _email;
-        private string? _mobile;
+        private string? _studentId;
+        private string? _courseId;
 
         public AttendanceDtoBuilder WithDefaults()
         {
-            _name = "John Doe";
-            _email = "john@example.com";
-            _mobile = "01771999999";
-            return this;
-        }
-
-        public AttendanceDtoBuilder WithEmptyName()
-        {
-            _name = string.Empty;
-            return this;
-        }
-
-        public AttendanceDtoBuilder WithEmail(string email)
-        {
-            _email = email;
-            return this;
-        }
-
-        public AttendanceDtoBuilder WithMobile(string mobile)
-        {
-            _mobile = mobile;
+            _studentId = "2d16af83-15b7-4e28-be1d-25ed1630a365";
+            _courseId = "8a5e3a17-115f-4df6-b6e4-000441a6b672";
             return this;
         }
 
@@ -36,9 +16,8 @@ namespace Attendance.UnitTests.Builders
         {
             return new AttendanceDto
             {
-                Name = _name,
-                Email = _email,
-                Mobile = _mobile,
+                StudentId = _studentId,
+                CourseId = _courseId
             };
         }
     }

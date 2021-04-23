@@ -3,9 +3,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using OpenCodeFoundation.ESchool.Services.Attendance.Domain.AggregatesModel.AttendanceAggregate;
+using OpenCodeFoundation.ESchool.Services.Attending.Domain.AggregatesModel.AttendanceAggregate;
 
-namespace OpenCodeFoundation.ESchool.Services.Attendance.Infrastructure.Repositories
+namespace OpenCodeFoundation.ESchool.Services.Attending.Infrastructure.Repositories
 {
     public class AttendanceRepository
         : IAttendanceRepository

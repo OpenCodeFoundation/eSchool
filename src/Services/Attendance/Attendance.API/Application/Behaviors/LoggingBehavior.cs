@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace OpenCodeFoundation.ESchool.Services.Attendance.API.Application.Behaviors
+namespace OpenCodeFoundation.ESchool.Services.Attending.API.Application.Behaviors
 {
     public class LoggingBehavior<TRequest, TResponse>
         : IPipelineBehavior<TRequest, TResponse>

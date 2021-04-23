@@ -1,10 +1,9 @@
 using MediatR;
 
-namespace OpenCodeFoundation.ESchool.Services.Attendance.API.Application.Commands
+namespace OpenCodeFoundation.ESchool.Services.Attending.API.Application.Commands
 {
     public record AttendanceApplicationCommand(
-            string Name,
-            string Email,
-            string Mobile)
+            string StudentId,
+            string CourseId)
         : IRequest<bool>;
 }

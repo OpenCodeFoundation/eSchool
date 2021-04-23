@@ -2,11 +2,10 @@
 using System.Threading;
 using System.Threading.Tasks;
 using HotChocolate;
-using OpenCodeFoundation.ESchool.Services.Attendance.API.Application.Commands;
-using OpenCodeFoundation.ESchool.Services.Attendance.Domain.AggregatesModel.EnrollmentAggregate;
-using OpenCodeFoundation.ESchool.Services.Attendance.Infrastructure;
+using OpenCodeFoundation.ESchool.Services.Attending.API.Application.Commands;
+using OpenCodeFoundation.ESchool.Services.Attending.Infrastructure;
 
-namespace OpenCodeFoundation.ESchool.Services.Attendance.API.Graphql
+namespace OpenCodeFoundation.ESchool.Services.Attending.API.Graphql
 {
     [System.Diagnostics.CodeAnalysis.SuppressMessage(
         "Performance",
@@ -14,7 +13,7 @@ namespace OpenCodeFoundation.ESchool.Services.Attendance.API.Graphql
         Justification = "GraphQL mutation used by Hot Chocolate")]
     public class Mutation
     {
-        public async Task<Attendance> AddAttendanceAsync(
+        public async Task<Domain.AggregatesModel.AttendanceAggregate.Attendance> AddAttendanceAsync(
             AttendanceApplicationCommand input,
             [Service] AttendanceContext context,
             CancellationToken cancellationToken)
@@ -29,10 +28,9 @@ namespace OpenCodeFoundation.ESchool.Services.Attendance.API.Graphql
                 throw new ArgumentNullException(nameof(context));
             }
 
-            var attendance = new Attendance(
-                input.Name,
-                input.Email,
-                input.Mobile);
+            var attendance = new Domain.AggregatesModel.AttendanceAggregate.Attendance(
+                input.StudentId,
+                input.CourseId);
 
             await context.Attendances.AddAsync(attendance, cancellationToken)
                 .ConfigureAwait(false);

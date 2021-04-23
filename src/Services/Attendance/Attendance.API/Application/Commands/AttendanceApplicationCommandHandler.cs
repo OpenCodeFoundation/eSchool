@@ -3,10 +3,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using OpenCodeFoundation.ESchool.Services.Attendance.Domain.AggregatesModel.AttendanceAggregate;
-using OpenCodeFoundation.ESchool.Services.Attendance.Infrastructure;
+using OpenCodeFoundation.ESchool.Services.Attending.Infrastructure;
 
-namespace OpenCodeFoundation.ESchool.Services.Attendance.API.Application.Commands
+namespace OpenCodeFoundation.ESchool.Services.Attending.API.Application.Commands
 {
     public sealed class AttendanceApplicationCommandHandler
         : IRequestHandler<AttendanceApplicationCommand, bool>
@@ -31,7 +30,7 @@ namespace OpenCodeFoundation.ESchool.Services.Attendance.API.Application.Command
                 throw new ArgumentNullException(nameof(command));
             }
 
-            var attendance = new Attendance(command.Name, command.Email, command.Mobile);
+            var attendance = new Domain.AggregatesModel.AttendanceAggregate.Attendance(command.StudentId, command.CourseId);
             await _context.Attendances.AddAsync(attendance, cancellationToken)
                 .ConfigureAwait(false);
             await _context.SaveChangesAsync(cancellationToken)

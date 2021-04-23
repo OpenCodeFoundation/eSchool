@@ -1,9 +1,9 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using OpenCodeFoundation.ESchool.Services.Attendance.Domain.SeedWork;
+using OpenCodeFoundation.ESchool.Services.Attending.Domain.SeedWork;
 
-namespace OpenCodeFoundation.ESchool.Services.Attendance.Domain.AggregatesModel.AttendanceAggregate
+namespace OpenCodeFoundation.ESchool.Services.Attending.Domain.AggregatesModel.AttendanceAggregate
 {
     public interface IAttendanceRepository
         : IRepository<Attendance>

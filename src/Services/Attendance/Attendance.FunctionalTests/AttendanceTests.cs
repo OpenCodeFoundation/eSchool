@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using Xunit;
 
-namespace OpenCodeFoundation.ESchool.Services.Attendance.FunctionalTests
+namespace OpenCodeFoundation.ESchool.Services.Attending.FunctionalTests
 {
     [Collection("TestServer")]
     public class AttendanceTests
@@ -14,9 +14,9 @@ namespace OpenCodeFoundation.ESchool.Services.Attendance.FunctionalTests
         }
 
         [Fact]
-        public async Task Get_all_enrolling_ok_status_code()
+        public async Task Get_all_attending_ok_status_code()
         {
-            var response = await _testServer.Client.GetAsync("/Enrollments");
+            var response = await _testServer.Client.GetAsync("/Attendances");
 
             response.EnsureSuccessStatusCode();
         }

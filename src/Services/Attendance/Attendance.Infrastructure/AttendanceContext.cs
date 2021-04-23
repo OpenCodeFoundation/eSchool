@@ -1,7 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
+using OpenCodeFoundation.ESchool.Services.Attending.Domain.AggregatesModel.AttendanceAggregate;
 
-namespace OpenCodeFoundation.ESchool.Services.Attendance.Infrastructure
+namespace OpenCodeFoundation.ESchool.Services.Attending.Infrastructure
 {
     public class AttendanceContext
         : DbContext
@@ -11,14 +12,14 @@ namespace OpenCodeFoundation.ESchool.Services.Attendance.Infrastructure
         {
         }
 
-        public DbSet<Domain.AggregatesModel.AttendanceAggregate.Attendance> Attendances { get; set; } = default!;
+        public DbSet<Attendance> Attendances { get; set; } = default!;
     }
 
     /// <summary>
     ///     Helper class for creating migration. To create new migration, run the
     ///     command from `Enrolling.Intrastructure` folder.
     ///
-    ///     $ dotnet ef migrations add name_of_migration --startup-project ../Enrolling.API.
+    ///     $ dotnet ef migrations add name_of_migration --startup-project ../Attending.API.
     /// </summary>
     public class AttendanceContextFactory : IDesignTimeDbContextFactory<AttendanceContext>
     {

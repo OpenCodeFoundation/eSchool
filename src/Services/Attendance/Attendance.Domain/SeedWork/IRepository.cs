@@ -1,4 +1,4 @@
-namespace OpenCodeFoundation.ESchool.Services.Attendance.Domain.SeedWork
+namespace OpenCodeFoundation.ESchool.Services.Attending.Domain.SeedWork
 {
     [System.Diagnostics.CodeAnalysis.SuppressMessage(
         "Design",

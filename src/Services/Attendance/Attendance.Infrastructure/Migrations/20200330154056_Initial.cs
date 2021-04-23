@@ -2,7 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace OpenCodeFoundation.ESchool.Services.Attendance.Infrastructure.Migrations
+namespace OpenCodeFoundation.ESchool.Services.Attending.Infrastructure.Migrations
 {
     public partial class Initial : Migration
     {
@@ -13,9 +13,8 @@ namespace OpenCodeFoundation.ESchool.Services.Attendance.Infrastructure.Migratio
                 columns: table => new
                 {
                     Id = table.Column<Guid>(nullable: false),
-                    Name = table.Column<string>(nullable: true),
-                    EmailAddress = table.Column<string>(nullable: true),
-                    MobileNumber = table.Column<string>(nullable: true),
+                    StudentId = table.Column<string>(nullable: false),
+                    CourseId = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {

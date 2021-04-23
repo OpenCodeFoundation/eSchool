@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 
-namespace OpenCodeFoundation.ESchool.Services.Attendance.API.Extensions
+namespace OpenCodeFoundation.ESchool.Services.Attending.API.Extensions
 {
     public static class ServiceCollectionExtensions
     {

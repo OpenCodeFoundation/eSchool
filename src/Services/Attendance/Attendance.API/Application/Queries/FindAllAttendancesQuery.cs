@@ -1,11 +1,10 @@
 using System.Collections.Generic;
 using MediatR;
-using OpenCodeFoundation.ESchool.Services.Attendance.Domain.AggregatesModel.EnrollmentAggregate;
 
-namespace OpenCodeFoundation.ESchool.Services.Attendance.API.Application.Queries
+namespace OpenCodeFoundation.ESchool.Services.Attending.API.Application.Queries
 {
     public class FindAllAttendancesQuery
-        : IRequest<IEnumerable<Attendance>>
+        : IRequest<IEnumerable<Domain.AggregatesModel.AttendanceAggregate.Attendance>>
     {
     }
 }

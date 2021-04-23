@@ -1,6 +1,6 @@
 using System;
 
-namespace OpenCodeFoundation.ESchool.Services.Attendance.Domain.SeedWork
+namespace OpenCodeFoundation.ESchool.Services.Attending.Domain.SeedWork
 {
     public abstract class Entity
     {

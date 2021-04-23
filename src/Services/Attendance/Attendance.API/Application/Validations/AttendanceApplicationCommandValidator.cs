@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
-using OpenCodeFoundation.ESchool.Services.Attendance.API.Application.Commands;
+using OpenCodeFoundation.ESchool.Services.Attending.API.Application.Commands;
 
-namespace OpenCodeFoundation.ESchool.Services.Attendance.API.Application.Validations
+namespace OpenCodeFoundation.ESchool.Services.Attending.API.Application.Validations
 {
     public class AttendanceApplicationCommandValidator
         : AbstractValidator<AttendanceApplicationCommand>

@@ -3,10 +3,9 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OpenCodeFoundation.ESchool.Services.Attendance.Infrastructure;
 
-namespace OpenCodeFoundation.ESchool.Services.Attendance.Infrastructure.Migrations
+namespace OpenCodeFoundation.ESchool.Services.Attending.Infrastructure.Migrations
 {
     [DbContext(typeof(AttendanceContext))]
     partial class AttendanceContextModelSnapshot : ModelSnapshot
@@ -25,13 +24,10 @@ namespace OpenCodeFoundation.ESchool.Services.Attendance.Infrastructure.Migratio
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("EmailAddress")
+                    b.Property<Guid>("StudentId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("MobileNumber")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
+                    b.Property<Guid>("CourseId")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

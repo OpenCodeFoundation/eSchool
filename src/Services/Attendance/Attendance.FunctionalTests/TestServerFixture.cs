@@ -6,11 +6,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using OpenCodeFoundation.ESchool.Services.Attendance.API;
-using OpenCodeFoundation.ESchool.Services.Attendance.Infrastructure;
+using OpenCodeFoundation.ESchool.Services.Attending.API;
+using OpenCodeFoundation.ESchool.Services.Attending.Infrastructure;
 using Serilog;
 
-namespace OpenCodeFoundation.ESchool.Services.Attendance.FunctionalTests
+namespace OpenCodeFoundation.ESchool.Services.Attending.FunctionalTests
 {
     public class TestServerFixture
         : IDisposable

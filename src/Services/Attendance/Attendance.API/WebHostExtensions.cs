@@ -6,7 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Polly;
 
-namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
+namespace OpenCodeFoundation.ESchool.Services.Attending.API
 {
     public static class WebHostExtensions
     {

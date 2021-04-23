@@ -6,10 +6,9 @@ using HotChocolate;
 using HotChocolate.Types;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using OpenCodeFoundation.ESchool.Services.Attendance.Domain.AggregatesModel.AttendanceAggregate;
-using OpenCodeFoundation.ESchool.Services.Attendance.Infrastructure;
+using OpenCodeFoundation.ESchool.Services.Attending.Infrastructure;
 
-namespace OpenCodeFoundation.ESchool.Services.Attendance.API.Graphql
+namespace OpenCodeFoundation.ESchool.Services.Attending.API.Graphql
 {
     [System.Diagnostics.CodeAnalysis.SuppressMessage(
         "Performance",
@@ -18,7 +17,7 @@ namespace OpenCodeFoundation.ESchool.Services.Attendance.API.Graphql
     [ExtendObjectType(Name = "Query")]
     public class AttendanceQuery
     {
-        public async Task<List<Attendance>> GetEnrollmentsAsync(
+        public async Task<List<Domain.AggregatesModel.AttendanceAggregate.Attendance>> GetEnrollmentsAsync(
             [Service] AttendanceContext context,
             [Service] ILogger<AttendanceQuery> logger,
             CancellationToken cancellationToken)

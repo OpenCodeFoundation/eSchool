@@ -4,11 +4,11 @@ using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using OpenCodeFoundation.ESchool.Services.Attendance.Infrastructure;
+using OpenCodeFoundation.ESchool.Services.Attending.Infrastructure;
 using Serilog;
 using Serilog.Enrichers.Span;
 
-namespace OpenCodeFoundation.ESchool.Services.Attendance.API
+namespace OpenCodeFoundation.ESchool.Services.Attending.API
 {
     public static class Program
     {

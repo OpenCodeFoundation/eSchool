@@ -9,11 +9,11 @@ COPY "eSchool.sln" "eSchool.sln"
 
 COPY "src/ApiGateways/eSchool.GraphQL/eSchool.GraphQL.csproj" "src/ApiGateways/eSchool.GraphQL/eSchool.GraphQL.csproj"
 
-COPY "src/Services/Enrolling/Enrolling.API/Enrolling.API.csproj" "src/Services/Enrolling/Enrolling.API/Enrolling.API.csproj"
-COPY "src/Services/Enrolling/Enrolling.Domain/Enrolling.Domain.csproj" "src/Services/Enrolling/Enrolling.Domain/Enrolling.Domain.csproj"
-COPY "src/Services/Enrolling/Enrolling.Infrastructure/Enrolling.Infrastructure.csproj" "src/Services/Enrolling/Enrolling.Infrastructure/Enrolling.Infrastructure.csproj"
-COPY "src/Services/Enrolling/Enrolling.UnitTests/Enrolling.UnitTests.csproj" "src/Services/Enrolling/Enrolling.UnitTests/Enrolling.UnitTests.csproj"
-COPY "src/Services/Enrolling/Enrolling.FunctionalTests/Enrolling.FunctionalTests.csproj" "src/Services/Enrolling/Enrolling.FunctionalTests/Enrolling.FunctionalTests.csproj"
+COPY "src/Services/Attending/Attending.API/Attending.API.csproj" "src/Services/Attending/Attending.API/Attending.API.csproj"
+COPY "src/Services/Attending/Attending.Domain/Attending.Domain.csproj" "src/Services/Attending/Attending.Domain/Attending.Domain.csproj"
+COPY "src/Services/Attending/Attending.Infrastructure/Attending.Infrastructure.csproj" "src/Services/Attending/Attending.Infrastructure/Attending.Infrastructure.csproj"
+COPY "src/Services/Attending/Attending.UnitTests/Attending.UnitTests.csproj" "src/Services/Attending/Attending.UnitTests/Attending.UnitTests.csproj"
+COPY "src/Services/Attending/Attending.FunctionalTests/Attending.FunctionalTests.csproj" "src/Services/Attending/Attending.FunctionalTests/Attending.FunctionalTests.csproj"
 
 COPY "src/Libraries/OpenTelemetry/OpenTelemetry.csproj" "src/Libraries/OpenTelemetry/OpenTelemetry.csproj"
 
@@ -28,14 +28,14 @@ COPY "docker-compose.dcproj" "docker-compose.dcproj"
 RUN dotnet restore eSchool.sln -nowarn:msb3202,nu1503
 
 COPY . .
-WORKDIR /src/src/Services/Enrolling/Enrolling.API
+WORKDIR /src/src/Services/Attending/Attending.API
 RUN dotnet build --no-restore -c Release -o /app/build
 
 FROM build as unittest
-WORKDIR /src/src/Services/Enrolling/Enrolling.UnitTests
+WORKDIR /src/src/Services/Attending/Attending.UnitTests
 
 FROM build as functionaltest
-WORKDIR /src/src/Services/Enrolling/Enrolling.FunctionalTests
+WORKDIR /src/src/Services/Attending/Attending.FunctionalTests
 
 FROM build AS publish
 RUN dotnet publish --no-restore -c Release -o /app/publish
@@ -43,4 +43,4 @@ RUN dotnet publish --no-restore -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Enrolling.API.dll"]
+ENTRYPOINT ["dotnet", "Attending.API.dll"]

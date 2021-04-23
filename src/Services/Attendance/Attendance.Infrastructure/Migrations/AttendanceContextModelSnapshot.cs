@@ -3,7 +3,6 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using OpenCodeFoundation.ESchool.Services.Attendance.Infrastructure;
 
 namespace OpenCodeFoundation.ESchool.Services.Attending.Infrastructure.Migrations
 {

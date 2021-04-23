@@ -10,14 +10,15 @@ using OpenCodeFoundation.ESchool.Web.Frontend.Blazor.Shared;
 
 namespace OpenCodeFoundation.ESchool.Web.Frontend.Blazor.Client
 {
-    public class Program
+    public static class Program
     {
         public static async Task Main(string[] args)
         {
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("#app");
 
-            var settings = await LoadFrontendSettings(builder);
+            var settings = await LoadFrontendSettings(builder)
+                .ConfigureAwait(false);
             builder.Services.AddSingleton(settings);
 
             builder.Services.AddHttpClient("EschoolClient", client =>
@@ -44,18 +45,15 @@ namespace OpenCodeFoundation.ESchool.Web.Frontend.Blazor.Client
         {
             using var http = new HttpClient()
             {
-                BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)
+                BaseAddress = new Uri(builder.HostEnvironment.BaseAddress),
             };
 
             var settings = await http
-                .GetFromJsonAsync<FrontendSettings>("appsettings");
+                .GetFromJsonAsync<FrontendSettings>("appsettings")
+                .ConfigureAwait(false);
 
-            if (settings is null)
-            {
-                throw new ArgumentNullException(nameof(settings));
-            }
-
-            return settings;
+            return settings ?? throw new InvalidOperationException(
+                "Failed to load settings");
         }
     }
 }

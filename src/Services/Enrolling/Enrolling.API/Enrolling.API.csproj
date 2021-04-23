@@ -8,23 +8,23 @@
     <!-- HealthChecks -->
     <PackageReference Include="AspNetCore.HealthChecks.SqlServer" Version="5.0.2"/>
     <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="5.0.1"/>
-    <PackageReference Include="HotChocolate.AspNetCore" Version="11.1.0"/>
-    <PackageReference Include="HotChocolate.Stitching" Version="11.1.0"/>
+    <PackageReference Include="HotChocolate.AspNetCore" Version="11.2.2"/>
+    <PackageReference Include="HotChocolate.Stitching" Version="11.2.2"/>
     <!-- In-memory commandbus -->
     <PackageReference Include="MediatR" Version="9.0.0"/>
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0"/>
     <!-- For validating inputs -->
-    <PackageReference Include="FluentValidation.AspNetCore" Version="10.0.2"/>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="10.0.4"/>
     <!-- Polly is a .NET resilience and transient-fault-handling library that
     allows developers to express policies such as Retry, Circuit Breaker, Timeout,
     Bulkhead Isolation, and Fallback in a fluent and thread-safe manner. -->
-    <PackageReference Include="Polly" Version="7.2.1"/>
+    <PackageReference Include="Polly" Version="7.2.2"/>
     <!-- Logging  -->
     <PackageReference Include="Serilog.AspNetCore" Version="4.1.0"/>
     <PackageReference Include="Serilog.Enrichers.Span" Version="1.2.0"/>
-    <PackageReference Include="Serilog.Sinks.Seq" Version="5.0.0"/>
+    <PackageReference Include="Serilog.Sinks.Seq" Version="5.0.1"/>
     <!-- Swagger -->
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.2"/>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.1.3"/>
     <!-- Need this package for generating migration files -->
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.5">
       <PrivateAssets>all</PrivateAssets>

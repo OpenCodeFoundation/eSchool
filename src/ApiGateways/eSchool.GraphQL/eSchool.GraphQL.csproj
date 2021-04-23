@@ -6,12 +6,12 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="HotChocolate.AspNetCore" Version="11.1.0"/>
-    <PackageReference Include="HotChocolate.Stitching" Version="11.1.0"/>
+    <PackageReference Include="HotChocolate.AspNetCore" Version="11.2.2"/>
+    <PackageReference Include="HotChocolate.Stitching" Version="11.2.2"/>
     <!-- Logging  -->
     <PackageReference Include="Serilog.AspNetCore" Version="4.1.0"/>
     <PackageReference Include="Serilog.Enrichers.Span" Version="1.2.0"/>
-    <PackageReference Include="Serilog.Sinks.Seq" Version="5.0.0"/>
+    <PackageReference Include="Serilog.Sinks.Seq" Version="5.0.1"/>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Libraries\OpenTelemetry\OpenTelemetry.csproj"/>

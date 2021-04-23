@@ -6,11 +6,27 @@ on:
       - "src/Services/Enrolling/**"
       - ".github/workflows/enrolling.api.yml"
       - "src/Libraries/OpenTelemetry/**"
+      - "eSchool.sln"
+      - "build/dotnet/**"
+      - "src/Directory.Build.props"
+      - "docker-compose.yml"
+      - "docker-compose.override.yml"
+      - "docker-compose.dcproj"
+      - "docker-compose-test.yml"
+      - "docker-compose-test.override.yml"
   pull_request:
     paths:
       - "src/Services/Enrolling/**"
       - ".github/workflows/enrolling.api.yml"
       - "src/Libraries/OpenTelemetry/**"
+      - "eSchool.sln"
+      - "build/dotnet/**"
+      - "src/Directory.Build.props"
+      - "docker-compose.yml"
+      - "docker-compose.override.yml"
+      - "docker-compose.dcproj"
+      - "docker-compose-test.yml"
+      - "docker-compose-test.override.yml"
 
 jobs:
   build:

@@ -27,16 +27,17 @@ namespace OpenCodeFoundation.ESchool.Web.Frontend.Blazor.Client
             });
             builder.Services.AddEschoolClient();
 
-            builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+            builder.Services.AddScoped(_ =>
+                new HttpClient
+                {
+                    BaseAddress = new Uri(builder.HostEnvironment.BaseAddress),
+                });
 
-            builder.Services.AddMudServices();
-            builder.Services.AddMudBlazorDialog();
-            builder.Services.AddMudBlazorSnackbar(config =>
+            builder.Services.AddMudServices(config =>
             {
-                config.PositionClass = Defaults.Classes.Position.BottomRight;
-                config.SnackbarVariant = Variant.Filled;
+                config.SnackbarConfiguration.PositionClass = Defaults.Classes.Position.BottomRight;
+                config.SnackbarConfiguration.SnackbarVariant = Variant.Filled;
             });
-            builder.Services.AddMudBlazorResizeListener();
 
             await builder.Build().RunAsync().ConfigureAwait(false);
         }

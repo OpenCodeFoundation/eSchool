@@ -1,3 +1,23 @@
+# [0.7.0](https://github.com/OpenCodeFoundation/eSchool/compare/v0.6.0...v0.7.0) (2021-05-01)
+
+
+### Bug Fixes
+
+* efcore sql globalization connection error ([#293](https://github.com/OpenCodeFoundation/eSchool/issues/293)) ([c4ace8a](https://github.com/OpenCodeFoundation/eSchool/commit/c4ace8a90377cc383e8308d07d7f94ff7ae0edd3))
+* NuGet restore failing in docker build ([4a1fee9](https://github.com/OpenCodeFoundation/eSchool/commit/4a1fee98ac90bb382b522057bd08067b3b3a768e))
+
+
+### Features
+
+* **frontend-blazor:** update MudBlazor to  v5 ([#386](https://github.com/OpenCodeFoundation/eSchool/issues/386)) ([d5dc12d](https://github.com/OpenCodeFoundation/eSchool/commit/d5dc12d59b3870176061b6cba0dcf850bad3bb95))
+* **pipeline:** better codeql pull request analysis ([#389](https://github.com/OpenCodeFoundation/eSchool/issues/389)) ([cf8f80a](https://github.com/OpenCodeFoundation/eSchool/commit/cf8f80af237b7867c8275864ebd0d660f6bfc0ab))
+* use global property file for generic code analyzers and project configuration ([#332](https://github.com/OpenCodeFoundation/eSchool/issues/332)) ([ffa43de](https://github.com/OpenCodeFoundation/eSchool/commit/ffa43def1153b6adaa53011dcc69a28cc7b7980f))
+* **frontend-blazor:** add enrollment UI ([#249](https://github.com/OpenCodeFoundation/eSchool/issues/249)) ([48a2722](https://github.com/OpenCodeFoundation/eSchool/commit/48a27220ebb1039b264fc1703ee9d31143ea46de))
+* **frontend-blazor:** add github action build pipeline ([#309](https://github.com/OpenCodeFoundation/eSchool/issues/309)) ([c843b2d](https://github.com/OpenCodeFoundation/eSchool/commit/c843b2dd4b50210ce81491ca53719bd4b80111d6))
+* **webstatus:** simplify webstatus project ([#298](https://github.com/OpenCodeFoundation/eSchool/issues/298)) ([fb51ba4](https://github.com/OpenCodeFoundation/eSchool/commit/fb51ba47f72bc04cf0f63b4432e02c6854c1b5ab))
+
+
+
 # [0.6.0](https://github.com/OpenCodeFoundation/eSchool/compare/v0.3.0...v0.6.0) (2020-12-02)
 
 After 3 months, we are publishing new version. We are skipping v0.4.0 and v0.5.0.

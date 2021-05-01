@@ -21,12 +21,12 @@ namespace Resulting.API.Extensions
 
             var hcBuilder = services.AddHealthChecks();
 
-            hcBuilder
-                .AddCheck("self", () => HealthCheckResult.Healthy())
-                .AddSqlServer(
-                    configuration["ConnectionStrings"],
-                    name: "ResultingDB-check",
-                    tags: new string[] { "resultingdb" });
+            //hcBuilder
+            //    .AddCheck("self", () => HealthCheckResult.Healthy())
+            //    .AddSqlServer(
+            //        configuration["ConnectionStrings"],
+            //        name: "ResultingDB-check",
+            //        tags: new string[] { "resultingdb" });
 
             return services;
         }

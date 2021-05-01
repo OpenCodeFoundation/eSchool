@@ -25,14 +25,14 @@ namespace Resulting.Infrastructure
     ///
     ///     $ dotnet ef migrations add name_of_migration --startup-project ../Enrolling.API.
     /// </summary>
-    public class ResultingContextFactory : IDesignTimeDbContextFactory<ResultingContext>
-    {
-        public ResultingContext CreateDbContext(string[] args)
-        {
-            var optionsBuilder = new DbContextOptionsBuilder<ResultingContext>()
-                .UseSqlServer("Server=.;Initial Catalog=OpenCodeFoundation.ResultingDB;Integrated Security=true");
+    //public class ResultingContextFactory : IDesignTimeDbContextFactory<ResultingContext>
+    //{
+    //    public ResultingContext CreateDbContext(string[] args)
+    //    {
+    //        var optionsBuilder = new DbContextOptionsBuilder<ResultingContext>()
+    //            .UseSqlServer("Server=.;Initial Catalog=OpenCodeFoundation.ResultingDB;Integrated Security=true");
 
-            return new ResultingContext(optionsBuilder.Options);
-        }
-    }
+    //        return new ResultingContext(optionsBuilder.Options);
+    //    }
+    //}
 }

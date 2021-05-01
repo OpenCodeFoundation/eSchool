@@ -44,11 +44,11 @@ namespace Resulting.API
                         TimeSpan.FromSeconds(15),
                     });
 
-                retry.Execute(() =>
-                {
-                    object p = context.Database.Migrate();
-                    seeder(context, services);
-                });
+                //retry.Execute(() =>
+                //{
+                //    object p = context.Database.Migrate();
+                //    seeder(context, services);
+                //});
 
                 logger.LogInformation($"Migrated database associated with context {typeof(TContext).Name}");
             }

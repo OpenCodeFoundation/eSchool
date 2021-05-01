@@ -15,7 +15,6 @@ using Microsoft.OpenApi.Models;
 using OpenCodeFoundation.ESchool.Services.Attending.API.Application.Behaviors;
 using OpenCodeFoundation.ESchool.Services.Attending.API.Application.Validations;
 using OpenCodeFoundation.ESchool.Services.Attending.API.Extensions;
-using OpenCodeFoundation.ESchool.Services.Attending.API.Graphql;
 using OpenCodeFoundation.ESchool.Services.Attending.Infrastructure;
 using OpenCodeFoundation.OpenTelemetry;
 using Serilog;
@@ -49,11 +48,6 @@ namespace OpenCodeFoundation.ESchool.Services.Attending.API
                             });
                 });
 
-            services.AddGraphQLServer()
-                .AddQueryType(d => d.Name("Query"))
-                    .AddType<AttendanceQuery>()
-                .AddMutationType<Mutation>()
-                .AddErrorFilter<GraphQlErrorFilter>();
 
             services.AddControllers()
                 .AddJsonOptions(options =>

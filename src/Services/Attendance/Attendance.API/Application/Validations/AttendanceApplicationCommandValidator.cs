@@ -8,9 +8,8 @@ namespace OpenCodeFoundation.ESchool.Services.Attending.API.Application.Validati
     {
         public AttendanceApplicationCommandValidator()
         {
-            RuleFor(application => application.Name).NotEmpty();
-            RuleFor(application => application.Email).NotEmpty().EmailAddress();
-            RuleFor(application => application.Mobile).NotEmpty();
+            RuleFor(application => application.CourseId).NotEmpty();
+            RuleFor(application => application.StudentId).NotEmpty();
         }
     }
 }

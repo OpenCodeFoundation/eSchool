@@ -21,7 +21,6 @@ COPY "src/Services/CourseRegistration/CourseRegistration.Infrastructure/CourseRe
 COPY "src/Services/CourseRegistration/CourseRegistration.UnitTests/CourseRegistration.UnitTests.csproj" "src/Services/CourseRegistration/CourseRegistration.UnitTests/Enrolling.UnitTests.csproj"
 COPY "src/Services/CourseRegistration/CourseRegistration.FunctionalTests/CourseRegistration.FunctionalTests.csproj" "src/Services/CourseRegistration/CourseRegistration.FunctionalTests/CourseRegistration.FunctionalTests.csproj"
 
-
 COPY "src/Libraries/OpenTelemetry/OpenTelemetry.csproj" "src/Libraries/OpenTelemetry/OpenTelemetry.csproj"
 
 COPY "src/Web/WebStatus/WebStatus.csproj" "src/Web/WebStatus/WebStatus.csproj"

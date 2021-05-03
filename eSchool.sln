@@ -52,9 +52,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CourseRegistration.Infrastr
 		{D2AA018D-B0EE-4B4B-A050-D90FE76F97F9} = {D2AA018D-B0EE-4B4B-A050-D90FE76F97F9}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseRegistration.FunctionalTests", "src\Services\CourseRegistration\CourseRegistration.FunctionalTests\CourseRegistration.FunctionalTests.csproj", "{FD22CADF-CCFB-40AF-8061-C37E16693D0C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CourseRegistration.FunctionalTests", "src\Services\CourseRegistration\CourseRegistration.FunctionalTests\CourseRegistration.FunctionalTests.csproj", "{FD22CADF-CCFB-40AF-8061-C37E16693D0C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseRegistration.UnitTests", "src\Services\CourseRegistration\CourseRegistration.UnitTests\CourseRegistration.UnitTests.csproj", "{9E4C30C6-52C0-4DBC-A30A-444A42E5BF7E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CourseRegistration.UnitTests", "src\Services\CourseRegistration\CourseRegistration.UnitTests\CourseRegistration.UnitTests.csproj", "{9E4C30C6-52C0-4DBC-A30A-444A42E5BF7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -292,12 +292,6 @@ Global
 		{53F4E6F9-6B91-45F9-97F9-F6EFA0EBEFCE} = {0C00A596-0FE3-4FA6-B54B-FE2BE83371EF}
 		{3BABD4D9-56A1-4BA3-B30C-30E6765AB389} = {0C00A596-0FE3-4FA6-B54B-FE2BE83371EF}
 		{4EB86635-CF79-4D15-909E-C41C98B0B586} = {0C00A596-0FE3-4FA6-B54B-FE2BE83371EF}
-		{E892AB3D-2291-437A-B6F2-602F59C894DB} = {1C120673-72F4-4679-AC4C-68286E9091A5}
-		{A5A7393C-AED0-4425-B099-25DA1F75D2BB} = {E892AB3D-2291-437A-B6F2-602F59C894DB}
-		{D2AA018D-B0EE-4B4B-A050-D90FE76F97F9} = {E892AB3D-2291-437A-B6F2-602F59C894DB}
-		{624B8B40-F653-4723-A970-D63E86877311} = {E892AB3D-2291-437A-B6F2-602F59C894DB}
-		{FD22CADF-CCFB-40AF-8061-C37E16693D0C} = {E892AB3D-2291-437A-B6F2-602F59C894DB}
-		{9E4C30C6-52C0-4DBC-A30A-444A42E5BF7E} = {E892AB3D-2291-437A-B6F2-602F59C894DB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E418719F-3193-403E-AF58-9BE9F94FD8BE}

@@ -1,4 +1,4 @@
-# eSchool - Microservice and Containers based open source School Administration Software
+dock# eSchool - Microservice and Containers based open source School Administration Software
 
 ## Linux Build Status for 'master' branch
 
@@ -34,7 +34,20 @@ After installing `Docker` in your machine, just run
 $ docker-compose up
 ```
 
+![dfvgdfvg](Images\Screenshot.png)
+
 in terminal from project's root folder. The first run can take 30 mins to 1 hour depending on your internet speed, as it will download required docker images from the docker hub. After everything starts up, you can access the `Enrolling.API` swagger UI by visiting [http://localhost:5102/swagger/](http://localhost:5102/swagger/)
+
+### How to Run on Visual studio
+
+After opening School project on Visula studion **right click** on the solution.
+From the menu select **docker-compose** as start-up project.
+
+A new window will open, select **single startup project** and from dropdon select **docker-compose** project
+
+![select](deploy\Screenshot2.png)
+
+Now, you will be able to run the project by clicking **docker-compose** from the menu bar.
 
 ### Service URLs
 

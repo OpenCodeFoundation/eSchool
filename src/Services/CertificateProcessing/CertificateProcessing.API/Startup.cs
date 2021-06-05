@@ -22,7 +22,13 @@ namespace CertificateProcessing.API
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "CertificateRegistration.API", Version = "v1" });
+                c.SwaggerDoc(
+                    "v1",
+                    new OpenApiInfo
+                    {
+                        Title = "CertificateRegistration.API",
+                        Version = "v1",
+                    });
             });
         }
 

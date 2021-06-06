@@ -1,15 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace ResultProcessing.API.Controllers
+namespace ExamManagement.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
     public class HelloWorldController : ControllerBase
     {
         [HttpGet]
-        public static string Ping()
+        public ActionResult<string> Ping()
         {
-            return "Pong";
+            return Ok("Pong");
         }
     }
 }

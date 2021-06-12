@@ -1,0 +1,14 @@
+version: 2
+updates:
+- package-ecosystem: nuget
+  directory: "/"
+  schedule:
+    interval: weekly
+    day: "friday"
+    time: "05:00"
+    timezone: Asia/Dhaka
+  open-pull-requests-limit: 10
+  reviewers:
+  - ratanparai
+  labels:
+    - "dependencies"

@@ -7,7 +7,7 @@ namespace LibraryManagement.API.Controllers
     public class HelloWorldController : ControllerBase
     {
         [HttpGet]
-        public static string Ping()
+        public ActionResult<string> Ping()
         {
             return Ok("Pong");
         }

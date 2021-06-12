@@ -15,6 +15,14 @@ services:
     depends_on:
       - sql.data
 
+  certificateprocessing.api:
+    image: ${REGISTRY:-eschool}/certificateprocessing.api:${TAG:-latest}
+    build:
+      context: .
+      dockerfile: src/Services/CertificateProcessing/CertificateProcessing.API/Dockerfile
+    depends_on:
+      - sql.data
+
   webstatus:
     image: ${REGISTRY:-eschool}/webstatus:${TAG:-latest}
     build:

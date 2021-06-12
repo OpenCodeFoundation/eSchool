@@ -18,8 +18,9 @@ COPY "src/Services/Enrolling/Enrolling.FunctionalTests/Enrolling.FunctionalTests
 COPY "src/Services/CourseRegistration/CourseRegistration.API/CourseRegistration.API.csproj" "src/Services/CourseRegistration/CourseRegistration.API/CourseRegistration.API.csproj"
 COPY "src/Services/CourseRegistration/CourseRegistration.Domain/CourseRegistration.Domain.csproj" "src/Services/CourseRegistration/CourseRegistration.Domain/CourseRegistration.Domain.csproj"
 COPY "src/Services/CourseRegistration/CourseRegistration.Infrastructure/CourseRegistration.Infrastructure.csproj" "src/Services/CourseRegistration/CourseRegistration.Infrastructure/CourseRegistration.Infrastructure.csproj"
-COPY "src/Services/CourseRegistration/CourseRegistration.UnitTests/CourseRegistration.UnitTests.csproj" "src/Services/CourseRegistration/CourseRegistration.UnitTests/Enrolling.UnitTests.csproj"
+COPY "src/Services/CourseRegistration/CourseRegistration.UnitTests/CourseRegistration.UnitTests.csproj" "src/Services/CourseRegistration/CourseRegistration.UnitTests/CourseRegistration.UnitTests.csproj"
 COPY "src/Services/CourseRegistration/CourseRegistration.FunctionalTests/CourseRegistration.FunctionalTests.csproj" "src/Services/CourseRegistration/CourseRegistration.FunctionalTests/CourseRegistration.FunctionalTests.csproj"
+
 
 COPY "src/Libraries/OpenTelemetry/OpenTelemetry.csproj" "src/Libraries/OpenTelemetry/OpenTelemetry.csproj"
 
@@ -34,11 +35,14 @@ COPY "docker-compose.dcproj" "docker-compose.dcproj"
 RUN dotnet restore eSchool.sln -nowarn:msb3202,nu1503
 
 COPY . .
-WORKDIR /src/src/ApiGateways/eSchool.GraphQL
+WORKDIR /src/src/Services/CourseRegistration/CourseRegistration.API
 RUN dotnet build --no-restore -c Release -o /app/build
 
 FROM build as unittest
-WORKDIR /src/src/Services/Enrolling/Enrolling.UnitTests
+WORKDIR /src/src/Services/CourseRegistration/CourseRegistration.UnitTests
+
+FROM build as functionaltest
+WORKDIR /src/src/Services/CourseRegistration/CourseRegistration.FunctionalTests
 
 FROM build AS publish
 RUN dotnet publish --no-restore -c Release -o /app/publish
@@ -46,4 +50,4 @@ RUN dotnet publish --no-restore -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "ESchool.GraphQL.dll"]
+ENTRYPOINT ["dotnet", "CourseRegistration.API.dll"]

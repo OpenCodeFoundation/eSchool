@@ -15,6 +15,14 @@ services:
     depends_on:
       - sql.data
 
+  courseregistration.api:
+    image: ${REGISTRY:-eschool}/courseregistration.api:${TAG:-latest}
+    build:
+      context: .
+      dockerfile: src/Services/CourseRegistration/CourseRegistration.API/Dockerfile
+    depends_on:
+      - sql.data
+
   webstatus:
     image: ${REGISTRY:-eschool}/webstatus:${TAG:-latest}
     build:

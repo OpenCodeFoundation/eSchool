@@ -3,96 +3,12 @@ updates:
 - package-ecosystem: nuget
   directory: "/"
   schedule:
-    interval: daily
+    interval: weekly
+    day: "friday"
+    time: "05:00"
     timezone: Asia/Dhaka
   open-pull-requests-limit: 10
   reviewers:
   - ratanparai
-  ignore:
-  - dependency-name: HotChocolate.Stitching
-    versions:
-    - 11.0.9
-    - 11.2.1
-  - dependency-name: MudBlazor
-    versions:
-    - 5.0.0
-    - 5.0.1
-    - 5.0.2
-    - 5.0.3
-    - 5.0.5
-    - 5.0.6
-    - 5.0.7
-  - dependency-name: FluentValidation.AspNetCore
-    versions:
-    - 10.0.0
-    - 10.0.1
-  - dependency-name: Microsoft.EntityFrameworkCore
-    versions:
-    - 5.0.3
-    - 5.0.4
-    - 5.0.5
-  - dependency-name: Microsoft.EntityFrameworkCore.SqlServer
-    versions:
-    - 5.0.3
-    - 5.0.4
-    - 5.0.5
-  - dependency-name: Microsoft.AspNetCore.Components.WebAssembly
-    versions:
-    - 5.0.2
-    - 5.0.3
-    - 5.0.4
-    - 5.0.5
-  - dependency-name: Microsoft.EntityFrameworkCore.Design
-    versions:
-    - 5.0.3
-    - 5.0.4
-    - 5.0.5
-  - dependency-name: Microsoft.AspNetCore.Components.WebAssembly.Server
-    versions:
-    - 5.0.2
-    - 5.0.3
-    - 5.0.4
-    - 5.0.5
-  - dependency-name: Microsoft.AspNetCore.Components.WebAssembly.DevServer
-    versions:
-    - 5.0.3
-    - 5.0.4
-    - 5.0.5
-  - dependency-name: Serilog.Sinks.Seq
-    versions:
-    - 5.0.0
-  - dependency-name: HotChocolate.AspNetCore
-    versions:
-    - 11.0.9
-    - 11.1.0
-  - dependency-name: Microsoft.AspNetCore.Mvc.Testing
-    versions:
-    - 5.0.2
-    - 5.0.3
-    - 5.0.4
-  - dependency-name: Swashbuckle.AspNetCore
-    versions:
-    - 6.0.1
-    - 6.0.4
-    - 6.0.5
-    - 6.0.7
-    - 6.1.0
-  - dependency-name: OpenTelemetry.Exporter.Jaeger
-    versions:
-    - 1.0.0-rc3
-    - 1.0.0-rc4
-  - dependency-name: coverlet.collector
-    versions:
-    - 3.0.2
-  - dependency-name: AspNetCore.HealthChecks.SqlServer
-    versions:
-    - 5.0.2
-  - dependency-name: AspNetCore.HealthChecks.UI
-    versions:
-    - 5.0.1
-  - dependency-name: AspNetCore.HealthChecks.UI.Client
-    versions:
-    - 5.0.1
-  - dependency-name: AspNetCore.HealthChecks.UI.SqlServer.Storage
-    versions:
-    - 5.0.1
+  labels:
+    - "dependencies"

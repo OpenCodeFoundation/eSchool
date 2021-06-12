@@ -27,23 +27,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebStatus", "src\Web\WebSta
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{74511F4E-FF9D-42C4-9531-A75C61270B73}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenTelemetry", "src\Libraries\OpenTelemetry\OpenTelemetry.csproj", "{7B410F3B-36E0-4853-9B4E-41D0CC2865B5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenTelemetry", "src\Libraries\OpenTelemetry\OpenTelemetry.csproj", "{7B410F3B-36E0-4853-9B4E-41D0CC2865B5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways", "{256317ED-A2C8-48A0-9C6E-D6EB1F7D0BE0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eSchool.GraphQL", "src\ApiGateways\eSchool.GraphQL\eSchool.GraphQL.csproj", "{4053591A-1C1A-4A81-8496-F2FF7EAB2D5C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eSchool.GraphQL", "src\ApiGateways\eSchool.GraphQL\eSchool.GraphQL.csproj", "{4053591A-1C1A-4A81-8496-F2FF7EAB2D5C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend.Blazor", "Frontend.Blazor", "{0C00A596-0FE3-4FA6-B54B-FE2BE83371EF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frontend.Blazor.Client", "src\Web\Frontend.Blazor\Frontend.Blazor.Client\Frontend.Blazor.Client.csproj", "{53F4E6F9-6B91-45F9-97F9-F6EFA0EBEFCE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frontend.Blazor.Client", "src\Web\Frontend.Blazor\Frontend.Blazor.Client\Frontend.Blazor.Client.csproj", "{53F4E6F9-6B91-45F9-97F9-F6EFA0EBEFCE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frontend.Blazor.Server", "src\Web\Frontend.Blazor\Frontend.Blazor.Server\Frontend.Blazor.Server.csproj", "{3BABD4D9-56A1-4BA3-B30C-30E6765AB389}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frontend.Blazor.Server", "src\Web\Frontend.Blazor\Frontend.Blazor.Server\Frontend.Blazor.Server.csproj", "{3BABD4D9-56A1-4BA3-B30C-30E6765AB389}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frontend.Blazor.Shared", "src\Web\Frontend.Blazor\Frontend.Blazor.Shared\Frontend.Blazor.Shared.csproj", "{4EB86635-CF79-4D15-909E-C41C98B0B586}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frontend.Blazor.Shared", "src\Web\Frontend.Blazor\Frontend.Blazor.Shared\Frontend.Blazor.Shared.csproj", "{4EB86635-CF79-4D15-909E-C41C98B0B586}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExamManagement", "ExamManagement", "{53B8221A-7791-47BC-BEAF-6971EE4FE8EF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CertificateProcessing", "CertificateProcessing", "{38032F91-9580-44DC-AF92-0F562D7126F8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExamManagement.API", "src\Services\ExamManagement\ExamManagement.API\ExamManagement.API.csproj", "{2F6B1739-927F-4CF2-BB21-995C73C2E7A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CertificateProcessing.API", "src\Services\CertificateProcessing\CertificateProcessing.API\CertificateProcessing.API.csproj", "{7C7B638F-A1E9-4908-91DD-4060E45F2CE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -199,18 +199,18 @@ Global
 		{4EB86635-CF79-4D15-909E-C41C98B0B586}.Release|x64.Build.0 = Release|Any CPU
 		{4EB86635-CF79-4D15-909E-C41C98B0B586}.Release|x86.ActiveCfg = Release|Any CPU
 		{4EB86635-CF79-4D15-909E-C41C98B0B586}.Release|x86.Build.0 = Release|Any CPU
-		{2F6B1739-927F-4CF2-BB21-995C73C2E7A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2F6B1739-927F-4CF2-BB21-995C73C2E7A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2F6B1739-927F-4CF2-BB21-995C73C2E7A3}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{2F6B1739-927F-4CF2-BB21-995C73C2E7A3}.Debug|x64.Build.0 = Debug|Any CPU
-		{2F6B1739-927F-4CF2-BB21-995C73C2E7A3}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{2F6B1739-927F-4CF2-BB21-995C73C2E7A3}.Debug|x86.Build.0 = Debug|Any CPU
-		{2F6B1739-927F-4CF2-BB21-995C73C2E7A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2F6B1739-927F-4CF2-BB21-995C73C2E7A3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2F6B1739-927F-4CF2-BB21-995C73C2E7A3}.Release|x64.ActiveCfg = Release|Any CPU
-		{2F6B1739-927F-4CF2-BB21-995C73C2E7A3}.Release|x64.Build.0 = Release|Any CPU
-		{2F6B1739-927F-4CF2-BB21-995C73C2E7A3}.Release|x86.ActiveCfg = Release|Any CPU
-		{2F6B1739-927F-4CF2-BB21-995C73C2E7A3}.Release|x86.Build.0 = Release|Any CPU
+		{7C7B638F-A1E9-4908-91DD-4060E45F2CE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C7B638F-A1E9-4908-91DD-4060E45F2CE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C7B638F-A1E9-4908-91DD-4060E45F2CE5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7C7B638F-A1E9-4908-91DD-4060E45F2CE5}.Debug|x64.Build.0 = Debug|Any CPU
+		{7C7B638F-A1E9-4908-91DD-4060E45F2CE5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7C7B638F-A1E9-4908-91DD-4060E45F2CE5}.Debug|x86.Build.0 = Debug|Any CPU
+		{7C7B638F-A1E9-4908-91DD-4060E45F2CE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C7B638F-A1E9-4908-91DD-4060E45F2CE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C7B638F-A1E9-4908-91DD-4060E45F2CE5}.Release|x64.ActiveCfg = Release|Any CPU
+		{7C7B638F-A1E9-4908-91DD-4060E45F2CE5}.Release|x64.Build.0 = Release|Any CPU
+		{7C7B638F-A1E9-4908-91DD-4060E45F2CE5}.Release|x86.ActiveCfg = Release|Any CPU
+		{7C7B638F-A1E9-4908-91DD-4060E45F2CE5}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -233,8 +233,8 @@ Global
 		{53F4E6F9-6B91-45F9-97F9-F6EFA0EBEFCE} = {0C00A596-0FE3-4FA6-B54B-FE2BE83371EF}
 		{3BABD4D9-56A1-4BA3-B30C-30E6765AB389} = {0C00A596-0FE3-4FA6-B54B-FE2BE83371EF}
 		{4EB86635-CF79-4D15-909E-C41C98B0B586} = {0C00A596-0FE3-4FA6-B54B-FE2BE83371EF}
-		{53B8221A-7791-47BC-BEAF-6971EE4FE8EF} = {1C120673-72F4-4679-AC4C-68286E9091A5}
-		{2F6B1739-927F-4CF2-BB21-995C73C2E7A3} = {53B8221A-7791-47BC-BEAF-6971EE4FE8EF}
+		{38032F91-9580-44DC-AF92-0F562D7126F8} = {1C120673-72F4-4679-AC4C-68286E9091A5}
+		{7C7B638F-A1E9-4908-91DD-4060E45F2CE5} = {38032F91-9580-44DC-AF92-0F562D7126F8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E418719F-3193-403E-AF58-9BE9F94FD8BE}

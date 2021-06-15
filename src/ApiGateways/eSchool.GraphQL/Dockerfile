@@ -15,6 +15,8 @@ COPY "src/Services/Enrolling/Enrolling.Infrastructure/Enrolling.Infrastructure.c
 COPY "src/Services/Enrolling/Enrolling.UnitTests/Enrolling.UnitTests.csproj" "src/Services/Enrolling/Enrolling.UnitTests/Enrolling.UnitTests.csproj"
 COPY "src/Services/Enrolling/Enrolling.FunctionalTests/Enrolling.FunctionalTests.csproj" "src/Services/Enrolling/Enrolling.FunctionalTests/Enrolling.FunctionalTests.csproj"
 
+COPY "src/Services/CertificateProcessing/CertificateProcessing.API/CertificateProcessing.API.csproj" "src/Services/CertificateProcessing/CertificateProcessing.API/CertificateProcessing.API.csproj"
+
 COPY "src/Libraries/OpenTelemetry/OpenTelemetry.csproj" "src/Libraries/OpenTelemetry/OpenTelemetry.csproj"
 
 COPY "src/Web/WebStatus/WebStatus.csproj" "src/Web/WebStatus/WebStatus.csproj"

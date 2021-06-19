@@ -36,15 +36,15 @@ $ docker-compose up
 
 in terminal from project's root folder. The first run can take 30 mins to 1 hour depending on your internet speed, as it will download required docker images from the docker hub. After everything starts up, you can access the `Enrolling.API` swagger UI by visiting [http://localhost:5102/swagger/](http://localhost:5102/swagger/)
 
-### How to Run on Visual studio
+## How to Run on Visual studio
 
-After opening eSchool project on Visual studio **right click** on the solution.
+After opening eSchool project on Visual studio **right click** on **docker-compose** file.
 
-From the menu select **docker-compose** as start-up project.
+From the menu select **Set as Startup Project**.
 
-![run-on-visual-studio](images/run-on-visual-studio.png)
+Now, you will be able to run the project by clicking **docker-compose** from the main menu bar.
 
-Now, you will be able to run the project by clicking **docker-compose** from the menu bar.
+**Note:** You have to run **Docker dekstop** before running **eSchool** project on **visual studio**
 
 ### Service URLs
 

@@ -38,14 +38,10 @@ in terminal from project's root folder. The first run can take 30 mins to 1 hour
 
 ### How to Run on Visual studio
 
-After opening School project on Visula studion **right click** on the solution.
+After opening eSchool project on Visual studio **right click** on the solution.
 From the menu select **docker-compose** as start-up project.
 
-![dfvgdfvg](Images\Screenshot.png)
-
-A new window will open, select **single startup project** and from dropdon select **docker-compose** project
-
-![select](deploy\Screenshot2.png)
+![dfvgdfvg](Images/Screenshot.png)
 
 Now, you will be able to run the project by clicking **docker-compose** from the menu bar.
 

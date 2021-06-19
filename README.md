@@ -38,11 +38,9 @@ in terminal from project's root folder. The first run can take 30 mins to 1 hour
 
 ## How to Run on Visual studio
 
-After opening eSchool project on Visual studio **right click** on **docker-compose** file.
-
-From the menu select **Set as Startup Project**.
-
-Now, you will be able to run the project by clicking **docker-compose** from the main menu bar.
+- Open **eSchool** project on Visual studio then **right click** on **docker-compose** file.
+- From the menu select **Set as Startup Project**.
+- Now, run the project by clicking **docker-compose** from the **main status menu bar**.
 
 **Note:** You have to run **Docker dekstop** before running **eSchool** project on **visual studio**
 

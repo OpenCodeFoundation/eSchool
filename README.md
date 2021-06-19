@@ -42,7 +42,7 @@ in terminal from project's root folder. The first run can take 30 mins to 1 hour
 - From the menu select **Set as Startup Project**.
 - Now, run the project by clicking **docker-compose** from the **main status menu bar**.
 
-**Note:** You have to run **Docker dekstop** before running **eSchool** project on **visual studio**
+**Note:** You have to run **Docker desktop** before running **eSchool** project on **visual studio**
 
 ### Service URLs
 

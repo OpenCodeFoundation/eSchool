@@ -38,7 +38,8 @@ in terminal from project's root folder. The first run can take 30 mins to 1 hour
 
 ## How to Run on Visual studio
 
-- Open **eSchool** project on Visual studio then **right click** on **docker-compose** file.
+- Open **eSchool** project on Visual studio then **right click** on **docker-compose** project.
+ ![docker-compose-up](https://user-images.githubusercontent.com/39862861/123513690-3b280a00-d6b0-11eb-9624-cf568bb194e7.png)
 - From the menu select **Set as Startup Project**.
 - Now, run the project by clicking **docker-compose** from the **main status menu bar**.
 

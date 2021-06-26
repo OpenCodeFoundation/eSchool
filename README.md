@@ -54,10 +54,11 @@ in terminal from project's root folder. The first run can take 30 mins to 1 hour
 - Visual Studio
 - SQL Server
 - Azure DevOps
-- RabbitMQ
 - API Gateway
 - GraphQL
 - Blazor
+- Logging: Serilog
+- Distributed tracing- Jaeger
 
 ## Contributing
 

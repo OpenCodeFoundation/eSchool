@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>OpenCodeFoundation.ESchool.Services.Enrolling.FunctionalTests</RootNamespace>
     <IsPackable>false</IsPackable>
   </PropertyGroup>

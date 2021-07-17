@@ -29,7 +29,7 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Graphql
                 throw new ArgumentNullException(nameof(context));
             }
 
-            var enrollment = new Enrollment(
+            var enrollment = Enrollment.CreateNew(
                 input.Name,
                 input.Email,
                 input.Mobile);

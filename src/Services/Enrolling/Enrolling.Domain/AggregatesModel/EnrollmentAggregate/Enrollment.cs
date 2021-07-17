@@ -6,7 +6,7 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.Domain.AggregatesModel.E
     public class Enrollment
         : Entity, IAggregateRoot
     {
-        public Enrollment(
+        private Enrollment(
             string name,
             string emailAddress,
             string mobileNumber)
@@ -24,5 +24,13 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.Domain.AggregatesModel.E
         public string EmailAddress { get; private set; }
 
         public string MobileNumber { get; private set; }
+
+        public static Enrollment CreateNew(
+            string name,
+            string emailAddress,
+            string mobileNumber)
+        {
+            return new(name, emailAddress, mobileNumber);
+        }
     }
 }

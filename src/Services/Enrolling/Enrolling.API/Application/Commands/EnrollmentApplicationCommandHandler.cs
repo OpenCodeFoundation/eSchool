@@ -31,7 +31,7 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Application.Commands
                 throw new ArgumentNullException(nameof(command));
             }
 
-            var enrollment = new Enrollment(command.Name, command.Email, command.Mobile);
+            var enrollment = Enrollment.CreateNew(command.Name, command.Email, command.Mobile);
             await _context.Enrollments.AddAsync(enrollment, cancellationToken)
                 .ConfigureAwait(false);
             await _context.SaveChangesAsync(cancellationToken)

@@ -14,7 +14,7 @@ namespace Enrolling.UnitTests.Domain
                 .WithDefaults()
                 .Build();
 
-            var enrollment = new Enrollment(dto.Name!, dto.Email!, dto.Mobile!);
+            var enrollment = Enrollment.CreateNew(dto.Name!, dto.Email!, dto.Mobile!);
 
             Assert.NotNull(enrollment);
             Assert.Equal(dto.Name, enrollment.Name);
@@ -30,18 +30,18 @@ namespace Enrolling.UnitTests.Domain
                 .WithEmptyName()
                 .Build();
 
-            Assert.Throws<ArgumentNullException>(() => new Enrollment(dto.Name!, dto.Email!, dto.Mobile!));
+            Assert.Throws<ArgumentNullException>(() => Enrollment.CreateNew(dto.Name!, dto.Email!, dto.Mobile!));
         }
 
         [Fact]
-        public void ShouldThrowExceptionEmtpyEmail()
+        public void ShouldThrowExceptionEmptyEmail()
         {
             var dto = new EnrollmentDtoBuilder()
                 .WithDefaults()
                 .WithEmail(string.Empty)
                 .Build();
 
-            Assert.Throws<ArgumentNullException>(() => new Enrollment(dto.Name!, dto.Email!, dto.Mobile!));
+            Assert.Throws<ArgumentNullException>(() => Enrollment.CreateNew(dto.Name!, dto.Email!, dto.Mobile!));
         }
 
         [Fact]
@@ -52,7 +52,7 @@ namespace Enrolling.UnitTests.Domain
                 .WithMobile(string.Empty)
                 .Build();
 
-            Assert.Throws<ArgumentNullException>(() => new Enrollment(dto.Name!, dto.Email!, dto.Mobile!));
+            Assert.Throws<ArgumentNullException>(() => Enrollment.CreateNew(dto.Name!, dto.Email!, dto.Mobile!));
         }
     }
 }

@@ -16,6 +16,7 @@ using Microsoft.OpenApi.Models;
 using OpenCodeFoundation.ESchool.Services.Enrolling.API.Application.Behaviors;
 using OpenCodeFoundation.ESchool.Services.Enrolling.API.Application.Validations;
 using OpenCodeFoundation.ESchool.Services.Enrolling.API.Extensions;
+using OpenCodeFoundation.ESchool.Services.Enrolling.Domain.AggregatesModel.EnrollmentAggregate;
 using OpenCodeFoundation.ESchool.Services.Enrolling.Infrastructure;
 using OpenCodeFoundation.OpenTelemetry;
 using Serilog;
@@ -62,6 +63,12 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Enrolling HTTP API", Version = "v1" });
+
+                c.MapType<EnrollmentId>(() => new OpenApiSchema
+                {
+                    Type = "string",
+                    Format = "uuid",
+                });
             });
 
             services.AddOpenTelemetryIntegration();

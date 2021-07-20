@@ -24,8 +24,8 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.Infrastructure.Repositor
                 .Entity;
         }
 
-        public async Task<Enrollment> FindByIdAsync(
-            Guid id,
+        public async Task<Enrollment?> FindByIdAsync(
+            EnrollmentId id,
             CancellationToken cancellationToken = default)
         {
             return await _context.Enrollments

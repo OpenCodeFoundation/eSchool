@@ -4,7 +4,7 @@ using OpenCodeFoundation.ESchool.Services.Enrolling.Domain.AggregatesModel.Enrol
 namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Application.Queries
 {
     public class GetEnrollmentByIdQuery
-        : IRequest<Enrollment>
+        : IRequest<Enrollment?>
     {
         public GetEnrollmentByIdQuery(EnrollmentId id)
         {

@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using OpenCodeFoundation.ESchool.Services.Enrolling.Domain.AggregatesModel.EnrollmentAggregate;
@@ -6,13 +7,20 @@ using OpenCodeFoundation.ESchool.Services.Enrolling.Domain.AggregatesModel.Enrol
 namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Application.Queries
 {
     public class GetEnrollmentByIdHandler
-        : IRequestHandler<GetEnrollmentByIdQuery, Enrollment>
+        : IRequestHandler<GetEnrollmentByIdQuery, Enrollment?>
     {
-        public Task<Enrollment> Handle(
+        private readonly IEnrollmentRepository _repository;
+
+        public GetEnrollmentByIdHandler(IEnrollmentRepository repository)
+        {
+            _repository = repository ?? throw new ArgumentNullException(nameof(repository));
+        }
+
+        public async Task<Enrollment?> Handle(
             GetEnrollmentByIdQuery query,
             CancellationToken cancellationToken)
         {
-            throw new System.NotImplementedException();
+            return await _repository.FindByIdAsync(query.Id);
         }
     }
 }

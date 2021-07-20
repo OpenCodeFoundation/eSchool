@@ -18,6 +18,7 @@ using OpenCodeFoundation.ESchool.Services.Enrolling.API.Application.Validations;
 using OpenCodeFoundation.ESchool.Services.Enrolling.API.Extensions;
 using OpenCodeFoundation.ESchool.Services.Enrolling.Domain.AggregatesModel.EnrollmentAggregate;
 using OpenCodeFoundation.ESchool.Services.Enrolling.Infrastructure;
+using OpenCodeFoundation.ESchool.Services.Enrolling.Infrastructure.Repositories;
 using OpenCodeFoundation.OpenTelemetry;
 using Serilog;
 
@@ -72,6 +73,8 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
             });
 
             services.AddOpenTelemetryIntegration();
+
+            services.AddTransient<IEnrollmentRepository, EnrollmentRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

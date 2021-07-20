@@ -44,6 +44,8 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Post(
             [FromBody] EnrollmentApplicationCommand command,
             CancellationToken cancellationToken)

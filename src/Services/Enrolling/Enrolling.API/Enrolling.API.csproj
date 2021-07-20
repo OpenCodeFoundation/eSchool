@@ -3,6 +3,8 @@
     <TargetFramework>net6.0</TargetFramework>
     <AssemblyName>Enrolling.API</AssemblyName>
     <RootNamespace>OpenCodeFoundation.ESchool.Services.Enrolling.API</RootNamespace>
+
+    <IncludeOpenAPIAnalyzers>true</IncludeOpenAPIAnalyzers>
   </PropertyGroup>
   <ItemGroup>
     <!-- HealthChecks -->

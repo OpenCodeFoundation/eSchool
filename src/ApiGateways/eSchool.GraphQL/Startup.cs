@@ -34,7 +34,8 @@ namespace OpenCodeFoundation.ESchool.ApiGateways.ESchool.GraphQL
                 .AddQueryType()
                     .AddTypeExtension<EnrollingQueries>()
                 .AddMutationType()
-                    .AddTypeExtension<EnrollmentMutations>();
+                    .AddTypeExtension<EnrollmentMutations>()
+                .UseField<RestApiErrorMiddleware>();
 
             services.AddOpenTelemetryIntegration();
         }

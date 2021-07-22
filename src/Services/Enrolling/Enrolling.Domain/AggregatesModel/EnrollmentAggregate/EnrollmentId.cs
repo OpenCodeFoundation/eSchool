@@ -5,5 +5,9 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.Domain.AggregatesModel.E
     [StronglyTypedId(typeof(Guid))]
     public partial struct EnrollmentId
     {
+        public override string ToString()
+        {
+            return _value.ToString();
+        }
     }
 }

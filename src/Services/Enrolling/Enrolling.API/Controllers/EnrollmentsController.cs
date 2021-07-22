@@ -22,14 +22,14 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Controllers
             _sender = sender ?? throw new ArgumentNullException(nameof(sender));
         }
 
-        [HttpGet]
+        [HttpGet(Name = "GetAll")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesDefaultResponseType]
         public async Task<IEnumerable<Enrollment>> Get(CancellationToken cancellationToken)
             => await _sender.Send(new FindAllEnrollmentsQuery(), cancellationToken)
                 .ConfigureAwait(false);
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetById")]
         [ProducesResponseType(typeof(Enrollment), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesDefaultResponseType]
@@ -46,17 +46,17 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Controllers
                 : Ok(enrollment);
         }
 
-        [HttpPost]
-        [ProducesResponseType(StatusCodes.Status200OK)]
+        [HttpPost(Name = "Create")]
+        [ProducesResponseType(typeof(Enrollment), StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
         [ProducesDefaultResponseType]
         public async Task<IActionResult> Post(
             [FromBody] EnrollmentApplicationCommand command,
             CancellationToken cancellationToken)
         {
-            await _sender.Send(command, cancellationToken)
+            var enrollment = await _sender.Send(command, cancellationToken)
                 .ConfigureAwait(false);
-            return Ok();
+            return CreatedAtAction(nameof(GetById), new { id = enrollment.Id }, enrollment);
         }
     }
 }

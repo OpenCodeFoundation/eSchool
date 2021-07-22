@@ -23,6 +23,8 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesDefaultResponseType]
         public async Task<IEnumerable<Enrollment>> Get(CancellationToken cancellationToken)
             => await _sender.Send(new FindAllEnrollmentsQuery(), cancellationToken)
                 .ConfigureAwait(false);
@@ -30,6 +32,7 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Controllers
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(Enrollment), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesDefaultResponseType]
         public async Task<ActionResult<Enrollment?>> GetById(
             EnrollmentId id,
             CancellationToken cancellationToken)
@@ -46,6 +49,7 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
+        [ProducesDefaultResponseType]
         public async Task<IActionResult> Post(
             [FromBody] EnrollmentApplicationCommand command,
             CancellationToken cancellationToken)

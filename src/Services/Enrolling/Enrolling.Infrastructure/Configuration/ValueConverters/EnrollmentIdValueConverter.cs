@@ -10,7 +10,6 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.Infrastructure.Configura
         public EnrollmentIdValueConverter()
             : base(e => e.Value, value => EnrollmentId.FromGuid(value))
         {
-            
         }
     }
 }

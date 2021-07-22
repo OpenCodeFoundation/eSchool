@@ -38,9 +38,19 @@ namespace OpenCodeFoundation.ESchool.ApiGateways.ESchool.GraphQL
                             .SetMessage(validationError)
                             .SetPath(context.Path)
                             .SetExtension("field", validationErrors.Key)
+                            .SetExtension("extra", exception.Result.AdditionalProperties)
                             .Build());
                     }
                 }
+            }
+            catch (ApiException<ProblemDetails> exception)
+            {
+                context.ReportError(ErrorBuilder
+                    .New()
+                    .SetMessage(exception.Result.Title)
+                    .SetPath(context.Path)
+                    .SetExtension("extra", exception.Result.AdditionalProperties)
+                    .Build());
             }
         }
     }

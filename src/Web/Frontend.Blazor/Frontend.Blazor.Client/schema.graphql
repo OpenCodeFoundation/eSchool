@@ -1,0 +1,28 @@
+﻿schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Query {
+  enrollments: [Enrollment!]!
+  enrollment(enrollmentId: Uuid!): Enrollment!
+}
+
+type Mutation {
+  createEnrollment(enrollment: EnrollmentApplicationCommandInput!): Enrollment!
+}
+
+scalar Uuid
+
+type Enrollment {
+  id: Uuid!
+  name: String
+  emailAddress: String
+  mobileNumber: String
+}
+
+input EnrollmentApplicationCommandInput {
+  name: String
+  email: String
+  mobile: String
+}

@@ -21,6 +21,10 @@ namespace OpenCodeFoundation.ESchool.Web.Frontend.Blazor.Client
                 .ConfigureAwait(false);
             builder.Services.AddSingleton(settings);
 
+            builder.Services
+                .AddEschoolClient()
+                .ConfigureHttpClient(client => client.BaseAddress = new Uri(settings.GraphQlGatewayEndpoint));
+
             builder.Services.AddScoped(_ =>
                 new HttpClient
                 {

@@ -13,11 +13,11 @@
       "requestStrategy": "Default",
       "outputDirectoryName": "Generated",
       "noStore": false,
-      "emitGeneratedCode": true,
+      "emitGeneratedCode": false,
       "razorComponents": false,
       "records": {
-        "inputs": false,
-        "entities": false
+        "inputs": true,
+        "entities": true
       },
       "transportProfiles": [
         {

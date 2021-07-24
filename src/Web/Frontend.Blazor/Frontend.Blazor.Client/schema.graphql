@@ -16,13 +16,13 @@ scalar Uuid
 
 type Enrollment {
   id: Uuid!
-  name: String
-  emailAddress: String
-  mobileNumber: String
+  name: String!
+  emailAddress: String!
+  mobileNumber: String!
 }
 
 input EnrollmentApplicationCommandInput {
-  name: String
-  email: String
-  mobile: String
+  name: String!
+  email: String!
+  mobile: String!
 }

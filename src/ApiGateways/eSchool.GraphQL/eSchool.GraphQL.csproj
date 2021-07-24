@@ -26,7 +26,7 @@
 
   <ItemGroup>
     <OpenApiReference Include="OpenAPIs\Enrolling.json">
-      <Options>/GenerateClientInterfaces:true /UseBaseUrl:false /OperationGenerationMode:SingleClientFromOperationId /GenerateExceptionClasses:true</Options>
+      <Options>/GenerateClientInterfaces:true /UseBaseUrl:false /OperationGenerationMode:SingleClientFromOperationId /GenerateExceptionClasses:true /GenerateOptionalPropertiesAsNullable:false /generateNullableReferenceTypes:true</Options>
       <ClassName>EnrollingServiceClient</ClassName>
       <Namespace>OpenCodeFoundation.ESchool.ApiGateways.ESchool.GraphQL.Enrolling</Namespace>
     </OpenApiReference>

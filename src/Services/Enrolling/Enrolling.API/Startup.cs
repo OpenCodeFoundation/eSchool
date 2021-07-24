@@ -64,6 +64,7 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Enrolling HTTP API", Version = "v1" });
+                c.SupportNonNullableReferenceTypes();
 
                 c.MapType<EnrollmentId>(() => new OpenApiSchema
                 {

@@ -244,17 +244,14 @@
           },
           "name": {
             "type": "string",
-            "nullable": true,
             "readOnly": true
           },
           "emailAddress": {
             "type": "string",
-            "nullable": true,
             "readOnly": true
           },
           "mobileNumber": {
             "type": "string",
-            "nullable": true,
             "readOnly": true
           }
         },
@@ -264,16 +261,13 @@
         "type": "object",
         "properties": {
           "name": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "email": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           },
           "mobile": {
-            "type": "string",
-            "nullable": true
+            "type": "string"
           }
         },
         "additionalProperties": false
@@ -337,7 +331,6 @@
                 "type": "string"
               }
             },
-            "nullable": true,
             "readOnly": true
           }
         },

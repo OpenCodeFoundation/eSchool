@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <RuleSet Name="eSchool" ToolsVersion="15.0">
   <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
     <!-- File Must Have Header -->
@@ -31,5 +31,10 @@
   <Rules AnalyzerId="Microsoft.CodeAnalysis.CSharp" RuleNamespace="Microsoft.CodeAnalysis.CSharp">
     <!-- Missing XML comment for publicly visible type or member -->
     <Rule Id="CS1591" Action="None" />
+  </Rules>
+
+  <Rules AnalyzerId="Microsoft.CodeQuality.Analyzers" RuleNamespace="Microsoft.CodeQuality.Analyzers">
+    <!-- Identifiers should not match keywords -->
+    <Rule Id="CA1716" Action="None" />
   </Rules>
 </RuleSet>

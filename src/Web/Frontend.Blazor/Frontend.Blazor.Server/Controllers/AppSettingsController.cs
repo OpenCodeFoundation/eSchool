@@ -14,9 +14,12 @@ namespace OpenCodeFoundation.ESchool.Web.Frontend.Blazor.Server.Controllers
 
         public AppSettingsController(IOptions<FrontendSettings> options)
         {
-            _settings = options is null
-                ? throw new ArgumentNullException(nameof(options))
-                : options.Value;
+            if (options == null)
+            {
+                throw new ArgumentNullException(nameof(options));
+            }
+
+            _settings = options.Value;
         }
 
         // GET

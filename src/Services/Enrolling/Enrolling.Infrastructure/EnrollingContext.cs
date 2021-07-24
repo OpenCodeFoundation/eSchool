@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using OpenCodeFoundation.ESchool.Services.Enrolling.Domain.AggregatesModel.EnrollmentAggregate;
+using OpenCodeFoundation.ESchool.Services.Enrolling.Infrastructure.Configuration.ValueConverters;
 
 namespace OpenCodeFoundation.ESchool.Services.Enrolling.Infrastructure
 {
@@ -13,11 +14,17 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.Infrastructure
         }
 
         public DbSet<Enrollment> Enrollments { get; set; } = default!;
+
+        protected override void ConfigureConventions(
+            ModelConfigurationBuilder configurationBuilder)
+        {
+            configurationBuilder.AddStronglyTypedIds();
+        }
     }
 
     /// <summary>
     ///     Helper class for creating migration. To create new migration, run the
-    ///     command from `Enrolling.Intrastructure` folder.
+    ///     command from `Enrolling.Infrastructure` folder.
     ///
     ///     $ dotnet ef migrations add name_of_migration --startup-project ../Enrolling.API.
     /// </summary>

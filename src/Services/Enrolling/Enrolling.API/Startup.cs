@@ -1,5 +1,6 @@
 using System;
 using System.Reflection;
+using System.Text.Json.Serialization;
 using FluentValidation.AspNetCore;
 using HealthChecks.UI.Client;
 using MediatR;
@@ -15,8 +16,9 @@ using Microsoft.OpenApi.Models;
 using OpenCodeFoundation.ESchool.Services.Enrolling.API.Application.Behaviors;
 using OpenCodeFoundation.ESchool.Services.Enrolling.API.Application.Validations;
 using OpenCodeFoundation.ESchool.Services.Enrolling.API.Extensions;
-using OpenCodeFoundation.ESchool.Services.Enrolling.API.Graphql;
+using OpenCodeFoundation.ESchool.Services.Enrolling.Domain.AggregatesModel.EnrollmentAggregate;
 using OpenCodeFoundation.ESchool.Services.Enrolling.Infrastructure;
+using OpenCodeFoundation.ESchool.Services.Enrolling.Infrastructure.Repositories;
 using OpenCodeFoundation.OpenTelemetry;
 using Serilog;
 
@@ -49,16 +51,10 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
                             });
                 });
 
-            services.AddGraphQLServer()
-                .AddQueryType(d => d.Name("Query"))
-                    .AddType<EnrollingQuery>()
-                .AddMutationType<Mutation>()
-                .AddErrorFilter<GraphQlErrorFilter>();
-
             services.AddControllers()
                 .AddJsonOptions(options =>
                 {
-                    options.JsonSerializerOptions.IgnoreNullValues = true;
+                    options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault;
                 })
                 .AddFluentValidation(fv =>
                     fv.RegisterValidatorsFromAssemblyContaining<EnrollmentApplicationCommandValidator>());
@@ -68,9 +64,18 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Enrolling HTTP API", Version = "v1" });
+                c.SupportNonNullableReferenceTypes();
+
+                c.MapType<EnrollmentId>(() => new OpenApiSchema
+                {
+                    Type = "string",
+                    Format = "uuid",
+                });
             });
 
             services.AddOpenTelemetryIntegration();
+
+            services.AddTransient<IEnrollmentRepository, EnrollmentRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -113,8 +118,6 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API
                 {
                     Predicate = r => r.Name.Contains("self", StringComparison.Ordinal),
                 });
-
-                endpoints.MapGraphQL();
             });
         }
     }

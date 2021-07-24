@@ -5,7 +5,7 @@ query getEnrollments {
 }
 
 mutation registerStudent($fullName: String! $email: String! $mobile: String!) {
-  addEnrollment(input: {name: $fullName, email: $email mobile: $mobile}) {
+  createEnrollment(enrollment: {name: $fullName, email: $email mobile: $mobile}) {
     ... enrollmentId
   }
 }

@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using OpenCodeFoundation.ESchool.ApiGateways.ESchool.GraphQL.Enrolling;
+using OpenCodeFoundation.ESchool.ApiGateways.ESchool.GraphQL.Enrollings;
 using OpenCodeFoundation.OpenTelemetry;
 using Serilog;
 
@@ -22,12 +24,18 @@ namespace OpenCodeFoundation.ESchool.ApiGateways.ESchool.GraphQL
         {
             services.AddCors();
 
-            services.AddHttpClient(Enrolling, c =>
-                c.BaseAddress = new Uri("http://enrolling.api/graphql"));
+            services.AddHttpClient<IEnrollingServiceClient, EnrollingServiceClient>(client =>
+            {
+                client.BaseAddress = new Uri("http://enrolling.api");
+            });
 
             services
                 .AddGraphQLServer()
-                .AddRemoteSchema(Enrolling);
+                .AddQueryType()
+                    .AddTypeExtension<EnrollingQueries>()
+                .AddMutationType()
+                    .AddTypeExtension<EnrollmentMutations>()
+                .UseField<RestApiErrorMiddleware>();
 
             services.AddOpenTelemetryIntegration();
         }

@@ -16,7 +16,7 @@
     <PackageReference Include="Microsoft.Extensions.Http" Version="5.0.0"/>
     <PackageReference Include="MudBlazor" Version="5.0.15"/>
     <PackageReference Include="StrawberryShake.CodeGeneration.CSharp.Analyzers" Version="11.3.2"/>
-    <PackageReference Include="StrawberryShake.Transport.Http" Version="11.3.2"/>
+    <PackageReference Include="StrawberryShake.Transport.Http" Version="11.3.4"/>
     <PackageReference Include="System.Net.Http.Json" Version="5.0.0"/>
   </ItemGroup>
   <ItemGroup>

@@ -37,7 +37,6 @@ namespace ExamManagement.API
             {
                 Log.CloseAndFlush();
             }
-
         }
 
         public static IHostBuilder CreateHostBuilder(IConfiguration configuration,string[] args) =>

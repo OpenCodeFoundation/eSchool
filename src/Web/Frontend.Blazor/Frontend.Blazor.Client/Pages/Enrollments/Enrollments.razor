@@ -1,13 +1,14 @@
 ﻿@page "/enrollments"
+@using StrawberryShake
 
-@inject IEschoolClient ESchoolClient
+ @inject IEschoolClient ESchoolClient 
 @inject ISnackbar Snackbar
 
 <MudContainer  MaxWidth="MaxWidth.ExtraLarge" Class="mt-16">
     <MudText Typo="Typo.h3" GutterBottom="true">Enrollment Lists</MudText>
     <MudText Class="mb-8">Get enrollment from database</MudText>
     <MudText class="mb-8">@_selectedName</MudText>
-    @if (_enrollments == null)
+     @if (_enrollments == null)
         {
             <MudProgressCircular Color="Color.Default" Indeterminate="true" />
         }
@@ -36,29 +37,29 @@
                     <MudTablePager PageSizeOptions="new[]{10, 50, 100}" />
                 </PagerContent>
             </MudTable>
-        }
+        } 
         </MudContainer>
 
         @code {
-            private IReadOnlyList<IEnrollment>? _enrollments;
+            private IReadOnlyList<IEnrollment>? _enrollments; 
 
             private string _selectedName = string.Empty;
 
             protected override async Task OnInitializedAsync()
             {
-                var operation = await ESchoolClient.GetEnrollmentsAsync();
+                 var result = await ESchoolClient.GetEnrollments.ExecuteAsync();
 
-                if (operation.HasErrors)
+                if (result.IsErrorResult())
                 {
-                    foreach (var error in operation.Errors)
+                    foreach (var error in result.Errors)
                     {
                         Snackbar.Add(error.Message, Severity.Error);
                     }
                 }
                 else
                 {
-                    _enrollments = operation.Data?.Enrollments;
-                }
+                    _enrollments = result.Data?.Enrollments;
+                } 
 
             }
 
@@ -66,5 +67,5 @@
             {
                 _selectedName = enrollment.Name;
                 return Task.CompletedTask;
-            }
+            } 
 }

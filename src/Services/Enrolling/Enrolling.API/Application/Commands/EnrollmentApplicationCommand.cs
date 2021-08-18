@@ -1,4 +1,5 @@
 using MediatR;
+using OpenCodeFoundation.ESchool.Services.Enrolling.Domain.AggregatesModel.EnrollmentAggregate;
 
 namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Application.Commands
 {
@@ -6,5 +7,5 @@ namespace OpenCodeFoundation.ESchool.Services.Enrolling.API.Application.Commands
             string Name,
             string Email,
             string Mobile)
-        : IRequest<bool>;
+        : IRequest<Enrollment>;
 }

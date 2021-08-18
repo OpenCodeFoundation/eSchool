@@ -2,6 +2,6 @@
 {
     public class FrontendSettings
     {
-        public string GraphQlGatewayEndpoint { get; set; }
+        public string? GraphQlGatewayEndpoint { get; set; }
     }
 }

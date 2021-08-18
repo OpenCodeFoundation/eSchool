@@ -69,7 +69,6 @@ namespace ExamManagement.API
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .AddEnvironmentVariables();
 
-            // Load other configurations here. Ex. Keyvault or AppConfiguration
             return builder.Build();
         }        
     }

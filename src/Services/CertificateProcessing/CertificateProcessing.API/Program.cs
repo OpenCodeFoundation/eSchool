@@ -15,7 +15,6 @@ namespace CertificateProcessing.API
             Activity.DefaultIdFormat = ActivityIdFormat.W3C;
 
             var configuration = GetConfiguration();
-
             Log.Logger = CreateSerilogLogger(configuration);
 
             try

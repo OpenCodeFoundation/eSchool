@@ -1,3 +1,19 @@
+# [0.8.0](https://github.com/OpenCodeFoundation/eSchool/compare/v0.7.0...v0.8.0) (2021-08-21)
+
+
+### Features
+
+* **certificate-processing:** add initial implementation ([#404](https://github.com/OpenCodeFoundation/eSchool/issues/404)) ([a0e76a7](https://github.com/OpenCodeFoundation/eSchool/commit/a0e76a704eecee8c06b331ed5221909df47dcb72))
+* **enrolling:** use factory to create domain object ([4b26049](https://github.com/OpenCodeFoundation/eSchool/commit/4b26049574a3ded0fb5b95dcdcc6eb74eccbe251))
+* **enrollment:** use strongly typed ids ([#471](https://github.com/OpenCodeFoundation/eSchool/issues/471)) ([1ca5244](https://github.com/OpenCodeFoundation/eSchool/commit/1ca52442d9a424446781f14390e499ce6f84046a))
+* **exam:** add initial exam service ([f17e2d8](https://github.com/OpenCodeFoundation/eSchool/commit/f17e2d81970330687607fc2dd624b47b6ceeb008))
+* **example-management:** add seq and serilog ([#491](https://github.com/OpenCodeFoundation/eSchool/issues/491)) ([0cd1536](https://github.com/OpenCodeFoundation/eSchool/commit/0cd1536db799c56c353c4c1088aba625e306109f))
+* **library-management:** initial implementation of library management service ([#427](https://github.com/OpenCodeFoundation/eSchool/issues/427)) ([bce5676](https://github.com/OpenCodeFoundation/eSchool/commit/bce56769a9cd070d59d525e8ab71577c3faa1e42))
+* **result-processing:** initial implementation of result processing service  ([#457](https://github.com/OpenCodeFoundation/eSchool/issues/457)) ([f89ec12](https://github.com/OpenCodeFoundation/eSchool/commit/f89ec128ac1917c5c5db920f01b737762c482f42))
+* separate dockerfile for each services ([0f0dddb](https://github.com/OpenCodeFoundation/eSchool/commit/0f0dddb7dcb3c8db2955d5dd18b2a08d9b05367e))
+
+
+
 # [0.7.0](https://github.com/OpenCodeFoundation/eSchool/compare/v0.6.0...v0.7.0) (2021-05-01)
 
 

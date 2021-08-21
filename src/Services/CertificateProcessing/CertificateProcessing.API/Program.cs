@@ -1,15 +1,23 @@
+using System;
+using System.Diagnostics;
+using System.IO;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 using Serilog.Enrichers.Span;
 
 namespace CertificateProcessing.API
 {
-    public class Program
+    public static class Program
     {
         public static readonly string Namespace = typeof(Program).Namespace!;
-        public static readonly string AppName = Namespace.Substring(Namespace.LastIndexOf('.', Namespace.LastIndexOf('.') - 1) + 1);
+        public static readonly string AppName = Namespace[(Namespace.LastIndexOf('.', Namespace.LastIndexOf('.') - 1) + 1)..];
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage(
+            "Design",
+            "CA1031:Do not catch general exception types",
+            Justification = "Top level all exception catcher")]
         public static int Main(string[] args)
         {
             Activity.DefaultIdFormat = ActivityIdFormat.W3C;

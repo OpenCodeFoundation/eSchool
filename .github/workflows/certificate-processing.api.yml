@@ -1,0 +1,51 @@
+name: CertificateProcessing.API
+
+on:
+  push:
+    paths:
+      - "src/Services/CertificateProcessing/**"
+      - ".github/workflows/certificate-processing.api.yml"
+      - "src/Libraries/OpenTelemetry/**"
+      - "build/dotnet/**"
+      - "src/Directory.Build.props"
+      - "docker-compose.yml"
+      - "docker-compose.override.yml"
+      - "docker-compose.dcproj"
+      - "docker-compose-test.yml"
+      - "docker-compose-test.override.yml"
+  pull_request:
+    paths:
+      - "src/Services/CertificateProcessing/**"
+      - ".github/workflows/certificate-processing.api.yml"
+      - "src/Libraries/OpenTelemetry/**"
+      - "build/dotnet/**"
+      - "src/Directory.Build.props"
+      - "docker-compose.yml"
+      - "docker-compose.override.yml"
+      - "docker-compose.dcproj"
+      - "docker-compose-test.yml"
+      - "docker-compose-test.override.yml"
+
+jobs:
+  build:
+    runs-on: ubuntu-16.04
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: set image tag
+        run: echo "TAG=$(git tag --points-at HEAD | cut -c 2-4)" >> $GITHUB_ENV
+
+      - name: build
+        run: docker-compose build certificateprocessing.api
+
+      - uses: azure/docker-login@v1
+        if: startsWith(github.ref, 'refs/tags') || github.ref == 'refs/heads/master'
+        with:
+          login-server: index.docker.io
+          username: ${{ secrets.DOCKERIO_USERNAME }}
+          password: ${{ secrets.DOCKERIO_PASSWORD }}
+
+      - name: push image
+        if: startsWith(github.ref, 'refs/tags') || github.ref == 'refs/heads/master'
+        run: docker-compose push certificateprocessing.api

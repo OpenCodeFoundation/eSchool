@@ -23,6 +23,14 @@ services:
     depends_on:
       - sql.data
 
+  exammanagement.api:
+    image: ${REGISTRY:-eschool}/exammanagement.api:${TAG:-latest}
+    build:
+      context: .
+      dockerfile: src/Services/ExamManagement/ExamManagement.API/Dockerfile
+    depends_on:
+      - sql.data
+
   webstatus:
     image: ${REGISTRY:-eschool}/webstatus:${TAG:-latest}
     build:

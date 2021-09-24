@@ -39,6 +39,14 @@ services:
     depends_on:
       - sql.data
 
+  resultprocessing.api:
+    image: ${REGISTRY:-eschool}/resultprocessing.api:${TAG:-latest}
+    build:
+      context: .
+      dockerfile: src/Services/ResultProcessing/ResultProcessing.API/Dockerfile
+    depends_on:
+      - sql.data
+
   webstatus:
     image: ${REGISTRY:-eschool}/webstatus:${TAG:-latest}
     build:

@@ -31,6 +31,14 @@ services:
     depends_on:
       - sql.data
 
+  librarymanagement.api:
+    image: ${REGISTRY:-eschool}/librarymanagement.api:${TAG:-latest}
+    build:
+      context: .
+      dockerfile: src/Services/LibraryManagement/LibraryManagement.API/Dockerfile
+    depends_on:
+      - sql.data
+
   webstatus:
     image: ${REGISTRY:-eschool}/webstatus:${TAG:-latest}
     build:

@@ -37,6 +37,13 @@ services:
     ports:
       - "5104:80"
 
+  librarymanagement.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+    ports:
+      - "5105:80"
+
   webstatus:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development

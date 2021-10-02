@@ -1,30 +1,34 @@
+using System;
+using System.Diagnostics;
+using System.IO;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Serilog;
 using Serilog.Enrichers.Span;
 
 namespace ExamManagement.API
 {
-    public class Program
+    public static class Program
     {
         public static readonly string Namespace = typeof(Program).Namespace!;
-        public static readonly string AppName = Namespace.Substring(Namespace.LastIndexOf('.', Namespace.LastIndexOf('.') - 1) + 1);
+        public static readonly string AppName = Namespace[(Namespace.LastIndexOf('.', Namespace.LastIndexOf('.') - 1) + 1)..];
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage(
             "Design",
             "CA1031:Do not catch general exception types",
             Justification = "Top level all exception catcher")]
-        public static void Main(string[] args)
+        public static int Main(string[] args)
         {
             Activity.DefaultIdFormat = ActivityIdFormat.W3C;
-            
+
             var configuration = GetConfiguration();
 
             Log.Logger = CreateSerilogLogger(configuration);
             try
             {
                 Log.Information("Configuring web host ({ApplicationContext})...", AppName);
-                CreateHostBuilder(args).Build().Run();                
+                CreateHostBuilder(configuration, args).Build().Run();
 
                 return 0;
             }
@@ -39,7 +43,7 @@ namespace ExamManagement.API
             }
         }
 
-        public static IHostBuilder CreateHostBuilder(IConfiguration configuration,string[] args) =>
+        public static IHostBuilder CreateHostBuilder(IConfiguration configuration, string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
@@ -69,6 +73,6 @@ namespace ExamManagement.API
                 .AddEnvironmentVariables();
 
             return builder.Build();
-        }        
+        }
     }
 }

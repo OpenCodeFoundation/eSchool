@@ -30,6 +30,27 @@ services:
     ports:
       - "5103:80"
 
+  exammanagement.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+    ports:
+      - "5104:80"
+
+  librarymanagement.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+    ports:
+      - "5105:80"
+
+  resultprocessing.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+    ports:
+      - "5106:80"
+
   webstatus:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development

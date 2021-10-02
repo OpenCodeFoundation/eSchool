@@ -53,12 +53,11 @@ in terminal from project's root folder. The first run can take 30 mins to 1 hour
 - Orchestrators: Kubernetes
 - Visual Studio
 - SQL Server
-- Azure DevOps
 - API Gateway
 - GraphQL
 - Blazor
-- Logging: Serilog
-- Distributed tracing- Jaeger
+- Serilog(Logging)
+- Jaeger(Distributed tracing)
 
 ## Contributing
 

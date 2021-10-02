@@ -47,7 +47,7 @@ namespace OpenCodeFoundation.ESchool.ApiGateways.ESchool.GraphQL
             {
                 context.ReportError(ErrorBuilder
                     .New()
-                    .SetMessage(exception.Result.Title)
+                    .SetMessage(exception.Result.Title ?? string.Empty)
                     .SetPath(context.Path)
                     .SetExtension("extra", exception.Result.AdditionalProperties)
                     .Build());

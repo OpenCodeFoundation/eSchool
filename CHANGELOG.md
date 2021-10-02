@@ -1,3 +1,24 @@
+# [0.9.0](https://github.com/OpenCodeFoundation/eSchool/compare/v0.8.0...v0.9.0) (2021-10-02)
+
+
+### Bug Fixes
+
+* **exam-management:** fix build ([#525](https://github.com/OpenCodeFoundation/eSchool/issues/525)) ([3446715](https://github.com/OpenCodeFoundation/eSchool/commit/3446715d0e2b71d627059ca5b2feb10fcce21fd9)), closes [#491](https://github.com/OpenCodeFoundation/eSchool/issues/491)
+* github action build fix ([#519](https://github.com/OpenCodeFoundation/eSchool/issues/519)) ([4ecf4df](https://github.com/OpenCodeFoundation/eSchool/commit/4ecf4df9ab257e78b9ce9beb2422495ad45a2c08))
+
+
+### Features
+
+* **certificate-processing:** add build pipeline via github action ([#499](https://github.com/OpenCodeFoundation/eSchool/issues/499)) ([8b8db0e](https://github.com/OpenCodeFoundation/eSchool/commit/8b8db0ed06c13f84d035dc53ecb5f5f5bdbf14d0))
+* **certificate-processing:** add seq and serilog  ([#497](https://github.com/OpenCodeFoundation/eSchool/issues/497)) ([de781b5](https://github.com/OpenCodeFoundation/eSchool/commit/de781b5bce6799a27e89d91a8eef34850eca25f7))
+* **exam-management:** add build pipeline ([627e305](https://github.com/OpenCodeFoundation/eSchool/commit/627e305c8dcec56804b2599364d11dba3be8d525))
+* **library-management:** add build pipeline ([47fb049](https://github.com/OpenCodeFoundation/eSchool/commit/47fb0495c599a485fe339f27022473ed1de3d043))
+* **pipeline:** remove azure DevOps pipeline ([#526](https://github.com/OpenCodeFoundation/eSchool/issues/526)) ([2629e15](https://github.com/OpenCodeFoundation/eSchool/commit/2629e154cc80cb3ccaaa9854abc55df16c989633))
+* **result-processing:** add build pipeline ([d938efd](https://github.com/OpenCodeFoundation/eSchool/commit/d938efd29cdeb30b82cc6f0ddfcd5f3327954ae6))
+* Add docker files for 3 service ([#518](https://github.com/OpenCodeFoundation/eSchool/issues/518)) ([a907392](https://github.com/OpenCodeFoundation/eSchool/commit/a907392ba0047eadf4b943746954202435e60b79))
+
+
+
 # [0.8.0](https://github.com/OpenCodeFoundation/eSchool/compare/v0.7.0...v0.8.0) (2021-08-21)
 
 

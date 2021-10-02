@@ -5,6 +5,9 @@
 
     <Nullable>enable</Nullable>
 
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisLevel>latest</AnalysisLevel>
+
     <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)/eSchool.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
@@ -31,8 +34,5 @@
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.CodeCoverage" Version="$(MicrosoftCodeCoveragePkgVer)" Condition="'$(Configuration)'=='Release'"/>
-    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="$(MicrosoftCodeAnalysisFxCopAnalyzersPkgVer)" Condition="'$(SkipAnalysis)'!='true'">
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
   </ItemGroup>
 </Project>

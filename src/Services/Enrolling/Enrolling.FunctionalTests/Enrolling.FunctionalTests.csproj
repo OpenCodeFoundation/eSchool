@@ -1,24 +1,24 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <RootNamespace>OpenCodeFoundation.ESchool.Services.Enrolling.FunctionalTests</RootNamespace>
-    <IsPackable>false</IsPackable>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="6.0.0-preview.6.21355.2"/>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.10.0"/>
-    <PackageReference Include="xunit" Version="2.4.1"/>
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3"/>
-    <PackageReference Include="coverlet.collector" Version="3.1.0"/>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Enrolling.API\Enrolling.API.csproj"/>
-    <ProjectReference Include="..\Enrolling.Domain\Enrolling.Domain.csproj"/>
-    <ProjectReference Include="..\Enrolling.Infrastructure\Enrolling.Infrastructure.csproj"/>
-  </ItemGroup>
-  <ItemGroup>
-    <None Update="appsettings.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<RootNamespace>OpenCodeFoundation.ESchool.Services.Enrolling.FunctionalTests</RootNamespace>
+		<IsPackable>false</IsPackable>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="6.0.0-rc.1.21452.15"/>
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0"/>
+		<PackageReference Include="xunit" Version="2.4.1"/>
+		<PackageReference Include="xunit.runner.visualstudio" Version="2.4.3"/>
+		<PackageReference Include="coverlet.collector" Version="3.1.0"/>
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Enrolling.API\Enrolling.API.csproj"/>
+		<ProjectReference Include="..\Enrolling.Domain\Enrolling.Domain.csproj"/>
+		<ProjectReference Include="..\Enrolling.Infrastructure\Enrolling.Infrastructure.csproj"/>
+	</ItemGroup>
+	<ItemGroup>
+		<None Update="appsettings.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
 </Project>

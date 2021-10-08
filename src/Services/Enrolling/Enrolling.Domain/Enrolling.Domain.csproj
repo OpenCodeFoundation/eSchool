@@ -1,10 +1,21 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
 
     <AssemblyName>Enrolling.Domain</AssemblyName>
     <RootNamespace>OpenCodeFoundation.ESchool.Services.Enrolling.Domain</RootNamespace>
+
+    <!-- 👇 Output the generated files to the disk, so you can see the result of the Source Generators under the "obj" folder. This is useful for debugging purpose -->
+    <EmitCompilerGeneratedFiles>True</EmitCompilerGeneratedFiles>
+    <CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)\GeneratedFiles</CompilerGeneratedFilesOutputPath>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Meziantou.Framework.StronglyTypedId" Version="1.0.15">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
 
 </Project>

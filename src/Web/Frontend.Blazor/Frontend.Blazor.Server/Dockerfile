@@ -1,40 +1,24 @@
-FROM mcr.microsoft.com/dotnet/aspnet:5.0-buster-slim AS base
+#See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
+
+FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
 WORKDIR /app
 EXPOSE 80
 
-FROM mcr.microsoft.com/dotnet/sdk:5.0-buster-slim AS build
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
 
-COPY "eSchool.sln" "eSchool.sln"
+COPY ["src/Web/Frontend.Blazor/Frontend.Blazor.Server/Frontend.Blazor.Server.csproj", "src/Web/Frontend.Blazor/Frontend.Blazor.Server/"]
+COPY ["src/Web/Frontend.Blazor/Frontend.Blazor.Shared/Frontend.Blazor.Shared.csproj", "src/Web/Frontend.Blazor/Frontend.Blazor.Shared/"]
+COPY ["src/Web/Frontend.Blazor/Frontend.Blazor.Client/Frontend.Blazor.Client.csproj", "src/Web/Frontend.Blazor/Frontend.Blazor.Client/"]
 
-COPY "src/ApiGateways/eSchool.GraphQL/eSchool.GraphQL.csproj" "src/ApiGateways/eSchool.GraphQL/eSchool.GraphQL.csproj"
-
-COPY "src/Services/Enrolling/Enrolling.API/Enrolling.API.csproj" "src/Services/Enrolling/Enrolling.API/Enrolling.API.csproj"
-COPY "src/Services/Enrolling/Enrolling.Domain/Enrolling.Domain.csproj" "src/Services/Enrolling/Enrolling.Domain/Enrolling.Domain.csproj"
-COPY "src/Services/Enrolling/Enrolling.Infrastructure/Enrolling.Infrastructure.csproj" "src/Services/Enrolling/Enrolling.Infrastructure/Enrolling.Infrastructure.csproj"
-COPY "src/Services/Enrolling/Enrolling.UnitTests/Enrolling.UnitTests.csproj" "src/Services/Enrolling/Enrolling.UnitTests/Enrolling.UnitTests.csproj"
-COPY "src/Services/Enrolling/Enrolling.FunctionalTests/Enrolling.FunctionalTests.csproj" "src/Services/Enrolling/Enrolling.FunctionalTests/Enrolling.FunctionalTests.csproj"
-
-COPY "src/Services/CertificateProcessing/CertificateProcessing.API/CertificateProcessing.API.csproj" "src/Services/CertificateProcessing/CertificateProcessing.API/CertificateProcessing.API.csproj"
-
-COPY "src/Libraries/OpenTelemetry/OpenTelemetry.csproj" "src/Libraries/OpenTelemetry/OpenTelemetry.csproj"
-
-COPY "src/Web/WebStatus/WebStatus.csproj" "src/Web/WebStatus/WebStatus.csproj"
-
-COPY "src/Web/Frontend.Blazor/Frontend.Blazor.Server/Frontend.Blazor.Server.csproj" "src/Web/Frontend.Blazor/Frontend.Blazor.Server/Frontend.Blazor.Server.csproj"
-COPY "src/Web/Frontend.Blazor/Frontend.Blazor.Client/Frontend.Blazor.Client.csproj" "src/Web/Frontend.Blazor/Frontend.Blazor.Client/Frontend.Blazor.Client.csproj"
-COPY "src/Web/Frontend.Blazor/Frontend.Blazor.Shared/Frontend.Blazor.Shared.csproj" "src/Web/Frontend.Blazor/Frontend.Blazor.Shared/Frontend.Blazor.Shared.csproj"
-
-COPY "docker-compose.dcproj" "docker-compose.dcproj"
-
-RUN dotnet restore eSchool.sln -nowarn:msb3202,nu1503
+RUN dotnet restore "src/Web/Frontend.Blazor/Frontend.Blazor.Server/Frontend.Blazor.Server.csproj"
 
 COPY . .
-WORKDIR /src/src/Web/Frontend.Blazor/Frontend.Blazor.Server
-RUN dotnet build --no-restore -c Release -o /app/build
+WORKDIR "/src/src/Web/Frontend.Blazor/Frontend.Blazor.Server"
+RUN dotnet build "Frontend.Blazor.Server.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish --no-restore -c Release -o /app/publish
+RUN dotnet publish "Frontend.Blazor.Server.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app

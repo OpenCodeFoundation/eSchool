@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 namespace ResultProcessing.API
 {
     public class Program
+ Feature/Shahanaz/ResultProcessing/Initial-implemantion
     { 
         public static readonly string Namespace = typeof(Program).Namespace!;
         public static readonly string AppName = Namespace.Substring(Namespace.LastIndexOf('.', Namespace.LastIndexOf('.') - 1) + 1);
@@ -45,10 +46,20 @@ namespace ResultProcessing.API
         }
 
          public static IHostBuilder CreateHostBuilder(IConfiguration configuration,string[] args) =>
+
+    {
+        public static void Main(string[] args)
+        {
+            CreateHostBuilder(args).Build().Run();
+        }
+
+        public static IHostBuilder CreateHostBuilder(string[] args) =>
+ main
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+ Feature/Shahanaz/ResultProcessing/Initial-implemantion
                     webBuilder.UseConfiguration(configuration);
                     webBuilder.UseSerilog();
                 });
@@ -75,5 +86,8 @@ namespace ResultProcessing.API
 
             return builder.Build();
         } 
+
+                });
+ main
     }
 }

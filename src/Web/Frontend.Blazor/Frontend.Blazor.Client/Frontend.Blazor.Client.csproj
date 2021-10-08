@@ -1,23 +1,27 @@
 <Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
-  <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
-    <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
-    <Nullable>enable</Nullable>
-    <AssemblyName>Frontend.Blazor.Client</AssemblyName>
-    <RootNamespace>OpenCodeFoundation.ESchool.Web.Frontend.Blazor.Client</RootNamespace>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.7"/>
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.7" PrivateAssets="all"/>
-    <PackageReference Include="Microsoft.Extensions.Http" Version="5.0.0"/>
-    <PackageReference Include="MudBlazor" Version="5.0.13"/>
-    <PackageReference Include="System.Net.Http.Json" Version="5.0.0"/>
-    <PackageReference Include="StrawberryShake" Version="11.0.0-preview.137"/>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Frontend.Blazor.Shared\Frontend.Blazor.Shared.csproj"/>
-  </ItemGroup>
-  <ItemGroup>
-    <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js"/>
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
+		<Nullable>enable</Nullable>
+		<AssemblyName>Frontend.Blazor.Client</AssemblyName>
+		<RootNamespace>OpenCodeFoundation.ESchool.Web.Frontend.Blazor.Client</RootNamespace>
+		<EmitCompilerGeneratedFiles>True</EmitCompilerGeneratedFiles>
+		<CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)\GeneratedFiles</CompilerGeneratedFilesOutputPath>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.10"/>
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.10" PrivateAssets="all"/>
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="5.0.2"/>
+		<PackageReference Include="Microsoft.Extensions.Http" Version="5.0.0"/>
+		<PackageReference Include="MudBlazor" Version="5.1.5"/>
+		<PackageReference Include="StrawberryShake.CodeGeneration.CSharp.Analyzers" Version="12.0.1"/>
+		<PackageReference Include="StrawberryShake.Transport.Http" Version="12.0.1"/>
+		<PackageReference Include="System.Net.Http.Json" Version="5.0.0"/>
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Frontend.Blazor.Shared\Frontend.Blazor.Shared.csproj"/>
+	</ItemGroup>
+	<ItemGroup>
+		<ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js"/>
+	</ItemGroup>
 </Project>

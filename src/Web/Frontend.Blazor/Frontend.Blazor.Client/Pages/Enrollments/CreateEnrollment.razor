@@ -1,5 +1,6 @@
 ﻿@page "/enrollments/create"
 @using System.ComponentModel.DataAnnotations
+@using StrawberryShake
 
 @inject IEschoolClient EschoolClient
 @inject NavigationManager NavigationManager
@@ -44,12 +45,12 @@
     private async Task Callback(MouseEventArgs obj)
     {
 
-        var operation = await EschoolClient
-            .RegisterStudentAsync(_fullName, _email, _mobile);
+        var result = await EschoolClient
+            .RegisterStudent.ExecuteAsync(_fullName, _email, _mobile);
 
-        if (operation.HasErrors)
+        if (result.IsErrorResult())
         {
-            foreach (var error in operation.Errors)
+            foreach (var error in result.Errors)
             {
                 Snackbar.Add(error.Message, Severity.Error);
             }

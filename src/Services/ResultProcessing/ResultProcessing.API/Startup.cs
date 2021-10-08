@@ -28,6 +28,7 @@ namespace ResultProcessing.API
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+ Feature/Shahanaz/ResultProcessing/Initial-implemantion
        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             var pathBase = Configuration["PATH_BASE"];
@@ -45,6 +46,25 @@ namespace ResultProcessing.API
             app.UseSerilogRequestLogging();
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ExamManagement.API v1"));
+
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ResultProcessing.API v1"));
+
+            app.UseRouting();
+
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
+ main
         }
     }
 }

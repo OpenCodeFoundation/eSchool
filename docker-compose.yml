@@ -47,6 +47,14 @@ services:
     depends_on:
       - sql.data
 
+  attendance.api:
+    image: ${REGISTRY:-eschool}/attendance.api:${TAG:-latest}
+    build:
+      context: .
+      dockerfile: src/Services/Attendance/Attendance.API/Dockerfile
+    depends_on:
+      - sql.data
+
   webstatus:
     image: ${REGISTRY:-eschool}/webstatus:${TAG:-latest}
     build:

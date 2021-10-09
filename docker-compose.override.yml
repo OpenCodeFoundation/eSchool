@@ -51,6 +51,13 @@ services:
     ports:
       - "5106:80"
 
+  attendance.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://0.0.0.0:80
+    ports:
+      - "5108:80"
+
   webstatus:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development

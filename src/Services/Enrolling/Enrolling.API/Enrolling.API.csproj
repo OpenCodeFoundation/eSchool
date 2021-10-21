@@ -23,7 +23,7 @@
 		<PackageReference Include="Serilog.Enrichers.Span" Version="1.4.0"/>
 		<PackageReference Include="Serilog.Sinks.Seq" Version="5.0.1"/>
 		<!-- Swagger -->
-		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.2"/>
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3"/>
 		<!-- Need this package for generating migration files -->
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.0-rc.1.21452.10">
 			<PrivateAssets>all</PrivateAssets>

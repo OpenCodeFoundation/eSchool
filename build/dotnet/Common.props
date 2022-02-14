@@ -34,5 +34,12 @@
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="$(MicrosoftCodeAnalysisFxCopAnalyzersPkgVer)" Condition="'$(SkipAnalysis)'!='true'">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="NullGuard.Fody" Version="3.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)/SharedAssemblyInfo.cs">
+      <Link>Properties\SharedAssemblyInfo.cs</Link>
+    </Compile>
   </ItemGroup>
 </Project>

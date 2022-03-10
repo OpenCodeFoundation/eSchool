@@ -3,6 +3,6 @@
 		<TargetFramework>net5.0</TargetFramework>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.2"/>
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0"/>
 	</ItemGroup>
 </Project>

@@ -1,6 +1,6 @@
 <Project>
   <PropertyGroup>
-    <LangVersion>9.0</LangVersion>
+    <LangVersion>preview</LangVersion>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
 
     <Nullable>enable</Nullable>

@@ -18,7 +18,7 @@ namespace Enrolling.UnitTests.Domain
                 .Build();
 
             var enrollment = Enrollment.CreateNew(dto.Name!, dto.Email!, dto.Mobile!);
-            return Verifier.Verify(enrollment);
+            return Verifier.Verify(enrollment).UseDirectory("Snapshots");
         }
 
         [Fact]

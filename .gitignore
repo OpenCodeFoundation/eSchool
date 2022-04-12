@@ -338,3 +338,6 @@ ASALocalRun/
 
 # Test Results
 /tests-results
+
+# Snapshot testing
+**/*.received.txt

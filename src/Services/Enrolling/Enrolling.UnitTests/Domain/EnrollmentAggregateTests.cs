@@ -1,25 +1,24 @@
 using System;
+using System.Threading.Tasks;
 using Enrolling.UnitTests.Builders;
 using OpenCodeFoundation.ESchool.Services.Enrolling.Domain.AggregatesModel.EnrollmentAggregate;
+using VerifyXunit;
 using Xunit;
 
 namespace Enrolling.UnitTests.Domain
 {
+    [UsesVerify]
     public class EnrollmentAggregateTests
     {
         [Fact]
-        public void NewApplicationShouldSuccessWithValidInput()
+        public Task NewApplicationShouldSuccessWithValidInput()
         {
             var dto = new EnrollmentDtoBuilder()
                 .WithDefaults()
                 .Build();
 
             var enrollment = Enrollment.CreateNew(dto.Name!, dto.Email!, dto.Mobile!);
-
-            Assert.NotNull(enrollment);
-            Assert.Equal(dto.Name, enrollment.Name);
-            Assert.Equal(dto.Email, enrollment.EmailAddress);
-            Assert.Equal(dto.Mobile, enrollment.MobileNumber);
+            return Verifier.Verify(enrollment).UseDirectory("Snapshots");
         }
 
         [Fact]

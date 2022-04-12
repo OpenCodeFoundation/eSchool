@@ -1,0 +1,6 @@
+﻿{
+  Id: Guid_1,
+  Name: John Doe,
+  EmailAddress: john@example.com,
+  MobileNumber: 01771999999
+}

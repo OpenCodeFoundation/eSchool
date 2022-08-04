@@ -10,7 +10,7 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="5.0.0"/>
     <!-- OpenTelemetry -->
     <PackageReference Include="OpenTelemetry.Extensions.Hosting" Version="1.0.0-rc7"/>
-    <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.0.0-rc7"/>
+    <PackageReference Include="OpenTelemetry.Instrumentation.AspNetCore" Version="1.0.0-rc9.5"/>
     <PackageReference Include="OpenTelemetry.Instrumentation.Http" Version="1.0.0-rc7"/>
     <PackageReference Include="OpenTelemetry.Instrumentation.SqlClient" Version="1.0.0-rc7"/>
     <PackageReference Include="OpenTelemetry.Exporter.Jaeger" Version="1.1.0"/>

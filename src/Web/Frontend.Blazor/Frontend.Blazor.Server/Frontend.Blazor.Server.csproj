@@ -6,7 +6,7 @@
 		<RootNamespace>OpenCodeFoundation.ESchool.Web.Frontend.Blazor.Server</RootNamespace>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="5.0.10"/>
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="7.0.3"/>
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\Frontend.Blazor.Client\Frontend.Blazor.Client.csproj"/>

@@ -16,7 +16,7 @@
 		<PackageReference Include="MudBlazor" Version="5.1.5"/>
 		<PackageReference Include="StrawberryShake.CodeGeneration.CSharp.Analyzers" Version="12.0.1"/>
 		<PackageReference Include="StrawberryShake.Transport.Http" Version="12.0.1"/>
-		<PackageReference Include="System.Net.Http.Json" Version="5.0.0"/>
+		<PackageReference Include="System.Net.Http.Json" Version="7.0.1"/>
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\Frontend.Blazor.Shared\Frontend.Blazor.Shared.csproj"/>
